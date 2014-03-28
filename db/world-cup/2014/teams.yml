@@ -1,0 +1,223 @@
+alg:
+  name: Algeria
+  cups: 0
+  squad:
+    coach: Vahid Halilhodzic
+    players:
+
+arg:
+  name: Argentina
+  cups: 0
+  squad:
+    coach: Alejandro Sabella
+    players:
+
+aus:
+  name: Australia
+  cups: 0
+  squad:
+    coach: Ange Postecoglou
+    players:
+
+bel:
+  name: Belgium
+  cups: 0
+  squad:
+    coach: Marc Wilmots
+    players:
+
+bih:
+  name: Bosnia and Herzegovina
+  cups: 0
+  squad:
+    coach: Safet Susic
+    players:
+
+bra:
+  name: Brazil
+  cups: 0
+  squad:
+    coach: Luiz Felipe Scolari
+    players:
+
+cmr:
+  name: Cameroon
+  cups: 0
+  squad:
+    coach: Volker Finke
+    players:
+
+chi:
+  name: Chile
+  cups: 0
+  squad:
+    coach: Jorge Sampaoli
+    players:
+
+col:
+  name: Colombia
+  cups: 0
+  squad:
+    coach: Jose Pekerman
+    players:
+
+crc:
+  name: Costa Rica
+  cups: 0
+  squad:
+    coach: Jorge Luis Pinto
+    players:
+
+civ:
+  name: Côte d'Ivoire
+  cups: 0
+  squad:
+    coach: Sabri Lamouchi
+    players:
+
+cro:
+  name: Croatia
+  cups: 0
+  squad:
+    coach: Niko Kovac
+    players:
+
+ecu:
+  name: Ecuador
+  cups: 0
+  squad:
+    coach: Reinaldo Rueda
+    players:
+
+eng:
+  name: England
+  cups: 0
+  squad:
+    coach: Roy Hodgson
+    players:
+
+fra:
+  name: France
+  cups: 0
+  squad:
+    coach: Didier Deschamps
+    players:
+
+ger:
+  name: Germany
+  cups: 0
+  squad:
+    coach: Joachim Low
+    players:
+
+gha:
+  name: Ghana
+  cups: 0
+  squad:
+    coach: Kwesi Appiah
+    players:
+
+gre:
+  name: Greece
+  cups: 0
+  squad:
+    coach: Fernando Santos
+    players:
+
+hon:
+  name: Honduras
+  cups: 0
+  squad:
+    coach: Luis Fernando Suarez
+    players:
+
+irn:
+  name: Iran
+  cups: 0
+  squad:
+    coach: Carlos Queiroz
+    players:
+
+ita:
+  name: Italy
+  cups: 0
+  squad:
+    coach: Cesare Prandelli
+    players:
+
+jpn:
+  name: Japan
+  cups: 0
+  squad:
+    coach: Alberto Zaccheroni
+    players:
+
+kor:
+  name: Korea Republic
+  cups: 0
+  squad:
+    coach: Hong Myungbo
+    players:
+
+mex:
+  name: Mexico
+  cups: 0
+  squad:
+    coach: Miguel Herrera
+    players:
+
+ned:
+  name: Netherlands
+  cups: 0
+  squad:
+    coach: Louis Van Gaal
+    players:
+
+nga:
+  name: Nigeria
+  cups: 0
+  squad:
+    coach: Stephen Keshi
+    players:
+
+por:
+  name: Portugal
+  cups: 0
+  squad:
+    coach: Paulo Bento
+    players:
+
+rus:
+  name: Russia
+  cups: 0
+  squad:
+    coach: Fabio Capello
+    players:
+
+esp:
+  name: Spain
+  cups: 0
+  squad:
+    coach: Vicente del Bosque
+    players:
+
+sui:
+  name: Switzerland
+  cups: 0
+  squad:
+    coach: Ottmar Hitzfeld
+    players:
+
+uru:
+  name: Uruguay
+  cups: 0
+  squad:
+    coach: Oscar Washington Tabarez
+    players:
+
+usa:
+  name: United States
+  cups: 0
+  squad:
+    coach: Jurgen Klinsmann
+    players:

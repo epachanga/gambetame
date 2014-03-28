@@ -1,0 +1,351 @@
+a:
+  teams:
+    bra:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    cro:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    mex:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    cmr:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+  matches:
+    - 1
+    - 2
+    - 17
+    - 18
+    - 33
+    - 34
+
+b:
+  teams:
+    esp:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    ned:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    chi:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    aus:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+  matches:
+    - 3
+    - 4
+    - 19
+    - 20
+    - 35
+    - 36
+
+c:
+  teams:
+    col:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    gre:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    civ:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    jpn:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+  matches:
+    - 5
+    - 6
+    - 21
+    - 22
+    - 37
+    - 38
+
+d:
+  teams:
+    uru:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    crc:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    eng:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+    ita:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+  matches:
+    - 7
+    - 8
+    - 23
+    - 24
+    - 39
+    - 40
+
+e:
+  teams:
+    sui:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    ecu:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    fra:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    hon:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+  matches:
+    - 9
+    - 10
+    - 25
+    - 26
+    - 41
+    - 42
+
+f:
+  teams:
+    arg:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    bih:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    irn:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    nga:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+  matches:
+    - 11
+    - 12
+    - 27
+    - 28
+    - 43
+    - 44
+
+g:
+  teams:
+    ger:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    por:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    gha:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    usa:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+  matches:
+    - 13
+    - 14
+    - 29
+    - 30
+    - 45
+    - 46
+
+h:
+  teams:
+    bel:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    alg:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    rus:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+    kor:
+      mp: 0
+      w: 0
+      d: 0
+      l: 0
+      gf: 0
+      ga: 0
+      pts: 0
+
+  matches:
+    - 15
+    - 16
+    - 31
+    - 32
+    - 47
+    - 48
