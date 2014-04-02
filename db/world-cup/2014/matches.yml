@@ -2,7 +2,7 @@
   name: Group Stage
   matches:
     1:
-      date: Thu Jun/12 17:00 (UTC-3)
+      date: 2014-6-12 17:00:00 -3
       team1:
         bra: 0
       team2:
@@ -10,7 +10,7 @@
       location: corinthians
 
     2:
-      date: Fri Jun/13 13:00 (UTC-3)
+      date: 2014-6-13 13:00:00 -3
       team1:
         mex: 0
       team2:
@@ -18,7 +18,7 @@
       location: dasdunas
 
     3:
-      date: Fri Jun/13 16:00 (UTC-3)
+      date: 2014-6-13 16:00:00 -3
       team1:
         esp: 0
       team2:
@@ -26,7 +26,7 @@
       location: fontenova
 
     4:
-      date: Fri Jun/13 18:00 (UTC-4)
+      date: 2014-6-13 18:00:00 -4
       team1:
         chi: 0
       team2:
@@ -34,7 +34,7 @@
       location: pantanal
 
     5:
-      date: Sat Jun/14 13:00 (UTC-3)
+      date: 2014-6-14 13:00:00 -3
       team1:
         col: 0
       team2:
@@ -42,7 +42,7 @@
       location: mineirao
 
     6:
-      date: Sat Jun/14 22:00 (UTC-3)
+      date: 2014-6-14 22:00:00 -3
       team1:
         civ: 0
       team2:
@@ -50,7 +50,7 @@
       location: pernambuco
 
     7:
-      date: Sat Jun/14 16:00 (UTC-3)
+      date: 2014-6-14 16:00:00 -3
       team1:
         uru: 0
       team2:
@@ -58,7 +58,7 @@
       location: castelao
 
     8:
-      date: Sat Jun/14 18:00 (UTC-4)
+      date: 2014-6-14 18:00:00 -4
       team1:
         eng: 0
       team2:
@@ -66,7 +66,7 @@
       location: amazonia
 
     9:
-      date: Sun Jun/15 13:00 (UTC-3)
+      date: 2014-6-15 13:00:00 -3
       team1:
         sui: 0
       team2:
@@ -74,7 +74,7 @@
       location: nacionaldebrasilia
 
     10:
-      date: Sun Jun/15 16:00 (UTC-3)
+      date: 2014-6-15 16:00:00 -3
       team1:
         fra: 0
       team2:
@@ -82,7 +82,7 @@
       location: beirario
 
     11:
-      date: Sun Jun/15 19:00 (UTC-3)
+      date: 2014-6-15 19:00:00 -3
       team1:
         arg: 0
       team2:
@@ -90,7 +90,7 @@
       location: maracana
 
     12:
-      date: Mon Jun/16 16:00 (UTC-3)
+      date: 2014-6-16 16:00:00 -3
       team1:
         irn: 0
       team2:
@@ -98,7 +98,7 @@
       location: dabaixada
 
     13:
-      date: Mon Jun/16 13:00 (UTC-3)
+      date: 2014-6-16 13:00:00 -3
       team1:
         ger: 0
       team2:
@@ -106,7 +106,7 @@
       location: fontenova
 
     14:
-      date: Mon Jun/16 19:00 (UTC-3)
+      date: 2014-6-16 19:00:00 -3
       team1:
         gha: 0
       team2:
@@ -114,7 +114,7 @@
       location: dasdunas
 
     15:
-      date: Tue Jun/17 13:00 (UTC-3)
+      date: 2014-6-17 13:00:00 -3
       team1:
         bel: 0
       team2:
@@ -122,7 +122,7 @@
       locaiton: mineirao
 
     16:
-      date: Tue Jun/17 18:00 (UTC-4)
+      date: 2014-6-17 18:00:00 -4
       team1:
         rus: 0
       team2:
@@ -130,7 +130,7 @@
       locaiton: pantanal
 
     17:
-      date: Tue Jun/17 16:00 (UTC-3)
+      date: 2014-6-17 16:00:00 -3
       team1:
         bra: 0
       team2:
@@ -138,7 +138,7 @@
       location: castelao
 
     18:
-      date: Wed Jun/18 18:00 (UTC-3)
+      date: 2014-6-18 18:00:00 -3
       team1:
         cmr: 0
       team2:
@@ -146,7 +146,7 @@
       location: amazonia
 
     19:
-      date: Wed Jun/18 16:00 (UTC-3)
+      date: 2014-6-18 16:00:00 -3
       team1:
         esp: 0
       team2:
@@ -154,7 +154,7 @@
       location: maracana
 
     20:
-      date: Wed Jun/18 13:00 (UTC-3)
+      date: 2014-6-18 13:00:00 -3
       team1:
         aus: 0
       team2:
@@ -162,84 +162,84 @@
       location: beirario
 
     21:
-      date: Thu Jun/19 13:00 (UTC-3)
+      date: 2014-6-19 13:00:00 -3
       team1:
         col: 0
       team2:
         civ: 0
       location: nacionaldebrasilia
     22:
-      date: Thu Jun/19 19:00 (UTC-3)
+      date: 2014-6-19 19:00:00 -3
       team1:
         jpn: 0
       team2:
         gre: 0
       location: dasdunas
     23:
-      date: Thu Jun/19 16:00 (UTC-3)
+      date: 2014-6-19 16:00:00 -3
       team1:
         uru: 0
       team2:
         eng: 0
       location: corinthians
     24:
-      date: Fri Jun/20 13:00 (UTC-3)
+      date: 2014-6-20 13:00:00 -3
       team1:
         ita: 0
       team2:
         crc: 0
       location: pernambuco
     25:
-      date: Fri Jun/20 16:00 (UTC-3)
+      date: 2014-6-20 16:00:00 -3
       team1:
         sui: 0
       team2:
         fra: 0
       location: fontenova
     26:
-      date: Fri Jun/20 19:00 (UTC-3)
+      date: 2014-6-20 19:00:00 -3
       team1:
         hon: 0
       team2:
         ecu: 0
       location: dabaixada
     27:
-      date: Sat Jun/21 13:00 (UTC-3)
+      date: 2014-6-21 13:00:00 -3
       team1:
         arg: 0
       team2:
         irn: 0
       location: mineirao
     28:
-      date: Sat Jun/21 18:00 (UTC-4)
+      date: 2014-6-21 18:00:00 -4
       team1:
         nga: 0
       team2:
         bih: 0
       location: pantanal
     29:
-      date: Sat Jun/21 16:00 (UTC-3)
+      date: 2014-6-21 16:00:00 -3
       team1:
         ger: 0
       team2:
         gha: 0
       location: castelao
     30:
-      date: Sun Jun/22 18:00 (UTC-4)
+      date: 2014-6-22 18:00:00 -4
       team1:
         usa: 0
       team2:
         por: 0
       location: amazonia
     31:
-      date: Sun Jun/22 13:00 (UTC-3)
+      date: 2014-6-22 13:00:00 -3
       team1:
         bel: 0
       team2:
         rus: 0
       location: maracana
     32:
-      date: Sun Jun/22 16:00 (UTC-3)
+      date: 2014-6-22 16:00:00 -3
       team1:
         kor: 0
       team2:
@@ -247,7 +247,7 @@
       location: beirario
 
     33:
-      date: Mon Jun/23 17:00 (UTC-3)
+      date: 2014-6-23 17:00:00 -3
       team1:
         cmr: 0
       team2:
@@ -255,7 +255,7 @@
       location: nacionaldebrasilia
 
     34:
-      date: Mon Jun/23 17:00 (UTC-3)
+      date: 2014-6-23 17:00:00 -3
       team1:
         cro: 0
       team2:
@@ -263,7 +263,7 @@
       location: pernambuco
 
     35:
-      date: Mon Jun/23 13:00 (UTC-3)
+      date: 2014-6-23 13:00:00 -3
       team1:
         aus: 0
       team2:
@@ -271,7 +271,7 @@
       location: dabaixada
 
     36:
-      date: Mon Jun/23 13:00 (UTC-3)
+      date: 2014-6-23 13:00:00 -3
       team1:
         ned: 0
       team2:
@@ -279,84 +279,84 @@
       location: corinthians
 
     37:
-      date: Tue Jun/24 16:00 (UTC-4)
+      date: 2014-6-24 16:00:00 -4
       team1:
         jpn: 0
       team2:
         col: 0
       location: pantanal
     38:
-      date: Tue Jun/24 17:00 (UTC-3)
+      date: 2014-6-24 17:00:00 -3
       team1:
         civ: 0
       team2:
         gre: 0
       location: castelao
     39:
-      date: Tue Jun/24 13:00 (UTC-3)
+      date: 2014-6-24 13:00:00 -3
       team1:
         ita: 0
       team2:
         uru: 0
       location: dasdunas
     40:
-      date: Tue Jun/24 13:00 (UTC-3)
+      date: 2014-6-24 13:00:00 -3
       team1:
         crc: 0
       team2:
         eng: 0
       location: mineirao
     41:
-      date: Wed Jun/25 16:00 (UTC-4)
+      date: 2014-6-25 16:00:00 -4
       team1:
         hon: 0
       team2:
         sui: 0
       location: amazonia
     42:
-      date: Wed Jun/25 17:00 (UTC-3)
+      date: 2014-6-25 17:00:00 -3
       team1:
         ecu: 0
       team2:
         fra: 0
       location: maracana
     43:
-      date: Wed Jun/25 13:00 (UTC-3)
+      date: 2014-6-25 13:00:00 -3
       team1:
         nga: 0
       team2:
         arg: 0
       location: beirario
     44:
-      date: Wed Jun/25 13:00 (UTC-3)
+      date: 2014-6-25 13:00:00 -3
       team1:
         bih: 0
       team2:
         irn: 0
       location: fontenova
     45:
-      date: Thu Jun/26 13:00 (UTC-3)
+      date: 2014-6-26 13:00:00 -3
       team1:
         usa: 0
       team2:
         ger: 0
       location: pernambuco
     46:
-      date: Thu Jun/26 13:00 (UTC-3)
+      date: 2014-6-26 13:00:00 -3
       team1:
         por: 0
       team2:
         gha: 0
       location: nacionaldebrasilia
     47:
-      date: Thu Jun/26 17:00 (UTC-3)
+      date: 2014-6-26 17:00:00 -3
       team1:
         kor: 0
       team2:
         bel: 0
       location: corinthians
     48:
-      date: Thu Jun/26 17:00 (UTC-3)
+      date: 2014-6-26 17:00:00 -3
       team1:
         alg: 0
       team2:
@@ -367,42 +367,42 @@
   name: Round of 16
   matches:
     49:
-      date: Sat Jun/28 13:00 (UTC-3)
+      date: 2014-6-28 13:00:00 -3
       team1: {1A}
       team2: {2B}
       location: mineirao
     50:
-      date: Sat Jun/28 17:00 (UTC-3)
+      date: 2014-6-28 17:00:00 -3
       team1: {1C}
       team2: {2D}
       location: maracana
     51:
-      date: Sun Jun/29 13:00 (UTC-3)
+      date: 2014-6-29 13:00:00 -3
       team1: {1B}
       team2: {2A}
       location: castelao
     52:
-      date: Sun Jun/29 17:00 (UTC-3)
+      date: 2014-6-29 17:00:00 -3
       team1: {1D}
       team2: {2C}
       location: pernambuco
     53:
-      date: Mon Jun/30 13:00 (UTC-3)
+      date: 2014-6-30 13:00:00 -3
       team1: {1E}
       team2: {2F}
       location: nacionaldebrasilia
     54:
-      date: Mon Jun/30 17:00 (UTC-3)
+      date: 2014-6-30 17:00:00 -3
       team1: {1G}
       team2: {2H}
       location: beirario
     55:
-      date: Tue Jul/01 13:00 (UTC-3)
+      date: 2014-7-01 13:00:00 -3
       team1: {1F}
       team2: {2E}
       location: corinthians
     56:
-      date: Tue Jul/01 17:00 (UTC-3)
+      date: 2014-7-01 17:00:00 -3
       team1: {1H}
       team2: {2G}
       location: fontenova
@@ -411,22 +411,22 @@
   name: Quarter Finals
   matches:
     57:
-      date: Fri Jul/04 17:00 (UTC-3)
+      date: 2014-7-04 17:00:00 -3
       team1: {W49}
       team2: {W50}
       location: castelao
     58:
-      date: Fri Jul/04 13:00 (UTC-3)
+      date: 2014-7-04 13:00:00 -3
       team1: {W53}
       team2: {W54}
       location: maracana
     59:
-      date: Sat Jul/05 17:00 (UTC-3)
+      date: 2014-7-05 17:00:00 -3
       team1: {W51}
       team2: {W52}
       location: fontenova
     60:
-      date: Sat Jul/05 13:00 (UTC-3)
+      date: 2014-7-05 13:00:00 -3
       team1: {W55}
       team2: {W56}
       location: nacionaldebrasilia
@@ -435,12 +435,12 @@
   name: Semi Finals
   matches:
     61:
-      date: Tue Jul/08 17:00 (UTC-3)
+      date: 2014-7-08 17:00:00 -3
       team1: {W57}
       team2: {W58}
       location: mineirao
     62:
-      date: Wed Jul/09 17:00 (UTC-3)
+      date: 2014-7-09 17:00:00 -3
       team1: {W59}
       team2: {W60}
       location: corinthians
@@ -449,7 +449,7 @@
   name: Play-off For Third Place
   matches:
     63:
-      date: Sat Jul/12 17:00 (UTC-3)
+      date: 2014-7-12 17:00:00 -3
       team1: {L61}
       team2: {L62}
       location: nacionaldebrasilia
@@ -458,7 +458,7 @@
   name: Final
   matches:
     64:
-      date: Sun Jul/13 16:00 (UTC-3)
+      date: 2014-7-13 16:00:00 -3
       location: maracana
       team1: {W61}
       team2: {W62}
