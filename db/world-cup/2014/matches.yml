@@ -1,464 +1,798 @@
-1:
-  name: Group Stage
-  matches:
-    1:
-      date: 2014-6-12 17:00:00 -3
-      team1:
-        bra: 0
-      team2:
-        cro: 0
-      location: corinthians
+-
+  id: 1
+  stage: Group Stage
+  date: 2014-6-12 17:00:00 -3
+  location: corinthians
+  teams:
+    home:
+      team: bra
+      goals:
+    away:
+      team: cro
+      goals:
 
-    2:
-      date: 2014-6-13 13:00:00 -3
-      team1:
-        mex: 0
-      team2:
-        cmr: 0
-      location: dasdunas
+-
+  id: 2
+  stage: Group Stage
+  date: 2014-6-13 13:00:00 -3
+  location: dasdunas
+  teams:
+    home:
+      team: mex
+      goals:
+    away:
+      team: cmr
+      goals:
 
-    3:
-      date: 2014-6-13 16:00:00 -3
-      team1:
-        esp: 0
-      team2:
-        ned: 0
-      location: fontenova
+-
+  id: 3
+  stage: Group Stage
+  date: 2014-6-13 16:00:00 -3
+  location: fontenova
+  teams:
+    home:
+      team: esp
+      goals:
+    away:
+      team: ned
+      goals:
 
-    4:
-      date: 2014-6-13 18:00:00 -4
-      team1:
-        chi: 0
-      team2:
-        aus: 0
-      location: pantanal
+-
+  id: 4
+  stage: Group Stage
+  date: 2014-6-13 18:00:00 -4
+  location: pantanal
+  teams:
+    home:
+      team: chi
+      goals:
+    away:
+      team: aus
+      goals:
 
-    5:
-      date: 2014-6-14 13:00:00 -3
-      team1:
-        col: 0
-      team2:
-        gre: 0
-      location: mineirao
+-
+  id: 5
+  stage: Group Stage
+  date: 2014-6-14 13:00:00 -3
+  location: mineirao
+  teams:
+    home:
+      team: col
+      goals:
+    away:
+      team: gre
+      goals:
 
-    6:
-      date: 2014-6-14 22:00:00 -3
-      team1:
-        civ: 0
-      team2:
-        jpn: 0
-      location: pernambuco
+-
+  id: 6
+  stage: Group Stage
+  date: 2014-6-14 22:00:00 -3
+  location: pernambuco
+  teams:
+    home:
+      team: civ
+      goals:
+    away:
+      team: jpn
+      goals:
 
-    7:
-      date: 2014-6-14 16:00:00 -3
-      team1:
-        uru: 0
-      team2:
-        crc: 0
-      location: castelao
+-
+  id: 7
+  stage: Group Stage
+  date: 2014-6-14 16:00:00 -3
+  location: castelao
+  teams:
+    home:
+      team: uru
+      goals:
+    away:
+      team: crc
+      goals:
 
-    8:
-      date: 2014-6-14 18:00:00 -4
-      team1:
-        eng: 0
-      team2:
-        ita: 0
-      location: amazonia
+-
+  id: 8
+  stage: Group Stage
+  date: 2014-6-14 18:00:00 -4
+  location: amazonia
+  teams:
+    home:
+      team: eng
+      goals:
+    away:
+      team: ita
+      goals:
 
-    9:
-      date: 2014-6-15 13:00:00 -3
-      team1:
-        sui: 0
-      team2:
-        ecu: 0
-      location: nacionaldebrasilia
+-
+  id: 9
+  stage: Group Stage
+  date: 2014-6-15 13:00:00 -3
+  location: nacionaldebrasilia
+  teams:
+    home:
+      team: sui
+      goals:
+    away:
+      team: ecu
+      goals:
 
-    10:
-      date: 2014-6-15 16:00:00 -3
-      team1:
-        fra: 0
-      team2:
-        hon: 0
-      location: beirario
+-
+  id: 10
+  stage: Group Stage
+  date: 2014-6-15 16:00:00 -3
+  location: beirario
+  teams:
+    home:
+      team: fra
+      goals:
+    away:
+      team: hon
+      goals:
 
-    11:
-      date: 2014-6-15 19:00:00 -3
-      team1:
-        arg: 0
-      team2:
-        bih: 0
-      location: maracana
+-
+  id: 11
+  stage: Group Stage
+  date: 2014-6-15 19:00:00 -3
+  location: maracana
+  teams:
+    home:
+      team: arg
+      goals:
+    away:
+      team: bih
+      goals:
 
-    12:
-      date: 2014-6-16 16:00:00 -3
-      team1:
-        irn: 0
-      team2:
-        nga: 0
-      location: dabaixada
+-
+  id: 12
+  stage: Group Stage
+  date: 2014-6-16 16:00:00 -3
+  location: dabaixada
+  teams:
+    home:
+      team: irn
+      goals:
+    away:
+      team: nga
+      goals:
 
-    13:
-      date: 2014-6-16 13:00:00 -3
-      team1:
-        ger: 0
-      team2:
-        por: 0
-      location: fontenova
+-
+  id: 13
+  stage: Group Stage
+  date: 2014-6-16 13:00:00 -3
+  location: fontenova
+  teams:
+    home:
+      team: ger
+      goals:
+    away:
+      team: por
+      goals:
 
-    14:
-      date: 2014-6-16 19:00:00 -3
-      team1:
-        gha: 0
-      team2:
-        usa: 0
-      location: dasdunas
+-
+  id: 14
+  stage: Group Stage
+  date: 2014-6-16 19:00:00 -3
+  location: dasdunas
+  teams:
+    home:
+      team: gha
+      goals:
+    away:
+      team: usa
+      goals:
 
-    15:
-      date: 2014-6-17 13:00:00 -3
-      team1:
-        bel: 0
-      team2:
-        alg: 0
-      locaiton: mineirao
+-
+  id: 15
+  stage: Group Stage
+  date: 2014-6-17 13:00:00 -3
+  location: mineirao
+  teams:
+    home:
+      team: bel
+      goals:
+    away:
+      team: alg
+      goals:
 
-    16:
-      date: 2014-6-17 18:00:00 -4
-      team1:
-        rus: 0
-      team2:
-        kor: 0
-      locaiton: pantanal
+-
+  id: 16
+  stage: Group Stage
+  date: 2014-6-17 18:00:00 -4
+  location: pantanal
+  teams:
+    home:
+      team: rus
+      goals:
+    away:
+      team: kor
+      goals:
 
-    17:
-      date: 2014-6-17 16:00:00 -3
-      team1:
-        bra: 0
-      team2:
-        mex: 0
-      location: castelao
+-
+  id: 17
+  stage: Group Stage
+  date: 2014-6-17 16:00:00 -3
+  location: castelao
+  teams:
+    home:
+      team: bra
+      goals:
+    away:
+      team: mex
+      goals:
 
-    18:
-      date: 2014-6-18 18:00:00 -3
-      team1:
-        cmr: 0
-      team2:
-        cro: 0
-      location: amazonia
+-
+  id: 18
+  stage: Group Stage
+  date: 2014-6-18 18:00:00 -3
+  location: amazonia
+  teams:
+    home:
+      team: cmr
+      goals:
+    away:
+      team: cro
+      goals:
 
-    19:
-      date: 2014-6-18 16:00:00 -3
-      team1:
-        esp: 0
-      team2:
-        chi: 0
-      location: maracana
+-
+  id: 19
+  stage: Group Stage
+  date: 2014-6-18 16:00:00 -3
+  location: maracana
+  teams:
+    home:
+      team: esp
+      goals:
+    away:
+      team: chi
+      goals:
 
-    20:
-      date: 2014-6-18 13:00:00 -3
-      team1:
-        aus: 0
-      team2:
-        ned: 0
-      location: beirario
+-
+  id: 20
+  stage: Group Stage
+  date: 2014-6-18 13:00:00 -3
+  location: beirario
+  teams:
+    home:
+      team: aus
+      goals:
+    away:
+      team: ned
+      goals:
 
-    21:
-      date: 2014-6-19 13:00:00 -3
-      team1:
-        col: 0
-      team2:
-        civ: 0
-      location: nacionaldebrasilia
-    22:
-      date: 2014-6-19 19:00:00 -3
-      team1:
-        jpn: 0
-      team2:
-        gre: 0
-      location: dasdunas
-    23:
-      date: 2014-6-19 16:00:00 -3
-      team1:
-        uru: 0
-      team2:
-        eng: 0
-      location: corinthians
-    24:
-      date: 2014-6-20 13:00:00 -3
-      team1:
-        ita: 0
-      team2:
-        crc: 0
-      location: pernambuco
-    25:
-      date: 2014-6-20 16:00:00 -3
-      team1:
-        sui: 0
-      team2:
-        fra: 0
-      location: fontenova
-    26:
-      date: 2014-6-20 19:00:00 -3
-      team1:
-        hon: 0
-      team2:
-        ecu: 0
-      location: dabaixada
-    27:
-      date: 2014-6-21 13:00:00 -3
-      team1:
-        arg: 0
-      team2:
-        irn: 0
-      location: mineirao
-    28:
-      date: 2014-6-21 18:00:00 -4
-      team1:
-        nga: 0
-      team2:
-        bih: 0
-      location: pantanal
-    29:
-      date: 2014-6-21 16:00:00 -3
-      team1:
-        ger: 0
-      team2:
-        gha: 0
-      location: castelao
-    30:
-      date: 2014-6-22 18:00:00 -4
-      team1:
-        usa: 0
-      team2:
-        por: 0
-      location: amazonia
-    31:
-      date: 2014-6-22 13:00:00 -3
-      team1:
-        bel: 0
-      team2:
-        rus: 0
-      location: maracana
-    32:
-      date: 2014-6-22 16:00:00 -3
-      team1:
-        kor: 0
-      team2:
-        alg: 0
-      location: beirario
+-
+  id: 21
+  stage: Group Stage
+  date: 2014-6-19 13:00:00 -3
+  location: nacionaldebrasilia
+  teams:
+    home:
+      team: col
+      goals:
+    away:
+      team: civ
+      goals:
+-
+  id: 22
+  stage: Group Stage
+  date: 2014-6-19 19:00:00 -3
+  location: dasdunas
+  teams:
+    home:
+      team: jpn
+      goals:
+    away:
+      team: gre
+      goals:
+-
+  id: 23
+  stage: Group Stage
+  date: 2014-6-19 16:00:00 -3
+  location: corinthians
+  teams:
+    home:
+      team: uru
+      goals:
+    away:
+      team: eng
+      goals:
+-
+  id: 24
+  stage: Group Stage
+  date: 2014-6-20 13:00:00 -3
+  location: pernambuco
+  teams:
+    home:
+      team: ita
+      goals:
+    away:
+      team: crc
+      goals:
+-
+  id: 25
+  stage: Group Stage
+  date: 2014-6-20 16:00:00 -3
+  location: fontenova
+  teams:
+    home:
+      team: sui
+      goals:
+    away:
+      team: fra
+      goals:
+-
+  id: 26
+  stage: Group Stage
+  date: 2014-6-20 19:00:00 -3
+  location: dabaixada
+  teams:
+    home:
+      team: hon
+      goals:
+    away:
+      team: ecu
+      goals:
+-
+  id: 27
+  stage: Group Stage
+  date: 2014-6-21 13:00:00 -3
+  location: mineirao
+  teams:
+    home:
+      team: arg
+      goals:
+    away:
+      team: irn
+      goals:
+-
+  id: 28
+  stage: Group Stage
+  date: 2014-6-21 18:00:00 -4
+  location: pantanal
+  teams:
+    home:
+      team: nga
+      goals:
+    away:
+      team: bih
+      goals:
+-
+  id: 29
+  stage: Group Stage
+  date: 2014-6-21 16:00:00 -3
+  location: castelao
+  teams:
+    home:
+      team: ger
+      goals:
+    away:
+      team: gha
+      goals:
+-
+  id: 30
+  stage: Group Stage
+  date: 2014-6-22 18:00:00 -4
+  location: amazonia
+  teams:
+    home:
+      team: usa
+      goals:
+    away:
+      team: por
+      goals:
+-
+  id: 31
+  stage: Group Stage
+  date: 2014-6-22 13:00:00 -3
+  location: maracana
+  teams:
+    home:
+      team: bel
+      goals:
+    away:
+      team: rus
+      goals:
+-
+  id: 32
+  stage: Group Stage
+  date: 2014-6-22 16:00:00 -3
+  location: beirario
+  teams:
+    home:
+      team: kor
+      goals:
+    away:
+      team: alg
+      goals:
 
-    33:
-      date: 2014-6-23 17:00:00 -3
-      team1:
-        cmr: 0
-      team2:
-        bra: 0
-      location: nacionaldebrasilia
+-
+  id: 33
+  stage: Group Stage
+  date: 2014-6-23 17:00:00 -3
+  location: nacionaldebrasilia
+  teams:
+    home:
+      team: cmr
+      goals:
+    away:
+      team: bra
+      goals:
 
-    34:
-      date: 2014-6-23 17:00:00 -3
-      team1:
-        cro: 0
-      team2:
-        mex: 0
-      location: pernambuco
+-
+  id: 34
+  stage: Group Stage
+  date: 2014-6-23 17:00:00 -3
+  location: pernambuco
+  teams:
+    home:
+      team: cro
+      goals:
+    away:
+      team: mex
+      goals:
 
-    35:
-      date: 2014-6-23 13:00:00 -3
-      team1:
-        aus: 0
-      team2:
-        esp: 0
-      location: dabaixada
+-
+  id: 35
+  stage: Group Stage
+  date: 2014-6-23 13:00:00 -3
+  location: dabaixada
+  teams:
+    home:
+      team: aus
+      goals:
+    away:
+      team: esp
+      goals:
 
-    36:
-      date: 2014-6-23 13:00:00 -3
-      team1:
-        ned: 0
-      team2:
-        chi: 0
-      location: corinthians
+-
+  id: 36
+  stage: Group Stage
+  date: 2014-6-23 13:00:00 -3
+  location: corinthians
+  teams:
+    home:
+      team: ned
+      goals:
+    away:
+      team: chi
+      goals:
 
-    37:
-      date: 2014-6-24 16:00:00 -4
-      team1:
-        jpn: 0
-      team2:
-        col: 0
-      location: pantanal
-    38:
-      date: 2014-6-24 17:00:00 -3
-      team1:
-        civ: 0
-      team2:
-        gre: 0
-      location: castelao
-    39:
-      date: 2014-6-24 13:00:00 -3
-      team1:
-        ita: 0
-      team2:
-        uru: 0
-      location: dasdunas
-    40:
-      date: 2014-6-24 13:00:00 -3
-      team1:
-        crc: 0
-      team2:
-        eng: 0
-      location: mineirao
-    41:
-      date: 2014-6-25 16:00:00 -4
-      team1:
-        hon: 0
-      team2:
-        sui: 0
-      location: amazonia
-    42:
-      date: 2014-6-25 17:00:00 -3
-      team1:
-        ecu: 0
-      team2:
-        fra: 0
-      location: maracana
-    43:
-      date: 2014-6-25 13:00:00 -3
-      team1:
-        nga: 0
-      team2:
-        arg: 0
-      location: beirario
-    44:
-      date: 2014-6-25 13:00:00 -3
-      team1:
-        bih: 0
-      team2:
-        irn: 0
-      location: fontenova
-    45:
-      date: 2014-6-26 13:00:00 -3
-      team1:
-        usa: 0
-      team2:
-        ger: 0
-      location: pernambuco
-    46:
-      date: 2014-6-26 13:00:00 -3
-      team1:
-        por: 0
-      team2:
-        gha: 0
-      location: nacionaldebrasilia
-    47:
-      date: 2014-6-26 17:00:00 -3
-      team1:
-        kor: 0
-      team2:
-        bel: 0
-      location: corinthians
-    48:
-      date: 2014-6-26 17:00:00 -3
-      team1:
-        alg: 0
-      team2:
-        rus: 0
-      location: dabaixada
+-
+  id: 37
+  stage: Group Stage
+  date: 2014-6-24 16:00:00 -4
+  location: pantanal
+  teams:
+    home:
+      team: jpn
+      goals:
+    away:
+      team: col
+      goals:
+-
+  id: 38
+  stage: Group Stage
+  date: 2014-6-24 17:00:00 -3
+  location: castelao
+  teams:
+    home:
+      team: civ
+      goals:
+    away:
+      team: gre
+      goals:
+-
+  id: 39
+  stage: Group Stage
+  date: 2014-6-24 13:00:00 -3
+  location: dasdunas
+  teams:
+    home:
+      team: ita
+      goals:
+    away:
+      team: uru
+      goals:
+-
+  id: 40
+  stage: Group Stage
+  date: 2014-6-24 13:00:00 -3
+  location: mineirao
+  teams:
+    home:
+      team: crc
+      goals:
+    away:
+      team: eng
+      goals:
+-
+  id: 41
+  stage: Group Stage
+  date: 2014-6-25 16:00:00 -4
+  location: amazonia
+  teams:
+    home:
+      team: hon
+      goals:
+    away:
+      team: sui
+      goals:
+-
+  id: 42
+  stage: Group Stage
+  date: 2014-6-25 17:00:00 -3
+  location: maracana
+  teams:
+    home:
+      team: ecu
+      goals:
+    away:
+      team: fra
+      goals:
+-
+  id: 43
+  stage: Group Stage
+  date: 2014-6-25 13:00:00 -3
+  location: beirario
+  teams:
+    home:
+      team: nga
+      goals:
+    away:
+      team: arg
+      goals:
+-
+  id: 44
+  stage: Group Stage
+  date: 2014-6-25 13:00:00 -3
+  location: fontenova
+  teams:
+    home:
+      team: bih
+      goals:
+    away:
+      team: irn
+      goals:
+-
+  id: 45
+  stage: Group Stage
+  date: 2014-6-26 13:00:00 -3
+  location: pernambuco
+  teams:
+    home:
+      team: usa
+      goals:
+    away:
+      team: ger
+      goals:
+-
+  id: 46
+  stage: Group Stage
+  date: 2014-6-26 13:00:00 -3
+  location: nacionaldebrasilia
+  teams:
+    home:
+      team: por
+      goals:
+    away:
+      team: gha
+      goals:
+-
+  id: 47
+  stage: Group Stage
+  date: 2014-6-26 17:00:00 -3
+  location: corinthians
+  teams:
+    home:
+      team: kor
+      goals:
+    away:
+      team: bel
+      goals:
+-
+  id: 48
+  stage: Group Stage
+  date: 2014-6-26 17:00:00 -3
+  location: dabaixada
+  teams:
+    home:
+      team: alg
+      goals:
+    away:
+      team: rus
+      goals:
 
-2:
-  name: Round of 16
-  matches:
-    49:
-      date: 2014-6-28 13:00:00 -3
-      team1: {1A}
-      team2: {2B}
-      location: mineirao
-    50:
-      date: 2014-6-28 17:00:00 -3
-      team1: {1C}
-      team2: {2D}
-      location: maracana
-    51:
-      date: 2014-6-29 13:00:00 -3
-      team1: {1B}
-      team2: {2A}
-      location: castelao
-    52:
-      date: 2014-6-29 17:00:00 -3
-      team1: {1D}
-      team2: {2C}
-      location: pernambuco
-    53:
-      date: 2014-6-30 13:00:00 -3
-      team1: {1E}
-      team2: {2F}
-      location: nacionaldebrasilia
-    54:
-      date: 2014-6-30 17:00:00 -3
-      team1: {1G}
-      team2: {2H}
-      location: beirario
-    55:
-      date: 2014-7-01 13:00:00 -3
-      team1: {1F}
-      team2: {2E}
-      location: corinthians
-    56:
-      date: 2014-7-01 17:00:00 -3
-      team1: {1H}
-      team2: {2G}
-      location: fontenova
+-
+  id: 49
+  stage: Round of 16
+  date: 2014-6-28 13:00:00 -3
+  location: mineirao
+  teams:
+    home:
+      team: '{1A}'
+      goals:
+    away:
+      team: '{2B}'
+      goals:
+-
+  id: 50
+  stage: Round of 16
+  date: 2014-6-28 17:00:00 -3
+  location: maracana
+  teams:
+    home:
+      team: '{1C}'
+      goals:
+    away:
+      team: '{2D}'
+      goals:
+-
+  id: 51
+  stage: Round of 16
+  date: 2014-6-29 13:00:00 -3
+  location: castelao
+  teams:
+    home:
+      team: '{1B}'
+      goals:
+    away:
+      team: '{2A}'
+      goals:
+-
+  id: 52
+  stage: Round of 16
+  date: 2014-6-29 17:00:00 -3
+  location: pernambuco
+  teams:
+    home:
+      team: '{1D}'
+      goals:
+    away:
+      team: '{2C}'
+      goals:
+-
+  id: 53
+  stage: Round of 16
+  date: 2014-6-30 13:00:00 -3
+  location: nacionaldebrasilia
+  teams:
+    home:
+      team: '{1E}'
+      goals:
+    away:
+      team: '{2F}'
+      goals:
+-
+  id: 54
+  stage: Round of 16
+  date: 2014-6-30 17:00:00 -3
+  location: beirario
+  teams:
+    home:
+      team: '{1G}'
+      goals:
+    away:
+      team: '{2H}'
+      goals:
+-
+  id: 55
+  stage: Round of 16
+  date: 2014-7-01 13:00:00 -3
+  location: corinthians
+  teams:
+    home:
+      team: '{1F}'
+      goals:
+    away:
+      team: '{2E}'
+      goals:
+-
+  id: 56
+  stage: Round of 16
+  date: 2014-7-01 17:00:00 -3
+  location: fontenova
+  teams:
+    home:
+      team: '{1H}'
+      goals:
+    away:
+      team: '{2G}'
+      goals:
 
-3:
-  name: Quarter Finals
-  matches:
-    57:
-      date: 2014-7-04 17:00:00 -3
-      team1: {W49}
-      team2: {W50}
-      location: castelao
-    58:
-      date: 2014-7-04 13:00:00 -3
-      team1: {W53}
-      team2: {W54}
-      location: maracana
-    59:
-      date: 2014-7-05 17:00:00 -3
-      team1: {W51}
-      team2: {W52}
-      location: fontenova
-    60:
-      date: 2014-7-05 13:00:00 -3
-      team1: {W55}
-      team2: {W56}
-      location: nacionaldebrasilia
+-
+  id: 57
+  stage: Quarter Finals
+  date: 2014-7-04 17:00:00 -3
+  location: castelao
+  teams:
+    home:
+      team: '{W49}'
+      goals:
+    away:
+      team: '{W50}'
+      goals:
+-
+  id: 58
+  stage: Quarter Finals
+  date: 2014-7-04 13:00:00 -3
+  location: maracana
+  teams:
+    home:
+      team: '{W53}'
+      goals:
+    away:
+      team: '{W54}'
+      goals:
+-
+  id: 59
+  stage: Quarter Finals
+  date: 2014-7-05 17:00:00 -3
+  location: fontenova
+  teams:
+    home:
+      team: '{W51}'
+      goals:
+    away:
+      team: '{W52}'
+      goals:
+-
+  id: 60
+  stage: Quarter Finals
+  date: 2014-7-05 13:00:00 -3
+  location: nacionaldebrasilia
+  teams:
+    home:
+      team: '{W55}'
+      goals:
+    away:
+      team: '{W56}'
+      goals:
 
-4:
-  name: Semi Finals
-  matches:
-    61:
-      date: 2014-7-08 17:00:00 -3
-      team1: {W57}
-      team2: {W58}
-      location: mineirao
-    62:
-      date: 2014-7-09 17:00:00 -3
-      team1: {W59}
-      team2: {W60}
-      location: corinthians
+-
+  id: 61
+  stage: Semi Finals
+  date: 2014-7-08 17:00:00 -3
+  location: mineirao
+  teams:
+    home:
+      team: '{W57}'
+      goals:
+    away:
+      team: '{W58}'
+      goals:
+-
+  id: 62
+  stage: Semi Finals
+  date: 2014-7-09 17:00:00 -3
+  location: corinthians
+  teams:
+    home:
+      team: '{W59}'
+      goals:
+    away:
+      team: '{W60}'
+      goals:
 
-5:
-  name: Play-off For Third Place
-  matches:
-    63:
-      date: 2014-7-12 17:00:00 -3
-      team1: {L61}
-      team2: {L62}
-      location: nacionaldebrasilia
+-
+  id: 63
+  stage: Play-off For Third Place
+  date: 2014-7-12 17:00:00 -3
+  location: nacionaldebrasilia
+  teams:
+    home:
+      team: '{L61}'
+      goals:
+    away:
+      team: '{L62}'
+      goals:
 
-6:
-  name: Final
-  matches:
-    64:
-      date: 2014-7-13 16:00:00 -3
-      location: maracana
-      team1: {W61}
-      team2: {W62}
+-
+  id: 64
+  stage: Final
+  date: 2014-7-13 16:00:00 -3
+  location: maracana
+  teams:
+    home:
+      team: '{W61}'
+      goals:
+    away:
+      team: '{W62}'
+      goals:

@@ -1,5 +1,6 @@
 alg:
   name: Algeria
+  group: h
   cups: 0
   squad:
     coach: Vahid Halilhodzic
@@ -7,6 +8,7 @@ alg:
 
 arg:
   name: Argentina
+  group: f
   cups: 0
   squad:
     coach: Alejandro Sabella
@@ -14,6 +16,7 @@ arg:
 
 aus:
   name: Australia
+  group: b
   cups: 0
   squad:
     coach: Ange Postecoglou
@@ -21,6 +24,7 @@ aus:
 
 bel:
   name: Belgium
+  group: h
   cups: 0
   squad:
     coach: Marc Wilmots
@@ -28,6 +32,7 @@ bel:
 
 bih:
   name: Bosnia and Herzegovina
+  group: f
   cups: 0
   squad:
     coach: Safet Susic
@@ -35,6 +40,7 @@ bih:
 
 bra:
   name: Brazil
+  group: a
   cups: 0
   squad:
     coach: Luiz Felipe Scolari
@@ -42,6 +48,7 @@ bra:
 
 cmr:
   name: Cameroon
+  group: a
   cups: 0
   squad:
     coach: Volker Finke
@@ -49,6 +56,7 @@ cmr:
 
 chi:
   name: Chile
+  group: b
   cups: 0
   squad:
     coach: Jorge Sampaoli
@@ -56,6 +64,7 @@ chi:
 
 col:
   name: Colombia
+  group: c
   cups: 0
   squad:
     coach: Jose Pekerman
@@ -63,6 +72,7 @@ col:
 
 crc:
   name: Costa Rica
+  group: d
   cups: 0
   squad:
     coach: Jorge Luis Pinto
@@ -70,6 +80,7 @@ crc:
 
 civ:
   name: Côte d'Ivoire
+  group: c
   cups: 0
   squad:
     coach: Sabri Lamouchi
@@ -77,6 +88,7 @@ civ:
 
 cro:
   name: Croatia
+  group: a
   cups: 0
   squad:
     coach: Niko Kovac
@@ -84,6 +96,7 @@ cro:
 
 ecu:
   name: Ecuador
+  group: e
   cups: 0
   squad:
     coach: Reinaldo Rueda
@@ -91,6 +104,7 @@ ecu:
 
 eng:
   name: England
+  group: d
   cups: 0
   squad:
     coach: Roy Hodgson
@@ -98,6 +112,7 @@ eng:
 
 fra:
   name: France
+  group: e
   cups: 0
   squad:
     coach: Didier Deschamps
@@ -105,6 +120,7 @@ fra:
 
 ger:
   name: Germany
+  group: g
   cups: 0
   squad:
     coach: Joachim Low
@@ -112,6 +128,7 @@ ger:
 
 gha:
   name: Ghana
+  group: g
   cups: 0
   squad:
     coach: Kwesi Appiah
@@ -119,6 +136,7 @@ gha:
 
 gre:
   name: Greece
+  group: c
   cups: 0
   squad:
     coach: Fernando Santos
@@ -126,6 +144,7 @@ gre:
 
 hon:
   name: Honduras
+  group: e
   cups: 0
   squad:
     coach: Luis Fernando Suarez
@@ -133,6 +152,7 @@ hon:
 
 irn:
   name: Iran
+  group: f
   cups: 0
   squad:
     coach: Carlos Queiroz
@@ -140,6 +160,7 @@ irn:
 
 ita:
   name: Italy
+  group: d
   cups: 0
   squad:
     coach: Cesare Prandelli
@@ -147,6 +168,7 @@ ita:
 
 jpn:
   name: Japan
+  group: c
   cups: 0
   squad:
     coach: Alberto Zaccheroni
@@ -154,6 +176,7 @@ jpn:
 
 kor:
   name: Korea Republic
+  group: h
   cups: 0
   squad:
     coach: Hong Myungbo
@@ -161,6 +184,7 @@ kor:
 
 mex:
   name: Mexico
+  group: a
   cups: 0
   squad:
     coach: Miguel Herrera
@@ -168,6 +192,7 @@ mex:
 
 ned:
   name: Netherlands
+  group: b
   cups: 0
   squad:
     coach: Louis Van Gaal
@@ -175,6 +200,7 @@ ned:
 
 nga:
   name: Nigeria
+  group: f
   cups: 0
   squad:
     coach: Stephen Keshi
@@ -182,6 +208,7 @@ nga:
 
 por:
   name: Portugal
+  group: g
   cups: 0
   squad:
     coach: Paulo Bento
@@ -189,6 +216,7 @@ por:
 
 rus:
   name: Russia
+  group: h
   cups: 0
   squad:
     coach: Fabio Capello
@@ -196,6 +224,7 @@ rus:
 
 esp:
   name: Spain
+  group: b
   cups: 0
   squad:
     coach: Vicente del Bosque
@@ -203,6 +232,7 @@ esp:
 
 sui:
   name: Switzerland
+  group: e
   cups: 0
   squad:
     coach: Ottmar Hitzfeld
@@ -210,6 +240,7 @@ sui:
 
 uru:
   name: Uruguay
+  group: d
   cups: 0
   squad:
     coach: Oscar Washington Tabarez
@@ -217,6 +248,7 @@ uru:
 
 usa:
   name: United States
+  group: g
   cups: 0
   squad:
     coach: Jurgen Klinsmann

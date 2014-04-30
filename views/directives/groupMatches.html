@@ -1,0 +1,20 @@
+<table class="table table-condensed table-hover">
+  <thead>
+    <tr>
+      <th>Date - Time</th>
+      <th>Venue</th>
+      <th></th>
+      <th>Results</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr ng-repeat="match in matches">
+      <td><time datetime="match.date"></time></td>
+      <td><venue rel="match.location"></venue></td>
+      <td><team rel="match.teams.home.team"></team></td>
+      <td><input type="text" class="score" ng-model="match.teams.home.goals" /> - <input type="text" class="score" ng-model="match.teams.away.goals" /></td>
+      <td><team rel="match.teams.away.team"></team></td>
+    </tr>
+  </tbody>
+</table>

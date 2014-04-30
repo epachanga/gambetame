@@ -1,37 +1,9 @@
 a:
   teams:
-    bra:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    cro:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    mex:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    cmr:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
+    - bra
+    - cro
+    - mex
+    - cmr
   matches:
     - 1
     - 2
@@ -42,38 +14,10 @@ a:
 
 b:
   teams:
-    esp:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    ned:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    chi:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    aus:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
+    - esp
+    - ned
+    - chi
+    - aus
   matches:
     - 3
     - 4
@@ -84,38 +28,10 @@ b:
 
 c:
   teams:
-    col:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    gre:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    civ:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    jpn:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
+    - col
+    - gre
+    - civ
+    - jpn
   matches:
     - 5
     - 6
@@ -126,38 +42,10 @@ c:
 
 d:
   teams:
-    uru:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    crc:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    eng:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-    ita:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
+    - uru
+    - crc
+    - eng
+    - ita
   matches:
     - 7
     - 8
@@ -168,41 +56,10 @@ d:
 
 e:
   teams:
-    sui:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    ecu:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    fra:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    hon:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
+    - sui
+    - ecu
+    - fra
+    - hon
 
   matches:
     - 9
@@ -214,41 +71,10 @@ e:
 
 f:
   teams:
-    arg:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    bih:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    irn:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    nga:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
+    - arg
+    - bih
+    - irn
+    - nga
 
   matches:
     - 11
@@ -260,41 +86,10 @@ f:
 
 g:
   teams:
-    ger:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    por:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    gha:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    usa:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
+    - ger
+    - por
+    - gha
+    - usa
 
   matches:
     - 13
@@ -306,41 +101,10 @@ g:
 
 h:
   teams:
-    bel:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    alg:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    rus:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
-
-    kor:
-      mp: 0
-      w: 0
-      d: 0
-      l: 0
-      gf: 0
-      ga: 0
-      pts: 0
+    - bel
+    - alg
+    - rus
+    - kor
 
   matches:
     - 15
