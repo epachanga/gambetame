@@ -1,4 +1,5 @@
 a:
+  link: http://www.fifa.com/worldcup/groups/group=255933/index.html
   teams:
     - bra
     - cro
@@ -13,6 +14,7 @@ a:
     - 34
 
 b:
+  link: http://www.fifa.com/worldcup/groups/group=255935/index.html
   teams:
     - esp
     - ned
@@ -27,6 +29,7 @@ b:
     - 36
 
 c:
+  link: http://www.fifa.com/worldcup/groups/group=255937/index.html
   teams:
     - col
     - gre
@@ -41,6 +44,7 @@ c:
     - 38
 
 d:
+  link: http://www.fifa.com/worldcup/groups/group=255939/index.html
   teams:
     - uru
     - crc
@@ -55,6 +59,7 @@ d:
     - 40
 
 e:
+  link: http://www.fifa.com/worldcup/groups/group=255941/index.html
   teams:
     - sui
     - ecu
@@ -70,6 +75,7 @@ e:
     - 42
 
 f:
+  link: http://www.fifa.com/worldcup/groups/group=255943/index.html
   teams:
     - arg
     - bih
@@ -85,6 +91,7 @@ f:
     - 44
 
 g:
+  link: http://www.fifa.com/worldcup/groups/group=255945/index.html
   teams:
     - ger
     - por
@@ -100,6 +107,7 @@ g:
     - 46
 
 h:
+  link: http://www.fifa.com/worldcup/groups/group=255947/index.html
   teams:
     - bel
     - alg

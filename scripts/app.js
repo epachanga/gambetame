@@ -2,6 +2,7 @@ angular.module('WorldCup', [
   'worldcup.controllers',
   'worldcup.directives',
   'worldcup.services',
+  'worldcup.filters',
   'timer',
   'firebase',
   'ngResource',

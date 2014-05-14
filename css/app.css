@@ -13,12 +13,13 @@ section .group h4 {
 }
 
 input.score {
-  width: 30px;
+  width: 40px;
   text-align: center;
   background: transparent;
   border: 1px solid black;
 }
 input.score[readonly] {
+  width: 30px;
   border: none;
 }
 
@@ -83,4 +84,12 @@ section[rel="home"] {
  */
 .navbar {
   margin-bottom: 0;
+}
+.table>thead>tr>th,
+.table>tbody>tr>th,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>tbody>tr>td,
+.table>tfoot>tr>td {
+  vertical-align: middle;
 }

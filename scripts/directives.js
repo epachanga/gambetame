@@ -1,10 +1,9 @@
 (function () {
   'use strict';
 
-  var GroupStandingsDirective = function($rootScope) {
+  var GroupStandingsDirective = function($rootScope, Groups) {
     return {
       restrict: 'E',
-      // replace: true,
       templateUrl: '/views/directives/groupStandings.html',
       scope: {
         group: '@'
@@ -12,26 +11,41 @@
       link: function(scope, element) {
         var group = $rootScope.groups[scope.group];
         scope.data = group;
-        scope.standings = _.sortBy(group.standings, 'pts').reverse();
+        scope.standings = group.standings;
+
+        scope.$watch('standings', function(newVal, oldVal){
+          if (!_.isEqual(newVal, oldVal)) {
+            debugger;
+          }
+        }, true);
       }
     };
   };
 
-  var GroupMatchesListDirective = function($rootScope) {
+  var GroupMatchesDirective = function($rootScope, Groups) {
     return {
       restrict: 'E',
-      // replace: true,
       templateUrl: '/views/directives/groupMatches.html',
       scope: {
         group: '@'
       },
       link: function(scope, element) {
+        var group = $rootScope.groups[scope.group];
+        scope.data = group;
+        scope.standings = group.standings;
+
         scope.matches = [];
-        angular.forEach($rootScope.groups[scope.group].matches,
-          function(element) {
-            scope.matches.push(_.findWhere($rootScope.matches , {id: element}));
+        _.forEach(group.matches, function(matchId){
+          scope.matches.push(_.findWhere($rootScope.matches, {id: matchId}));
+        });
+
+        scope.buildStandings = Groups.buildStandings;
+
+        scope.$watch('matches', function(newVal, oldVal){
+          if (!_.isEqual(newVal, oldVal)) {
+            scope.buildStandings(scope.group)
           }
-        );
+        }, true);
       }
     };
   };
@@ -51,11 +65,13 @@
   var TeamDirective = function($rootScope) {
     return {
       restrict: 'E',
+      templateUrl: '/views/directives/team.html',
       scope: {
         rel: '='
       },
       link: function(scope, element) {
-        element[0].innerHTML = $rootScope.teams[scope.rel].name;
+        scope.name = $rootScope.teams[scope.rel].name;
+        scope.flag = $rootScope.teams[scope.rel].flag;
       }
     };
   };
@@ -83,8 +99,10 @@
   };
 
   angular.module('worldcup.directives', [])
-    .directive('groupstandings', ['$rootScope', GroupStandingsDirective])
-    .directive('groupmatcheslist', ['$rootScope', GroupMatchesListDirective])
+    .directive('groupStandings',
+                            ['$rootScope', 'Groups', GroupStandingsDirective])
+    .directive('groupMatches',
+                            ['$rootScope', 'Groups', GroupMatchesDirective])
     .directive('team', ['$rootScope', TeamDirective])
     .directive('venue', ['$rootScope', VenueDirective])
     .directive('time', TimeDirective);

@@ -1,76 +1,47 @@
 maracana:
   name: Estádio do Maracanã
   location: Rio de Janeiro, RJ
-  image:
-  intro:
 
 nacionaldebrasilia:
   name: Estádio Nacional Mané Garrincha
   location: Brasília, DF
-  image:
-  intro:
 
 corinthians:
   name: Arena de São Paulo
   location: São Paulo, SP
-  image:
-  intro:
 
 castelao:
   name: Estádio Castelão
   location: Fortaleza, CE
-  image:
-  intro:
 
 mineirao:
   name: Estádio Mineirão
   location: Belo Horizonte, MG
-  image:
-  intro:
-    - One of the most historic venues in Brazilian football and called home by Atletico Mineiro and Cruzeiro, both former national champions, the 57,483 capacity Estadio Mineirao has undergone a complete overhaul prior to hosting six matches at the 2014 FIFA World Cup™ - including one semi-final.
-    - The modernisation project included the lowering of the pitch surface and improving stadium accessibility, among other issues, with sustainability principles at the core of all work carried out. Exemplifying this approach is the facility to capture and store up to 6,270,000 litres of rainwater, which can then be reused.
-    - Located in the Pampulha neighbourhood of Belo Horizonte and inaugurated on 5 December 1965, the stadium belongs to the Minas Gerais state government. Going by the official name of the Estadio Governador Magalhaes Pinto, in footballing circles it is almost universally known as the Mineirão.
-      Boasting an enthusiastic and vibrant atmosphere on matchdays, whether it be O Galo (Atletico Mineiro) or A Raposa (Cruzeiro) that are playing at home, the Mineirão has also proved a worthy setting for Brazilian national team matches – including A Seleção’s clashes with arch-rivals Argentina in FIFA World Cup qualifying encounters in 2004 and 2008.
-    - What is more, the stadium has been regularly graced over the years by attacking legends such as Ronaldo, Tostao, Reinaldo and Dario.
 
 fontenova:
   name: Arena Fonte Nova
   location: Salvador, BA
-  image:
-  intro:
 
 pantanal:
   name: Arena Pantanal
   location: Cuiabá, MT
-  image:
-  intro:
 
 amazonia:
   name: Arena Amazônia
   location: Manaus, AM
-  image:
-  intro:
 
 dasdunas:
   name: Estádio das Dunas
   location: Natal, RN
-  image:
-  intro:
 
 beirario:
   name: Estádio Beira-Rio
   location: Porto Alegre, RS
-  image:
-  intro:
 
 pernambuco:
   name: Arena Pernambuco
   location: Recife, PE
-  image:
-  intro:
 
 dabaixada:
   name: Arena da Baixada
   location: Curitiba, PR
-  image:
-  intro:

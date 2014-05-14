@@ -1,6 +1,12 @@
-<section class="container" rel="matches">
-  <section class="group" ng-repeat="(group, data) in groups">
+<section class="container" ng-controller="MatchesCtrl">
+  <section class="stage">
+    <h3>Group Stage</h3>
+    <section ng-repeat="(date, matches) in GroupStage">
+      <h4>{{date}}</h4>
+    </section>
+  </section>
+  <!-- <section class="group" ng-repeat="(group, data) in groups">
     <h4>Group {{group}}</h4>
     <groupmatcheslist group="{{group}}"></groupmatcheslist>
-  </section>
+  </section> -->
 </section>

@@ -13,7 +13,11 @@
       <td><time datetime="match.date"></time></td>
       <td><venue rel="match.location"></venue></td>
       <td><team rel="match.teams.home.team"></team></td>
-      <td><input type="text" class="score" ng-model="match.teams.home.goals" /> - <input type="text" class="score" ng-model="match.teams.away.goals" /></td>
+      <td>
+        <input type="number" min="0" class="score" ng-model="match.teams.home.goals" />
+        -
+        <input type="number" min="0" class="score" ng-model="match.teams.away.goals" />
+      </td>
       <td><team rel="match.teams.away.team"></team></td>
     </tr>
   </tbody>

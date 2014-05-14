@@ -1,7 +1,7 @@
 <section class="container" rel="groups">
   <section class="group row" ng-repeat="(group, data) in groups">
-    <h4 class="col-md-12">Group {{group}}</h4>
-    <groupstandings class="col-md-4" group="{{group}}"></groupstandings>
-    <groupmatcheslist class="col-md-8" group="{{group}}"></groupmatcheslist>
+    <h4 class="col-md-12">Group {{group}} <a href="{{data.link}}" class="pull-right" rel="group-detail" target="_blank" data-toggle="tooltip" data-placement="left" title="Group Details"><span class="glyphicon glyphicon-info-sign"></span></a></h4>
+    <group-standings class="col-md-12" group="{{group}}"></group-standings>
+    <group-matches class="col-md-12" group="{{group}}"></group-matches>
   </section>
 </section>

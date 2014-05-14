@@ -1,26 +1,28 @@
-<table class="table table-condensed table-hover">
-  <thead>
-    <tr>
-      <th>Team</th>
-      <th>MP</th>
-      <th>W</th>
-      <th>D</th>
-      <th>L</th>
-      <th>GF</th>
-      <th>GA</th>
-      <th>Pts</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr ng-repeat="team in standings">
-      <td><team rel="team.team"></team></td>
-      <td><input type="text" class="score" ng-model="team.mp" readonly /></td>
-      <td><input type="text" class="score" ng-model="team.w" readonly /></td>
-      <td><input type="text" class="score" ng-model="team.d" readonly /></td>
-      <td><input type="text" class="score" ng-model="team.l" readonly /></td>
-      <td><input type="text" class="score" ng-model="team.gf" readonly /></td>
-      <td><input type="text" class="score" ng-model="team.ga" readonly /></td>
-      <td><input type="text" class="score" ng-model="team.pts" readonly /></td>
-    </tr>
-  </tbody>
-</table>
+<div class="table-responsive">
+  <table class="table table-condensed table-hover">
+    <thead>
+      <tr>
+        <th>TEAM</th>
+        <th>MP</th>
+        <th>W</th>
+        <th>D</th>
+        <th>L</th>
+        <th>GF</th>
+        <th>GA</th>
+        <th>PTS</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="team in data.standings | orderStandings">
+        <td><team rel="team.name"></team></td>
+        <td><input type="text" class="score" ng-model="team.mp" readonly /></td>
+        <td><input type="text" class="score" ng-model="team.w" readonly /></td>
+        <td><input type="text" class="score" ng-model="team.d" readonly /></td>
+        <td><input type="text" class="score" ng-model="team.l" readonly /></td>
+        <td><input type="text" class="score" ng-model="team.gf" readonly /></td>
+        <td><input type="text" class="score" ng-model="team.ga" readonly /></td>
+        <td><input type="text" class="score" ng-model="team.pts" readonly /></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

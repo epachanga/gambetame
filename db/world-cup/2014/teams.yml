@@ -1,255 +1,159 @@
 alg:
   name: Algeria
+  flag: /img/flags/alg.png
   group: h
-  cups: 0
-  squad:
-    coach: Vahid Halilhodzic
-    players:
 
 arg:
   name: Argentina
+  flag: /img/flags/arg.png
   group: f
-  cups: 0
-  squad:
-    coach: Alejandro Sabella
-    players:
 
 aus:
   name: Australia
+  flag: /img/flags/aus.png
   group: b
-  cups: 0
-  squad:
-    coach: Ange Postecoglou
-    players:
 
 bel:
   name: Belgium
+  flag: /img/flags/bel.png
   group: h
-  cups: 0
-  squad:
-    coach: Marc Wilmots
-    players:
 
 bih:
   name: Bosnia and Herzegovina
+  flag: /img/flags/bih.png
   group: f
-  cups: 0
-  squad:
-    coach: Safet Susic
-    players:
 
 bra:
   name: Brazil
+  flag: /img/flags/bra.png
   group: a
-  cups: 0
-  squad:
-    coach: Luiz Felipe Scolari
-    players:
 
 cmr:
   name: Cameroon
+  flag: /img/flags/cmr.png
   group: a
-  cups: 0
-  squad:
-    coach: Volker Finke
-    players:
 
 chi:
   name: Chile
+  flag: /img/flags/chi.png
   group: b
-  cups: 0
-  squad:
-    coach: Jorge Sampaoli
-    players:
 
 col:
   name: Colombia
+  flag: /img/flags/col.png
   group: c
-  cups: 0
-  squad:
-    coach: Jose Pekerman
-    players:
 
 crc:
   name: Costa Rica
+  flag: /img/flags/crc.png
   group: d
-  cups: 0
-  squad:
-    coach: Jorge Luis Pinto
-    players:
 
 civ:
   name: Côte d'Ivoire
+  flag: /img/flags/civ.png
   group: c
-  cups: 0
-  squad:
-    coach: Sabri Lamouchi
-    players:
 
 cro:
   name: Croatia
+  flag: /img/flags/cro.png
   group: a
-  cups: 0
-  squad:
-    coach: Niko Kovac
-    players:
 
 ecu:
   name: Ecuador
+  flag: /img/flags/ecu.png
   group: e
-  cups: 0
-  squad:
-    coach: Reinaldo Rueda
-    players:
 
 eng:
   name: England
+  flag: /img/flags/eng.png
   group: d
-  cups: 0
-  squad:
-    coach: Roy Hodgson
-    players:
 
 fra:
   name: France
+  flag: /img/flags/fra.png
   group: e
-  cups: 0
-  squad:
-    coach: Didier Deschamps
-    players:
 
 ger:
   name: Germany
+  flag: /img/flags/ger.png
   group: g
-  cups: 0
-  squad:
-    coach: Joachim Low
-    players:
 
 gha:
   name: Ghana
+  flag: /img/flags/gha.png
   group: g
-  cups: 0
-  squad:
-    coach: Kwesi Appiah
-    players:
 
 gre:
   name: Greece
+  flag: /img/flags/gre.png
   group: c
-  cups: 0
-  squad:
-    coach: Fernando Santos
-    players:
 
 hon:
   name: Honduras
+  flag: /img/flags/hon.png
   group: e
-  cups: 0
-  squad:
-    coach: Luis Fernando Suarez
-    players:
 
 irn:
   name: Iran
+  flag: /img/flags/irn.png
   group: f
-  cups: 0
-  squad:
-    coach: Carlos Queiroz
-    players:
 
 ita:
   name: Italy
+  flag: /img/flags/ita.png
   group: d
-  cups: 0
-  squad:
-    coach: Cesare Prandelli
-    players:
 
 jpn:
   name: Japan
+  flag: /img/flags/jpn.png
   group: c
-  cups: 0
-  squad:
-    coach: Alberto Zaccheroni
-    players:
 
 kor:
   name: Korea Republic
+  flag: /img/flags/kor.png
   group: h
-  cups: 0
-  squad:
-    coach: Hong Myungbo
-    players:
 
 mex:
   name: Mexico
+  flag: /img/flags/mex.png
   group: a
-  cups: 0
-  squad:
-    coach: Miguel Herrera
-    players:
 
 ned:
   name: Netherlands
+  flag: /img/flags/ned.png
   group: b
-  cups: 0
-  squad:
-    coach: Louis Van Gaal
-    players:
 
 nga:
   name: Nigeria
+  flag: /img/flags/nga.png
   group: f
-  cups: 0
-  squad:
-    coach: Stephen Keshi
-    players:
 
 por:
   name: Portugal
+  flag: /img/flags/por.png
   group: g
-  cups: 0
-  squad:
-    coach: Paulo Bento
-    players:
 
 rus:
   name: Russia
+  flag: /img/flags/rus.png
   group: h
-  cups: 0
-  squad:
-    coach: Fabio Capello
-    players:
 
 esp:
   name: Spain
+  flag: /img/flags/esp.png
   group: b
-  cups: 0
-  squad:
-    coach: Vicente del Bosque
-    players:
 
 sui:
   name: Switzerland
+  flag: /img/flags/sui.png
   group: e
-  cups: 0
-  squad:
-    coach: Ottmar Hitzfeld
-    players:
 
 uru:
   name: Uruguay
+  flag: /img/flags/uru.png
   group: d
-  cups: 0
-  squad:
-    coach: Oscar Washington Tabarez
-    players:
 
 usa:
   name: United States
+  flag: /img/flags/usa.png
   group: g
-  cups: 0
-  squad:
-    coach: Jurgen Klinsmann
-    players:
