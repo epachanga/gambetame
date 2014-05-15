@@ -84,16 +84,10 @@
       },
       link: function(scope, element) {
         var
-        hours = String(scope.datetime.getHours()).length > 1
-                                                ? scope.datetime.getHours()
-                                                : '0'+scope.datetime.getHours(),
-        minutes = String(scope.datetime.getMinutes()).length > 1
-                                              ? scope.datetime.getMinutes()
-                                              : '0'+scope.datetime.getMinutes();
+        _moment = moment(scope.datetime);
 
-        element[0].innerHTML = scope.datetime.getDate()
-                              + '/' + (scope.datetime.getMonth() + 1)
-                              + ' ' + hours + ':' + minutes;
+        element[0].innerHTML = _moment.format('DD MMM YYYY').toUpperCase()
+                              + ' - ' + _moment.format('HH:mm') + ' Local time';
       }
     };
   };
