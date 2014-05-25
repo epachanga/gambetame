@@ -607,10 +607,10 @@
   location: mineirao
   teams:
     home:
-      team: '{1A}'
+      team: '[1A]'
       goals:
     away:
-      team: '{2B}'
+      team: '[2B]'
       goals:
 -
   id: 50
@@ -619,10 +619,10 @@
   location: maracana
   teams:
     home:
-      team: '{1C}'
+      team: '[1C]'
       goals:
     away:
-      team: '{2D}'
+      team: '[2D]'
       goals:
 -
   id: 51
@@ -631,10 +631,10 @@
   location: castelao
   teams:
     home:
-      team: '{1B}'
+      team: '[1B]'
       goals:
     away:
-      team: '{2A}'
+      team: '[2A]'
       goals:
 -
   id: 52
@@ -643,10 +643,10 @@
   location: pernambuco
   teams:
     home:
-      team: '{1D}'
+      team: '[1D]'
       goals:
     away:
-      team: '{2C}'
+      team: '[2C]'
       goals:
 -
   id: 53
@@ -655,10 +655,10 @@
   location: nacionaldebrasilia
   teams:
     home:
-      team: '{1E}'
+      team: '[1E]'
       goals:
     away:
-      team: '{2F}'
+      team: '[2F]'
       goals:
 -
   id: 54
@@ -667,10 +667,10 @@
   location: beirario
   teams:
     home:
-      team: '{1G}'
+      team: '[1G]'
       goals:
     away:
-      team: '{2H}'
+      team: '[2H]'
       goals:
 -
   id: 55
@@ -679,10 +679,10 @@
   location: corinthians
   teams:
     home:
-      team: '{1F}'
+      team: '[1F]'
       goals:
     away:
-      team: '{2E}'
+      team: '[2E]'
       goals:
 -
   id: 56
@@ -691,10 +691,10 @@
   location: fontenova
   teams:
     home:
-      team: '{1H}'
+      team: '[1H]'
       goals:
     away:
-      team: '{2G}'
+      team: '[2G]'
       goals:
 
 -
@@ -704,10 +704,10 @@
   location: castelao
   teams:
     home:
-      team: '{W49}'
+      team: '[W49]'
       goals:
     away:
-      team: '{W50}'
+      team: '[W50]'
       goals:
 -
   id: 58
@@ -716,10 +716,10 @@
   location: maracana
   teams:
     home:
-      team: '{W53}'
+      team: '[W53]'
       goals:
     away:
-      team: '{W54}'
+      team: '[W54]'
       goals:
 -
   id: 59
@@ -728,10 +728,10 @@
   location: fontenova
   teams:
     home:
-      team: '{W51}'
+      team: '[W51]'
       goals:
     away:
-      team: '{W52}'
+      team: '[W52]'
       goals:
 -
   id: 60
@@ -740,10 +740,10 @@
   location: nacionaldebrasilia
   teams:
     home:
-      team: '{W55}'
+      team: '[W55]'
       goals:
     away:
-      team: '{W56}'
+      team: '[W56]'
       goals:
 
 -
@@ -753,10 +753,10 @@
   location: mineirao
   teams:
     home:
-      team: '{W57}'
+      team: '[W57]'
       goals:
     away:
-      team: '{W58}'
+      team: '[W58]'
       goals:
 -
   id: 62
@@ -765,10 +765,10 @@
   location: corinthians
   teams:
     home:
-      team: '{W59}'
+      team: '[W59]'
       goals:
     away:
-      team: '{W60}'
+      team: '[W60]'
       goals:
 
 -
@@ -778,10 +778,10 @@
   location: nacionaldebrasilia
   teams:
     home:
-      team: '{L61}'
+      team: '[L61]'
       goals:
     away:
-      team: '{L62}'
+      team: '[L62]'
       goals:
 
 -
@@ -791,8 +791,8 @@
   location: maracana
   teams:
     home:
-      team: '{W61}'
+      team: '[W61]'
       goals:
     away:
-      team: '{W62}'
+      team: '[W62]'
       goals:

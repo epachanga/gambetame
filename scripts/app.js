@@ -4,10 +4,12 @@ angular.module('WorldCup', [
   'worldcup.services',
   'worldcup.filters',
   'timer',
-  'firebase',
   'ngResource',
   'ngRoute'
 ])
+.value('PARSE_APP_ID', 'QkPPikBb9pMTELRRuUJxZNJxTtsvaKDtqPnyqiRE')
+.value('PARSE_CLIENT_KEY', 'tWIMPGxC3trQvzMxzLKyziza6w6YPAhWPTa9BYwD')
+.value('FB_APP_ID', '1435795020006139')
 .config(
   ['$routeProvider', '$locationProvider',
     function($routeProvider, $locationProvider) {
@@ -51,6 +53,45 @@ angular.module('WorldCup', [
         .otherwise({
           templateUrl: '/views/error.html'
         });
+    }
+  ]
+)
+.run(
+  ['$rootScope', '$window', 'PARSE_APP_ID', 'PARSE_CLIENT_KEY', 'FB_APP_ID',
+    function($rootScope, $window, PARSE_APP_ID, PARSE_CLIENT_KEY, FB_APP_ID){
+      $rootScope.currentUser = null;
+
+      Parse.initialize(PARSE_APP_ID, PARSE_CLIENT_KEY);
+
+      $window.fbAsyncInit = function(){
+        Parse.FacebookUtils.init({
+          appId      : FB_APP_ID, // Facebook App ID
+          channelUrl : '//fixture.loc/channel.html', // Channel File
+          status     : true, // check login status
+          cookie     : true, // enable cookies to allow Parse to access the session
+          xfbml      : true  // parse XFBML
+        });
+      };
+
+      (function(d){
+        // load the Facebook javascript SDK
+
+        var js,
+        id = 'facebook-jssdk',
+        ref = d.getElementsByTagName('script')[0];
+
+        if (d.getElementById(id)) {
+          return;
+        }
+
+        js = d.createElement('script');
+        js.id = id;
+        js.async = true;
+        js.src = "//connect.facebook.net/en_US/all.js";
+
+        ref.parentNode.insertBefore(js, ref);
+
+      }(document));
     }
   ]
 );

@@ -52,18 +52,18 @@
         standings.push({
           name: team,
           priority: i+1,
-          mp: 0,
-          w: 0,
-          d: 0,
-          l: 0,
-          gf: 0,
-          ga: 0,
-          pts: 0
+          mp: '-',
+          w: '-',
+          d: '-',
+          l: '-',
+          gf: '-',
+          ga: '-',
+          pts: '-'
         });
       });
       _.forEach(self.data[group].matches, function(matchId){
         var
-        match = _.findWhere($rootScope.matches, {id: matchId}),
+        match = _.find($rootScope.matches, {id: matchId}),
         home = match.teams.home,
         away = match.teams.away;
 
@@ -74,6 +74,25 @@
           homeGoals = parseInt(home.goals),
           awayGoals = parseInt(away.goals),
           tie = homeGoals == awayGoals;
+
+          if (homeStandsings.mp === '-') {
+            homeStandsings.mp =
+            homeStandsings.w =
+            homeStandsings.d =
+            homeStandsings.l =
+            homeStandsings.gf =
+            homeStandsings.ga =
+            homeStandsings.pts = 0;
+          }
+          if (awayStandsings.mp === '-') {
+            awayStandsings.mp =
+            awayStandsings.w =
+            awayStandsings.d =
+            awayStandsings.l =
+            awayStandsings.gf =
+            awayStandsings.ga =
+            awayStandsings.pts = 0;
+          }
 
           homeStandsings.mp++;
           homeStandsings.gf += homeGoals;
@@ -105,6 +124,9 @@
           }
         }
       });
+      if (!self.data[group].standings) {
+        self.data[group].standings = [];
+      }
       self.data[group].standings = standings;
     };
 
@@ -130,9 +152,41 @@
     }
   };
 
+  var Utils = function() {
+
+    var orderStandings = function(standings) {
+      return standings.sort(function(a, b) {
+        var
+        apts = a.pts === '-' ? -1 : a.pts,
+        bpts = b.pts === '-' ? -1 : b.pts;
+
+
+        if (apts > bpts) {
+          return -1;
+        }
+        else if (apts < bpts) {
+          return 1;
+        }
+        else if (a.priority > b.priority) {
+          return 1;
+        }
+        else {
+          return -1;
+        }
+      });
+    };
+
+    return {
+      orderStandings: orderStandings
+    }
+
+  };
+
   angular.module('worldcup.services', [])
+    .service('Utils', [Utils])
     .service('Grounds', ['$rootScope', '$http', '$q', Grounds])
     .service('Teams', ['$rootScope', '$http', '$q', Teams])
     .service('Groups', ['$rootScope', '$http', '$q', Groups])
-    .service('Matches', ['$rootScope', '$http', '$q', Matches]);
+    .service('Matches', ['$rootScope', '$http', '$q', Matches])
+    ;
 })();

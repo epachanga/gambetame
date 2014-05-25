@@ -1,13 +1,13 @@
-html, body {
-  width: 100%;
-  height: 100%;
-}
 body {
   background: #f8f8f8 url(../img/pattern.jpg);
   text-align: left;
-  padding-top: 50px;
+  padding: 50px 0;
+  font: 300 15px 'Open Sans', sans-serif;
 }
 
+section .group {
+  padding-bottom: 50px;
+}
 section .group h4 {
   text-transform: uppercase;
 }
@@ -96,13 +96,63 @@ team.away {
 team img {
   width: 45px;
   position: absolute;
-  top: 5px;
+  top: 50%;
   left: 0;
+  margin-top: -15px;
 }
 team.away img {
   left: auto;
   right: 0;
 }
+
+nav li.loading .loader {
+  display: block;
+}
+nav li.loading a {
+  display: none;
+}
+
+.loader {
+  display: none;
+  margin: 5px auto 0;
+  font-size: 10px;
+  position: relative;
+  text-indent: -9999em;
+  border-top: 5px solid rgba(27, 151, 89, 0.2);/*rgba(255, 255, 255, 0.2)*/
+  border-right: 5px solid rgba(27, 151, 89, 0.2);/*rgba(255, 255, 255, 0.2)*/
+  border-bottom: 5px solid rgba(27, 151, 89, 0.2);/*rgba(255, 255, 255, 0.2)*/
+  border-left: 5px solid #33DD8B;
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+}
+.loader,
+.loader:after {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+
 
 /**
  * Bootstrap overwrite
@@ -110,11 +160,34 @@ team.away img {
 .navbar {
   margin-bottom: 0;
 }
-.table>thead>tr>th,
-.table>tbody>tr>th,
-.table>tfoot>tr>th,
-.table>thead>tr>td,
-.table>tbody>tr>td,
-.table>tfoot>tr>td {
+.table-responsive > .table > thead > tr > th,
+.table-responsive > .table > tbody > tr > th,
+.table-responsive > .table > tfoot > tr > th,
+.table-responsive > .table > thead > tr > td,
+.table-responsive > .table > tbody > tr > td,
+.table-responsive > .table > tfoot > tr > td {
   vertical-align: middle;
+}
+.table-responsive > .table > thead > tr > th,
+.table-responsive > .table > tbody > tr > th,
+.table-responsive > .table > tfoot > tr > th {
+  color: #27bc5f;
+  font-size: 13px;
+}
+.table-responsive > .table > thead > tr > th.match-result,
+.table-responsive > .table > tbody > tr > th.match-result,
+.table-responsive > .table > tfoot > tr > th.match-result,
+.table-responsive > .table > thead > tr > td.match-result,
+.table-responsive > .table > tbody > tr > td.match-result,
+.table-responsive > .table > tfoot > tr > td.match-result {
+  width: 110px;
+  white-space: nowrap;
+}
+.table-responsive > .table > thead > tr > th.match-info,
+.table-responsive > .table > tbody > tr > th.match-info,
+.table-responsive > .table > tfoot > tr > th.match-info,
+.table-responsive > .table > thead > tr > td.match-info,
+.table-responsive > .table > tbody > tr > td.match-info,
+.table-responsive > .table > tfoot > tr > td.match-info {
+  width: 350px;
 }
