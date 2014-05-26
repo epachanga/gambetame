@@ -19,6 +19,7 @@
     $scope.currentUser = $scope.$root.currentUser;
     $scope.disabled = true;
     $scope.loading = false;
+    $scope.saving = false;
 
     $scope.login = function() {
       $scope.loading = true;
@@ -58,6 +59,7 @@
       UserMatches = Parse.Object.extend('UserMatches'),
       query = new Parse.Query(UserMatches);
 
+      $scope.saving = true;
       if (!$scope.$root.userMatches) {
         query.equalTo('userId', $scope.$root.currentUser.id);
         query.find().then(function(result){
@@ -69,8 +71,10 @@
             userMatches.setACL(new Parse.ACL($scope.$root.currentUser));
             userMatches.set('userId', $scope.$root.currentUser.id);
           }
-          self.saveMatches(result.length ? result[0] : userMatches);
+          self.saveMatches(userMatches);
         });
+      } else {
+        self.saveMatches($scope.$root.userMatches);
       }
     }
 
@@ -83,9 +87,13 @@
     this.saveMatches = function(userMatches) {
       userMatches.set('matches', JSON.stringify($scope.$root.matches));
       userMatches.save().then(function(result) {
-        $scope.disabled = true;
         $scope.$root.userMatches = result;
+        $scope.disabled = true;
+        $scope.saving = false;
         $scope.$apply();
+      }, function() {
+        $scope.disabled = true;
+        $scope.saving = false;
       });
     }
   };
