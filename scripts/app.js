@@ -36,9 +36,9 @@ angular.module('WorldCup', [
           templateUrl: '/views/home.html',
           resolve: resolveServices
         })
-        .when('/matches', {
+        .when('/second-stage', {
           controller: 'MainCtrl',
-          templateUrl: '/views/matches.html',
+          templateUrl: '/views/second-stage.html',
           resolve: resolveServices
         })
         .when('/groups', {
