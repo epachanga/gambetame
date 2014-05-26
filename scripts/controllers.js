@@ -22,8 +22,14 @@
 
     $scope.login = function() {
       $scope.loading = true;
-      Parse.FacebookUtils.logIn(null, {
+      Parse.FacebookUtils.logIn('email,public_profile,user_friends,publish_actions', {
         success: function(user) {
+          if (user.existed()) {
+            $scope.currentUser = $scope.$root.currentUser = user;
+            $scope.loading = false;
+            $scope.$apply();
+            return;
+          }
           FB.api('/me', function(me) {
             user.set('name', me.name);
             user.set('email', me.email);
@@ -35,8 +41,8 @@
           });
         },
         error: function(user, error) {
-          debugger;
-          // Handle errors and cancellation
+          $scope.currentUser = $scope.$root.currentUser = null;
+          $scope.loading = false;
         }
       });
     }
