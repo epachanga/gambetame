@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var TopNavCtrl = function($rootScope, $scope, $location) {
+  var TopNavCtrl = function($scope, $location) {
     $scope.selected = '';
 
     $scope.$watch(function(){ return $location.path(); },
@@ -9,12 +9,6 @@
         $scope.selected = $location.path().split('/')[1];
       }
     );
-
-    $scope.changeView = function(evt) {
-      evt.preventDefault();
-      $scope.selected = evt.currentTarget.getAttribute('href');
-      $location.path(evt.currentTarget.getAttribute('href'));
-    }
   };
 
   var UserCtrl = function($scope) {
@@ -49,6 +43,7 @@
 
     $scope.logout = function() {
       Parse.User.logOut();
+      FB.logout();
       $scope.currentUser = $scope.$root.currentUser = null;
     }
 
@@ -89,21 +84,16 @@
     }
   };
 
-  var HomeCtrl = function($scope, $route) {
-    var firstMatch = _.find($route.current.locals.MatchesData, {id: 1});
-    $scope.startTime = firstMatch.date.getTime();
-  };
+  var MainCtrl = function ($scope, $route, Groups) {
+    $scope.$root.matches = $route.current.locals.MatchesData;
+    $scope.$root.teams = $route.current.locals.TeamsData;
+    $scope.$root.grounds = $route.current.locals.GroundsData;
+    $scope.$root.groups = $route.current.locals.GroupsData;
 
-  var MainCtrl = function ($rootScope, $scope, $route, Groups) {
-    $rootScope.matches = $route.current.locals.MatchesData;
-    $rootScope.teams = $route.current.locals.TeamsData;
-    $rootScope.grounds = $route.current.locals.GroundsData;
-    $rootScope.groups = $route.current.locals.GroupsData;
+    $scope.$root.buildStandings = Groups.buildStandings;
 
-    $rootScope.buildStandings = Groups.buildStandings;
-
-    _.forEach($rootScope.groups, function(data, group) {
-      $rootScope.buildStandings(group);
+    _.forEach($scope.$root.groups, function(data, group) {
+      $scope.$root.buildStandings(group);
     });
 
     angular.element(document).ready(function() {
@@ -120,7 +110,7 @@
         if (result.length) {
           var matches = JSON.parse(result[0].get('matches'));
           _.forEach(matches, function(match){
-            var $match =_.find($rootScope.matches, {id: match.id});
+            var $match =_.find($scope.$root.matches, {id: match.id});
             $match.teams.home.goals = match.teams.home.goals;
             $match.teams.away.goals = match.teams.away.goals;
           });
@@ -130,8 +120,8 @@
     }
   };
 
-  var MatchesCtrl = function ($rootScope, $scope) {
-    $scope.matches = _.groupBy($rootScope.matches, 'stage');
+  var MatchesCtrl = function ($scope) {
+    $scope.matches = _.groupBy($scope.$root.matches, 'stage');
     _.forEach($scope.matches, function(matches, stage) {
       $scope[stage.replace(/\s/g, '')] = _.groupBy(matches, function(match){
         return match.date.getDate() + '/' + parseInt(match.date.getMonth()+1);
@@ -139,11 +129,21 @@
     });
   };
 
+  var GroupCtrl = function($scope, $routeParams) {
+    $scope.group = $routeParams.group;
+  };
+
+  var HomeCtrl = function($scope) {
+    var firstMatch = _.find($scope.$root.matches, {id: 1});
+    $scope.startTime = firstMatch.date.getTime();
+  };
+
   angular.module('worldcup.controllers', [])
-    .controller('TopNavCtrl', ['$rootScope', '$scope', '$location', TopNavCtrl])
+    .controller('MainCtrl', ['$scope', '$route', 'Groups', 'Matches', MainCtrl])
+    .controller('TopNavCtrl', ['$scope', '$location', TopNavCtrl])
+    .controller('HomeCtrl', ['$scope', HomeCtrl])
+    .controller('GroupCtrl', ['$scope', '$routeParams', GroupCtrl])
+    .controller('MatchesCtrl', ['$scope', MatchesCtrl])
     .controller('UserCtrl', ['$scope', UserCtrl])
-    .controller('HomeCtrl', ['$scope', '$route', HomeCtrl])
-    .controller('MainCtrl',
-      ['$rootScope', '$scope', '$route', 'Groups', 'Matches', MainCtrl])
-    .controller('MatchesCtrl', ['$rootScope', '$scope', MatchesCtrl]);
+    ;
 })();

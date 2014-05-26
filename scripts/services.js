@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var Grounds = function($rootScope, $http, $q) {
+  var Grounds = function($http, $q) {
     var
     data = null,
     defer = $q.defer();
@@ -17,7 +17,7 @@
     }
   };
 
-  var Teams = function($rootScope, $http, $q) {
+  var Teams = function($http, $q) {
     var
     data = null,
     defer = $q.defer();
@@ -136,7 +136,7 @@
     }
   };
 
-  var Matches = function($rootScope, $http, $q) {
+  var Matches = function($http, $q) {
     var
     data = null,
     defer = $q.defer();
@@ -184,9 +184,9 @@
 
   angular.module('worldcup.services', [])
     .service('Utils', [Utils])
-    .service('Grounds', ['$rootScope', '$http', '$q', Grounds])
-    .service('Teams', ['$rootScope', '$http', '$q', Teams])
+    .service('Grounds', ['$http', '$q', Grounds])
+    .service('Teams', ['$http', '$q', Teams])
+    .service('Matches', ['$http', '$q', Matches])
     .service('Groups', ['$rootScope', '$http', '$q', Groups])
-    .service('Matches', ['$rootScope', '$http', '$q', Matches])
     ;
 })();

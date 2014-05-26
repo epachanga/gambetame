@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr ng-repeat="team in data.standings | orderStandings">
+      <tr ng-repeat="(i, team) in data.standings | orderStandings" ng-class="{success: i <2 }">
         <td><team rel="team.name"></team></td>
         <td class="text-center"><input type="text" class="score" ng-model="team.mp" readonly /></td>
         <td class="text-center"><input type="text" class="score" ng-model="team.w" readonly /></td>

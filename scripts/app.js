@@ -32,13 +32,9 @@ angular.module('WorldCup', [
 
       $routeProvider
         .when('/', {
-          controller: 'HomeCtrl',
+          controller: 'MainCtrl',
           templateUrl: '/views/home.html',
-          resolve: {
-            'MatchesData': function(Matches){
-              return Matches.promise;
-            }
-          }
+          resolve: resolveServices
         })
         .when('/matches', {
           controller: 'MainCtrl',
@@ -48,6 +44,11 @@ angular.module('WorldCup', [
         .when('/groups', {
           controller: 'MainCtrl',
           templateUrl: '/views/groups.html',
+          resolve: resolveServices
+        })
+        .when('/groups/:group', {
+          controller: 'MainCtrl',
+          templateUrl: '/views/group.html',
           resolve: resolveServices
         })
         .otherwise({
@@ -66,7 +67,7 @@ angular.module('WorldCup', [
       $window.fbAsyncInit = function(){
         Parse.FacebookUtils.init({
           appId      : FB_APP_ID, // Facebook App ID
-          channelUrl : '//fixture.loc/channel.html', // Channel File
+          channelUrl : '//gambeta.me/channel.html', // Channel File
           status     : true, // check login status
           cookie     : true, // enable cookies to allow Parse to access the session
           xfbml      : true  // parse XFBML

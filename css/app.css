@@ -5,10 +5,10 @@ body {
   font: 300 15px 'Open Sans', sans-serif;
 }
 
-section .group {
+.group {
   padding-bottom: 50px;
 }
-section .group h4 {
+.group h4 {
   text-transform: uppercase;
 }
 

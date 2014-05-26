@@ -212,7 +212,7 @@
         _moment = moment(scope.datetime);
 
         element[0].innerHTML = _moment.format('DD MMM YYYY').toUpperCase()
-                              + ' - ' + _moment.format('HH:mm') + ' Local time';
+                                              + ' - ' + _moment.format('HH:mm');
       }
     };
   };
