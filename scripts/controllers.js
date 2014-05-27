@@ -51,7 +51,6 @@
 
     $scope.logout = function() {
       Parse.User.logOut();
-      FB.logout();
       $scope.currentUser = $scope.$root.currentUser = null;
     }
 
