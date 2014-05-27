@@ -4,6 +4,7 @@ angular.module('WorldCup', [
   'worldcup.services',
   'worldcup.filters',
   'timer',
+  'ga',
   'ngResource',
   'ngRoute'
 ])

@@ -1,12 +1,13 @@
 (function () {
   'use strict';
 
-  var TopNavCtrl = function($scope, $location) {
+  var TopNavCtrl = function($scope, $location, ga) {
     $scope.selected = '';
 
     $scope.$watch(function(){ return $location.path(); },
       function(newVal, oldVal){
         $scope.selected = $location.path().split('/')[1];
+        ga('send', 'pageview', {title: $location.path()});
       }
     );
   };
@@ -154,7 +155,7 @@
 
   angular.module('worldcup.controllers', [])
     .controller('MainCtrl', ['$scope', '$route', 'Groups', 'Matches', MainCtrl])
-    .controller('TopNavCtrl', ['$scope', '$location', TopNavCtrl])
+    .controller('TopNavCtrl', ['$scope', '$location', 'ga', TopNavCtrl])
     .controller('HomeCtrl', ['$scope', HomeCtrl])
     .controller('GroupCtrl', ['$scope', '$routeParams', GroupCtrl])
     .controller('MatchesCtrl', ['$scope', MatchesCtrl])
