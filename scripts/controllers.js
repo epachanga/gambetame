@@ -167,7 +167,7 @@
   var MatchesCtrl = function ($scope) {
     $scope.matches = _.groupBy($scope.$root.matches, 'stage');
     _.forEach($scope.matches, function(matches, stage) {
-      $scope[stage.replace(/\s/g, '')] = _.groupBy(matches, function(match){
+      $scope[stage.replace(/[\s-]/g, '')] = _.groupBy(matches, function(match){
         return match.date.getDate() + '/' + parseInt(match.date.getMonth()+1);
       });
     });

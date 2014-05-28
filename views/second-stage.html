@@ -21,6 +21,13 @@
     </section>
   </section>
   <section class="stage row">
+    <h3 class="col-md-12">Play-off For Third Place</h3>
+    <section class="col-md-12" ng-repeat="(date, matches) in PlayoffForThirdPlace">
+      <h4>{{date}}</h4>
+      <matches-list matches="matches"></matches-list>
+    </section>
+  </section>
+  <section class="stage row">
     <h3 class="col-md-12">Final</h3>
     <section class="col-md-12" ng-repeat="(date, matches) in Final">
       <h4>{{date}}</h4>
