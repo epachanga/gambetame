@@ -102,6 +102,23 @@
           }
         };
 
+        scope.selectWinnerPenalties = function($evt) {
+          var _scope = $($evt.target).scope();
+          if (/\[/.test(_scope.match.teams.home.team) || /\[/.test(_scope.match.teams.away.team)) {
+            $evt.stopPropagation();
+            $evt.preventDefault();
+            $evt.target.checked = false;
+            return;
+          }
+          if ($evt.target.value == 'home') {
+            _scope.match.teams.home.penalty = true;
+            _scope.match.teams.away.penalty = false;
+          } else if($evt.target.value == 'away') {
+            _scope.match.teams.home.penalty = false;
+            _scope.match.teams.away.penalty = true;
+          }
+        };
+
         scope.$watch(
           function() { return $rootScope.simpleMode },
           function(newVal, oldVal) {
@@ -203,6 +220,18 @@
                       scope.rel = match.teams.home.team;
                     } else if (match.teams.home.goals < match.teams.away.goals) {
                       scope.rel = match.teams.away.team;
+                    } else if (match.teams.home.goals >= 0
+                          && match.teams.away.goals >= 0
+                          && match.teams.home.goals == match.teams.away.goals) {
+                      if (match.teams.home.penalty) {
+                        scope.rel = match.teams.home.team;
+                      } else if (match.teams.away.penalty) {
+                        scope.rel = match.teams.away.team;
+                      } else {
+                        scope.name = matches[0];
+                        scope.flag = false;
+                        return;
+                      }
                     } else {
                       scope.name = matches[0];
                       scope.flag = false;
