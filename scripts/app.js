@@ -73,6 +73,13 @@ angular.module('WorldCup', [
           cookie     : true, // enable cookies to allow Parse to access the session
           xfbml      : true  // parse XFBML
         });
+
+        FB.getLoginStatus(function(data) {
+          if (data.status != 'connected') {
+            Parse.User.logOut();
+            $rootScope.currentUser = null;
+          }
+        });
       };
 
       (function(d){

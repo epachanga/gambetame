@@ -2,7 +2,7 @@
   'use strict';
 
   var WorldCupCtrl = function($scope, $location, ga) {
-    $scope.currentUser = Parse.User.current();
+    $scope.$root.currentUser = Parse.User.current();
     $scope.loading = false;
     $scope.$root.simpleMode = (localStorage.getItem('simpleMode') === 'true');
 
@@ -30,7 +30,7 @@
         'email,public_profile,user_friends,publish_actions', {
         success: function(user) {
           if (user.existed()) {
-            $scope.currentUser = user;
+            $scope.$root.currentUser = user;
             $scope.loading = false;
             $scope.$apply();
             return;
@@ -39,14 +39,14 @@
             user.set('name', me.name);
             user.set('email', me.email);
             user.save().then(function(result) {
-              $scope.currentUser = result;
+              $scope.$root.currentUser = result;
               $scope.loading = false;
               $scope.$apply();
             });
           });
         },
         error: function(user, error) {
-          $scope.currentUser = null;
+          $scope.$root.currentUser = null;
           $scope.loading = false;
         }
       });
@@ -54,7 +54,7 @@
 
     $scope.logout = function() {
       Parse.User.logOut();
-      $scope.currentUser = null;
+      $scope.$root.currentUser = null;
     }
   };
 
@@ -83,14 +83,14 @@
 
       $scope.saving = true;
       if (!$scope.$root.userMatches) {
-        query.equalTo('userId', $scope.currentUser.id);
+        query.equalTo('userId', $scope.$root.currentUser.id);
         query.find().then(function(result){
           if (result.length) {
             userMatches = result[0];
           } else {
             userMatches = new UserMatches();
-            userMatches.setACL(new Parse.ACL($scope.currentUser));
-            userMatches.set('userId', $scope.currentUser.id);
+            userMatches.setACL(new Parse.ACL($scope.$root.currentUser));
+            userMatches.set('userId', $scope.$root.currentUser.id);
           }
           self.saveMatches(userMatches);
         });
@@ -141,12 +141,12 @@
       $('[data-toggle~="tooltip"]').tooltip();
     });
 
-    if ($scope.currentUser) {
+    if ($scope.$root.currentUser) {
       var
       UserMatches = Parse.Object.extend('UserMatches'),
       query = new Parse.Query(UserMatches);
 
-      query.equalTo('userId', $scope.currentUser.id);
+      query.equalTo('userId', $scope.$root.currentUser.id);
       query.find().then(function(result){
         if (result.length) {
           var matches = JSON.parse(result[0].get('matches'));
