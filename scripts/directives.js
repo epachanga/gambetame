@@ -83,6 +83,34 @@
         matches: '='
       },
       link: function(scope) {
+        scope.simpleMode = $rootScope.simpleMode;
+
+        scope.selectWinner = function($evt) {
+          var _scope = $($evt.target).scope();
+          if (/\[/.test(_scope.match.teams.home.team) || /\[/.test(_scope.match.teams.away.team)) {
+            $evt.stopPropagation();
+            $evt.preventDefault();
+            $evt.target.checked = false;
+            return;
+          }
+          if ($evt.target.value == 'home') {
+            _scope.match.teams.home.goals = 1;
+            _scope.match.teams.away.goals = 0;
+          } else if($evt.target.value == 'away') {
+            _scope.match.teams.away.goals = 1;
+            _scope.match.teams.home.goals = 0;
+          }
+        };
+
+        scope.$watch(
+          function() { return $rootScope.simpleMode },
+          function(newVal, oldVal) {
+            if (newVal != oldVal) {
+              scope.simpleMode = newVal;
+            }
+          }
+        );
+
         scope.$watch('matches', function(newVal, oldVal){
           if (!_.isEqual(newVal, oldVal)) {
             _.forEach(newVal, function(v, k){
@@ -167,7 +195,9 @@
             scope.$watch('match', function(newVal, oldVal){
               if (!_.isEqual(newVal, oldVal)) {
                 if (!_.isNull(newVal.teams.home.goals)
-                                        && !_.isNull(newVal.teams.away.goals)) {
+                                        && !_.isNull(newVal.teams.away.goals)
+                                        && !/\[/.test(newVal.teams.home.team)
+                                        && !/\[/.test(newVal.teams.away.team)) {
                   if (result == 'W') {
                     if (match.teams.home.goals > match.teams.away.goals) {
                       scope.rel = match.teams.home.team;
@@ -190,7 +220,6 @@
                       return;
                     }
                   }
-
                   scope.name = $rootScope.teams[scope.rel].name;
                   scope.flag = $rootScope.teams[scope.rel].flag;
                 } else {

@@ -155,6 +155,9 @@
             $match.teams.home.goals = match.teams.home.goals;
             $match.teams.away.goals = match.teams.away.goals;
           });
+          _.forEach($scope.$root.groups, function(data, group) {
+            $scope.$root.buildStandings(group);
+          });
           $scope.$apply();
         }
       });
