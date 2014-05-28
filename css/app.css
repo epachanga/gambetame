@@ -2,11 +2,35 @@
   display: none !important;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   background: #f8f8f8 url(../img/pattern.jpg);
   text-align: left;
-  padding: 50px 0;
+  padding: 50px 0 0;
   font: 300 15px 'Open Sans', sans-serif;
+}
+
+.page-wrap {
+  min-height: 100%;
+  /* equal to footer height */
+  margin-bottom: -50px;
+}
+.page-wrap:after {
+  content: "";
+  display: block;
+}
+.site-footer, .page-wrap:after {
+  /* .push must be the same height as footer */
+  height: 50px;
+}
+.site-footer {
+  text-align: center;
+  background: rgba(29, 18, 4, 0.7);
+  line-height: 50px;
+  color: #fbfbfb;
 }
 
 .group {
@@ -44,9 +68,9 @@ section[rel="home"] {
 }
 
 .timer-wrapper {
-  margin-top: 40px;
   text-shadow: 0 1px 5px rgba(0,0,0,.1);
   color: #fff;
+  margin: 40px 0;
 }
 
 .timer-wrapper .days-wrapper,
@@ -125,6 +149,7 @@ team.away img {
 .btn.loader,
 .btn.loader:focus {
   outline: none;
+  padding: 0;
   background-color: transparent;
   border-top: 5px solid rgba(27, 151, 89, 0.2);
   border-right: 5px solid rgba(27, 151, 89, 0.2);

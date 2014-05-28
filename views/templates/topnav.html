@@ -33,8 +33,12 @@
     <ul class="nav navbar-nav navbar-right" ng-controller="UserCtrl">
       <li ng-show="currentUser"><button type="button" ng-class="{loader: saving}" class="btn btn-success navbar-btn" ng-disabled="disabled" ng-click="save()">Save</button></li>
       <li class="dropdown" ng-show="currentUser">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown">{{currentUser.get('name')}} <b class="caret"></b></a>
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-cog"></i></a>
         <ul class="dropdown-menu">
+          <li ng-show="simpleMode"><a href="#" ng-click="switchMode()">Switch to advanced mode <!-- <i class="fa fa-question" ng-click="modeHelp($event, 'advanced')"></i> --></a></li>
+          <li ng-hide="simpleMode"><a href="#" ng-click="switchMode()">Switch to simple mode <!-- <i class="fa fa-question" ng-click="modeHelp($event, 'simple')"></i> --></a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header">{{currentUser.get('name')}}</li>
           <li><a href="#" ng-click="logout()">Logout</a></li>
         </ul>
       </li>

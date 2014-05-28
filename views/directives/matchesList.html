@@ -8,9 +8,11 @@
         </td>
         <td><team class="home" rel="match.teams.home.team"></team></td>
         <td class="text-center match-result">
-          <input type="number" min="0" class="score" ng-model="match.teams.home.goals" />
+          <input type="number" min="0" class="score" ng-model="match.teams.home.goals" ng-hide="simpleMode" />
+          <input type="radio" value="home" name="match{{match.id}}" ng-checked="match.teams.home.goals > match.teams.away.goals" ng-show="simpleMode" ng-click="selectWinner($event)"/>
           -
-          <input type="number" min="0" class="score" ng-model="match.teams.away.goals" />
+          <input type="number" min="0" class="score" ng-model="match.teams.away.goals" ng-hide="simpleMode" />
+          <input type="radio" value="away" name="match{{match.id}}" ng-checked="match.teams.away.goals > match.teams.home.goals" ng-show="simpleMode" ng-click="selectWinner($event)"/>
         </td>
         <td><team class="away" rel="match.teams.away.team"></team></td>
       </tr>

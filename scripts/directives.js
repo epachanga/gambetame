@@ -13,6 +13,16 @@
         var group = $rootScope.groups[scope.group];
         scope.data = group;
         scope.standings = group.standings;
+        scope.simpleMode = $rootScope.simpleMode;
+
+        scope.$watch(
+          function() { return $rootScope.simpleMode },
+          function(newVal, oldVal) {
+            if (newVal != oldVal) {
+              scope.simpleMode = newVal;
+            }
+          }
+        );
       }
     };
   };
@@ -29,11 +39,31 @@
         var group = $rootScope.groups[scope.group];
         scope.data = group;
         scope.standings = group.standings;
+        scope.simpleMode = $rootScope.simpleMode;
 
         scope.matches = [];
         _.forEach(group.matches, function(matchId){
           scope.matches.push(_.find($rootScope.matches, {id: matchId}));
         });
+
+        scope.selectWinner = function($evt) {
+          if ($evt.target.value == 'home') {
+            $($evt.target).scope().match.teams.home.goals = 1;
+            $($evt.target).scope().match.teams.away.goals = 0;
+          } else if($evt.target.value == 'away') {
+            $($evt.target).scope().match.teams.away.goals = 1;
+            $($evt.target).scope().match.teams.home.goals = 0;
+          }
+        };
+
+        scope.$watch(
+          function() { return $rootScope.simpleMode },
+          function(newVal, oldVal) {
+            if (newVal != oldVal) {
+              scope.simpleMode = newVal;
+            }
+          }
+        );
 
         scope.$watch('matches', function(newVal, oldVal){
           if (!_.isEqual(newVal, oldVal)) {
