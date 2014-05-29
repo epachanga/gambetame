@@ -264,10 +264,6 @@
                 scope.rel = match.teams.home.team;
               } else if (match.teams.home.goals < match.teams.away.goals) {
                 scope.rel = match.teams.away.team;
-              } else {
-                scope.name = matches[0];
-                scope.flag = false;
-                return;
               }
             }
             if (result == 'L') {
@@ -275,13 +271,15 @@
                 scope.rel = match.teams.home.team;
               } else if (match.teams.home.goals > match.teams.away.goals) {
                 scope.rel = match.teams.away.team;
-              } else {
-                scope.name = matches[0];
-                scope.flag = false;
-                return;
               }
             }
           }
+        }
+
+        if (/\[/.test(scope.rel)) {
+          scope.name = matches[0];
+          scope.flag = false;
+          return;
         }
         scope.name = $rootScope.teams[scope.rel].name;
         scope.flag = $rootScope.teams[scope.rel].flag;

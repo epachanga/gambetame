@@ -107,6 +107,12 @@ section[rel="home"] {
   line-height: 90px;
 }
 
+.match-id {
+  font-size: 28px;
+  font-weight: 300;
+  width: 60px;
+}
+
 team {
   display: block;
   text-transform: uppercase;

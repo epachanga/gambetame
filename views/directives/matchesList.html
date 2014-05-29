@@ -2,6 +2,9 @@
   <table class="table table-hover">
     <tbody>
       <tr ng-repeat="match in matches">
+        <td class="match-id" ng-if="match.stage != 'Group Stage'">
+          {{match.id}}
+        </td>
         <td class="match-info">
           <time datetime="match.date"></time><br/>
           <venue rel="match.location"></venue>
