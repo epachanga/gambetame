@@ -154,6 +154,8 @@
             var $match =_.find($scope.$root.matches, {id: match.id});
             $match.teams.home.goals = match.teams.home.goals;
             $match.teams.away.goals = match.teams.away.goals;
+            $match.teams.home.penalty = match.teams.home.penalty;
+            $match.teams.away.penalty = match.teams.away.penalty;
           });
           _.forEach($scope.$root.groups, function(data, group) {
             $scope.$root.buildStandings(group);
