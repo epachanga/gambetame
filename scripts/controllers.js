@@ -171,6 +171,24 @@
 
   var GroupCtrl = function($scope) {
     $scope.group = $scope.routeParams.group;
+
+    if ($scope.group == 'all') {
+      $scope.next = '/second-stage';
+    } else {
+      var
+      current = null,
+      next = null;
+      for (var i in $scope.$root.groups) {
+        if (current) {
+          next = '/groups/' + i;
+          break;
+        }
+        if (i == $scope.group) {
+          current = true;
+        }
+      }
+      $scope.next = next || '/second-stage';
+    }
   };
 
   var HomeCtrl = function($scope) {
