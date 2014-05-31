@@ -1,4 +1,4 @@
-<div class="container" ng-controller="TopNavCtrl">
+<div class="container">
   <!-- Brand and toggle get grouped for better mobile display -->
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
@@ -12,8 +12,8 @@
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse" id="navbar-collapse">
-    <ul class="nav navbar-nav navbar-left" {{selected}}>
-      <li ng-class="selected == 'groups' ? 'active' : ''" class="dropdown">
+    <ul class="nav navbar-nav navbar-left" ng-show="currentUser">
+      <li ng-class="page == 'groups' ? 'active' : ''" class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="/groups/a">Group A</a></li>
@@ -25,17 +25,22 @@
           <li><a href="/groups/g">Group G</a></li>
           <li><a href="/groups/h">Group H</a></li>
           <li class="divider"></li>
-          <li><a href="/groups">All Groups</a></li>
+          <li><a href="/groups/all">All Groups</a></li>
         </ul>
       </li>
-      <li ng-class="selected == 'second-stage' ? 'active' : ''"><a href="/second-stage">Second Stage</a></li>
+      <li ng-class="page == 'second-stage' ? 'active' : ''"><a href="/second-stage">Second Stage</a></li>
+      <li ng-if="page != 'home'">
+        <a href="#">
+          <timer end-time="startTime">{{days}} : {{hours}} : {{minutes}} : {{seconds}}</timer>
+        </a>
+      </li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-controller="UserCtrl">
       <li ng-hide="currentUser">
         <a href="#" ng-click="login()" ng-class="{loader: loading}">Sign in with Facebook</a>
       </li>
       <li ng-show="currentUser"><button type="button" ng-class="{loader: saving}" class="btn btn-success navbar-btn" ng-disabled="disabled" ng-click="save()">Save</button></li>
-      <li class="dropdown">
+      <li class="dropdown" ng-show="currentUser">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cog"></i></a>
         <ul class="dropdown-menu">
           <li ng-show="simpleMode"><a href="#" ng-click="switchMode()">Switch to advanced mode <!-- <i class="fa fa-question" ng-click="modeHelp($event, 'advanced')"></i> --></a></li>

@@ -1,0 +1,38 @@
+<section rel="home" ng-controller="HomeCtrl">
+  <h1>Gambeta.me<br/><small>Let your friends see how much you know about the worldcup.</small></h1>
+  <timer end-time="startTime">
+    <div class="timer-wrapper">
+      <div class="days-wrapper">
+        <span class="days">{{days}}</span> <br>day{{daysS}}
+      </div>
+      <div class="hours-wrapper">
+        <span class="hours">{{hours}}</span> <br>hour{{hoursS}}
+      </div>
+      <div class="minutes-wrapper">
+        <span class="minutes">{{minutes}}</span> <br>minute{{minutesS}}
+      </div>
+      <div class="seconds-wrapper">
+        <span class="seconds">{{seconds}}</span> <br>second{{secondsS}}
+      </div>
+    </div>
+  </timer>
+
+  <div class="well col-md-8 col-md-offset-2" ng-hide="currentUser">
+    <div>
+      <p class="lead">
+        Sign in to start placing your bets* with friends.<br/>
+      </p>
+      <p>
+        <a class="btn btn-social btn-facebook" ng-click="login()" ng-class="{loader: loading}">
+          <i class="fa fa-facebook"></i>
+          Sign in with Facebook
+        </a>
+      </p>
+      <br/><br/>
+      <small><small>* Virtual bets, no real money is involved.</small></small>
+    </div>
+  </div>
+  <div ng-show="currentUser">
+    <a href="/group/a" class="btn btn-success btn-lg">Start Now</a>
+  </div>
+</section>

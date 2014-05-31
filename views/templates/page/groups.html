@@ -1,0 +1,14 @@
+<section rel="groups" ng-controller="GroupCtrl">
+  <section ng-if="group != 'all'" class="group row">
+    <h4 id="group-{{group}}" class="col-md-12">Group {{group}}</h4>
+    <group-standings class="col-md-12" group="{{group}}"></group-standings>
+    <group-matches class="col-md-12" group="{{group}}"></group-matches>
+  </section>
+  <div ng-if="group == 'all'">
+    <section class="group row" ng-repeat="(group, data) in groups">
+      <h4 id="group-{{group}}" class="col-md-12">Group {{group}}</h4>
+      <group-standings class="col-md-12" group="{{group}}"></group-standings>
+      <group-matches class="col-md-12" group="{{group}}"></group-matches>
+    </section>
+  </div>
+</section>

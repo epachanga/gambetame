@@ -8,8 +8,8 @@ angular.module('WorldCup', [
   'ngResource',
   'ngRoute'
 ])
-.value('PARSE_APP_ID', 'QkPPikBb9pMTELRRuUJxZNJxTtsvaKDtqPnyqiRE')
-.value('PARSE_CLIENT_KEY', 'tWIMPGxC3trQvzMxzLKyziza6w6YPAhWPTa9BYwD')
+.value('PARSE_APP_ID', '7mghYoIjQPCwTEQ8xL43HY4EU7ixDzh4Rk1hEh9P')
+.value('PARSE_CLIENT_KEY', 'StBqBqmPL4XsMblXf3HAbzLTm17roPoSIs4aOYWm')
 .value('FB_APP_ID', '1435795020006139')
 .config(
   ['$routeProvider', '$locationProvider',
@@ -34,22 +34,17 @@ angular.module('WorldCup', [
       $routeProvider
         .when('/', {
           controller: 'MainCtrl',
-          templateUrl: '/views/home.html',
-          resolve: resolveServices
-        })
-        .when('/second-stage', {
-          controller: 'MainCtrl',
-          templateUrl: '/views/second-stage.html',
-          resolve: resolveServices
-        })
-        .when('/groups', {
-          controller: 'MainCtrl',
-          templateUrl: '/views/groups.html',
+          templateUrl: '/views/layout.html',
           resolve: resolveServices
         })
         .when('/groups/:group', {
           controller: 'MainCtrl',
-          templateUrl: '/views/group.html',
+          templateUrl: '/views/layout.html',
+          resolve: resolveServices
+        })
+        .when('/second-stage', {
+          controller: 'MainCtrl',
+          templateUrl: '/views/layout.html',
           resolve: resolveServices
         })
         .otherwise({

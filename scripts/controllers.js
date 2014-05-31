@@ -2,9 +2,16 @@
   'use strict';
 
   var WorldCupCtrl = function($scope, $location, ga) {
+    $scope.page = null;
     $scope.$root.currentUser = Parse.User.current();
     $scope.loading = false;
     $scope.$root.simpleMode = (localStorage.getItem('simpleMode') === 'true');
+
+    $scope.$watch(function(){ return $location.path(); },
+      function(newVal, oldVal){
+        $scope.page = $location.path().split('/')[1] || 'home';
+      }
+    );
 
     $scope.$watch(function(){ return $location.path(); },
       function(newVal, oldVal){
@@ -24,48 +31,7 @@
       console.log('evme', mode);
     };*/
 
-    $scope.login = function() {
-      $scope.loading = true;
-      Parse.FacebookUtils.logIn(
-        'email,public_profile,user_friends,publish_actions', {
-        success: function(user) {
-          if (user.existed()) {
-            $scope.$root.currentUser = user;
-            $scope.loading = false;
-            $scope.$apply();
-            return;
-          }
-          FB.api('/me', function(me) {
-            user.set('name', me.name);
-            user.set('email', me.email);
-            user.save().then(function(result) {
-              $scope.$root.currentUser = result;
-              $scope.loading = false;
-              $scope.$apply();
-            });
-          });
-        },
-        error: function(user, error) {
-          $scope.$root.currentUser = null;
-          $scope.loading = false;
-        }
-      });
-    }
 
-    $scope.logout = function() {
-      Parse.User.logOut();
-      $scope.$root.currentUser = null;
-    }
-  };
-
-  var TopNavCtrl = function($scope, $location) {
-    $scope.selected = '';
-
-    $scope.$watch(function(){ return $location.path(); },
-      function(newVal, oldVal){
-        $scope.selected = $location.path().split('/')[1];
-      }
-    );
   };
 
   var UserCtrl = function($scope) {
@@ -125,7 +91,11 @@
     }
   };
 
-  var MainCtrl = function ($scope, $route, Groups) {
+  var MainCtrl = function ($scope, $route, $routeParams, $location, Groups) {
+    if($scope.page != 'home' && !$scope.currentUser) {
+      $location.path('/');
+      return;
+    }
     $scope.$root.matches = $route.current.locals.MatchesData;
     $scope.$root.teams = $route.current.locals.TeamsData;
     $scope.$root.grounds = $route.current.locals.GroundsData;
@@ -137,9 +107,11 @@
       $scope.$root.buildStandings(group);
     });
 
-    angular.element(document).ready(function() {
-      $('[data-toggle~="tooltip"]').tooltip();
-    });
+    var firstMatch = _.find($scope.$root.matches, {id: 1});
+    $scope.startTime = firstMatch.date.getTime();
+
+    $scope.routeParams = $routeParams;
+    $scope.viewTemplate = '/views/templates/page/' + $scope.page + '.html';
 
     if ($scope.$root.currentUser) {
       var
@@ -164,33 +136,65 @@
         }
       });
     }
+
+    $scope.login = function() {
+      $scope.loading = true;
+      Parse.FacebookUtils.logIn(
+        'email,public_profile,user_friends,publish_actions', {
+        success: function(user) {
+          if (user.existed()) {
+            $scope.$root.currentUser = user;
+            $scope.loading = false;
+            $scope.$apply();
+            $route.reload();
+            return;
+          }
+          FB.api('/me', function(me) {
+            user.set('name', me.name);
+            user.set('email', me.email);
+            user.save().then(function(result) {
+              $scope.$root.currentUser = result;
+              $scope.loading = false;
+              $scope.$apply();
+              $route.reload();
+            });
+          });
+        },
+        error: function(user, error) {
+          $scope.$root.currentUser = null;
+          $scope.loading = false;
+          $route.reload();
+        }
+      });
+    }
+
+    $scope.logout = function() {
+      Parse.User.logOut();
+      $scope.$root.currentUser = null;
+      $route.reload();
+    }
   };
 
-  var MatchesCtrl = function ($scope) {
+  var SecondStageCtrl = function ($scope) {
     $scope.matches = _.groupBy($scope.$root.matches, 'stage');
     _.forEach($scope.matches, function(matches, stage) {
-      $scope[stage.replace(/[\s-]/g, '')] = _.groupBy(matches, function(match){
-        return match.date.getDate() + '/' + parseInt(match.date.getMonth()+1);
-      });
+      $scope[stage.replace(/[\s-]/g, '')] = matches;
     });
   };
 
-  var GroupCtrl = function($scope, $routeParams) {
-    $scope.group = $routeParams.group;
+  var GroupCtrl = function($scope) {
+    $scope.group = $scope.routeParams.group;
   };
 
   var HomeCtrl = function($scope) {
-    var firstMatch = _.find($scope.$root.matches, {id: 1});
-    $scope.startTime = firstMatch.date.getTime();
   };
 
   angular.module('worldcup.controllers', [])
     .controller('WorldCupCtrl', ['$scope', '$location', 'ga', WorldCupCtrl])
-    .controller('MainCtrl', ['$scope', '$route', 'Groups', 'Matches', MainCtrl])
-    .controller('TopNavCtrl', ['$scope', '$location', TopNavCtrl])
+    .controller('MainCtrl', ['$scope', '$route', '$routeParams', '$location', 'Groups', MainCtrl])
     .controller('HomeCtrl', ['$scope', HomeCtrl])
-    .controller('GroupCtrl', ['$scope', '$routeParams', GroupCtrl])
-    .controller('MatchesCtrl', ['$scope', MatchesCtrl])
+    .controller('GroupCtrl', ['$scope', GroupCtrl])
+    .controller('SecondStageCtrl', ['$scope', SecondStageCtrl])
     .controller('UserCtrl', ['$scope', UserCtrl])
     ;
 })();
