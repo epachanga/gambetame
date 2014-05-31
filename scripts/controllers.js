@@ -1,21 +1,19 @@
 (function () {
   'use strict';
 
-  var WorldCupCtrl = function($scope, $location, ga) {
-    $scope.page = null;
-    $scope.$root.currentUser = Parse.User.current();
+  var MainCtrl = function ($scope, $route, $routeParams, $window, $location, ga, Groups) {
+    $scope.page = $location.path().split('/')[1] || 'home';
     $scope.loading = false;
+
+    $scope.$root.currentUser = Parse.User.current();
     $scope.$root.simpleMode = (localStorage.getItem('simpleMode') === 'true');
 
     $scope.$watch(function(){ return $location.path(); },
       function(newVal, oldVal){
-        $scope.page = $location.path().split('/')[1] || 'home';
-      }
-    );
-
-    $scope.$watch(function(){ return $location.path(); },
-      function(newVal, oldVal){
-        ga('send', 'pageview', {title: $location.path()});
+        if (newVal != oldVal) {
+          $scope.page = $location.path().split('/')[1] || 'home';
+          ga('send', 'pageview', {title: $location.path()});
+        }
       }
     );
 
@@ -31,7 +29,85 @@
       console.log('evme', mode);
     };*/
 
+    if($scope.page != 'home' && !$scope.currentUser) {
+      $location.path('/');
+      return;
+    }
+    $scope.$root.matches = $route.current.locals.MatchesData;
+    $scope.$root.teams = $route.current.locals.TeamsData;
+    $scope.$root.grounds = $route.current.locals.GroundsData;
+    $scope.$root.groups = $route.current.locals.GroupsData;
 
+    $scope.$root.buildStandings = Groups.buildStandings;
+
+    _.forEach($scope.$root.groups, function(data, group) {
+      $scope.$root.buildStandings(group);
+    });
+
+    var firstMatch = _.find($scope.$root.matches, {id: 1});
+    $scope.startTime = firstMatch.date.getTime();
+
+    $scope.routeParams = $routeParams;
+    $scope.viewTemplate = '/views/templates/page/' + $scope.page + '.html';
+
+    if ($scope.$root.currentUser) {
+      var
+      UserMatches = Parse.Object.extend('UserMatches'),
+      query = new Parse.Query(UserMatches);
+
+      query.equalTo('userId', $scope.$root.currentUser.id);
+      query.find().then(function(result){
+        if (result.length) {
+          var matches = JSON.parse(result[0].get('matches'));
+          _.forEach(matches, function(match){
+            var $match =_.find($scope.$root.matches, {id: match.id});
+            $match.teams.home.goals = match.teams.home.goals;
+            $match.teams.away.goals = match.teams.away.goals;
+            $match.teams.home.penalty = match.teams.home.penalty;
+            $match.teams.away.penalty = match.teams.away.penalty;
+          });
+          _.forEach($scope.$root.groups, function(data, group) {
+            $scope.$root.buildStandings(group);
+          });
+          $scope.$apply();
+        }
+      });
+    }
+
+    $scope.login = function() {
+      $scope.loading = true;
+      Parse.FacebookUtils.logIn(
+        'email,public_profile,user_friends,publish_actions', {
+        success: function(user) {
+          if (user.existed()) {
+            $scope.$root.currentUser = user;
+            $scope.loading = false;
+            $window.location.reload();
+            return;
+          }
+          FB.api('/me', function(me) {
+            user.set('name', me.name);
+            user.set('email', me.email);
+            user.save().then(function(result) {
+              $scope.$root.currentUser = result;
+              $scope.loading = false;
+              $window.location.reload();
+            });
+          });
+        },
+        error: function(user, error) {
+          $scope.$root.currentUser = null;
+          $scope.loading = false;
+          $scope.$apply();
+        }
+      });
+    }
+
+    $scope.logout = function() {
+      Parse.User.logOut();
+      $scope.$root.currentUser = null;
+      $window.location.reload();
+    }
   };
 
   var UserCtrl = function($scope) {
@@ -91,90 +167,6 @@
     }
   };
 
-  var MainCtrl = function ($scope, $route, $routeParams, $location, Groups) {
-    if($scope.page != 'home' && !$scope.currentUser) {
-      $location.path('/');
-      return;
-    }
-    $scope.$root.matches = $route.current.locals.MatchesData;
-    $scope.$root.teams = $route.current.locals.TeamsData;
-    $scope.$root.grounds = $route.current.locals.GroundsData;
-    $scope.$root.groups = $route.current.locals.GroupsData;
-
-    $scope.$root.buildStandings = Groups.buildStandings;
-
-    _.forEach($scope.$root.groups, function(data, group) {
-      $scope.$root.buildStandings(group);
-    });
-
-    var firstMatch = _.find($scope.$root.matches, {id: 1});
-    $scope.startTime = firstMatch.date.getTime();
-
-    $scope.routeParams = $routeParams;
-    $scope.viewTemplate = '/views/templates/page/' + $scope.page + '.html';
-
-    if ($scope.$root.currentUser) {
-      var
-      UserMatches = Parse.Object.extend('UserMatches'),
-      query = new Parse.Query(UserMatches);
-
-      query.equalTo('userId', $scope.$root.currentUser.id);
-      query.find().then(function(result){
-        if (result.length) {
-          var matches = JSON.parse(result[0].get('matches'));
-          _.forEach(matches, function(match){
-            var $match =_.find($scope.$root.matches, {id: match.id});
-            $match.teams.home.goals = match.teams.home.goals;
-            $match.teams.away.goals = match.teams.away.goals;
-            $match.teams.home.penalty = match.teams.home.penalty;
-            $match.teams.away.penalty = match.teams.away.penalty;
-          });
-          _.forEach($scope.$root.groups, function(data, group) {
-            $scope.$root.buildStandings(group);
-          });
-          $scope.$apply();
-        }
-      });
-    }
-
-    $scope.login = function() {
-      $scope.loading = true;
-      Parse.FacebookUtils.logIn(
-        'email,public_profile,user_friends,publish_actions', {
-        success: function(user) {
-          if (user.existed()) {
-            $scope.$root.currentUser = user;
-            $scope.loading = false;
-            $scope.$apply();
-            $route.reload();
-            return;
-          }
-          FB.api('/me', function(me) {
-            user.set('name', me.name);
-            user.set('email', me.email);
-            user.save().then(function(result) {
-              $scope.$root.currentUser = result;
-              $scope.loading = false;
-              $scope.$apply();
-              $route.reload();
-            });
-          });
-        },
-        error: function(user, error) {
-          $scope.$root.currentUser = null;
-          $scope.loading = false;
-          $route.reload();
-        }
-      });
-    }
-
-    $scope.logout = function() {
-      Parse.User.logOut();
-      $scope.$root.currentUser = null;
-      $route.reload();
-    }
-  };
-
   var SecondStageCtrl = function ($scope) {
     $scope.matches = _.groupBy($scope.$root.matches, 'stage');
     _.forEach($scope.matches, function(matches, stage) {
@@ -187,11 +179,11 @@
   };
 
   var HomeCtrl = function($scope) {
+    // $scope.$root.currentUser = true;
   };
 
   angular.module('worldcup.controllers', [])
-    .controller('WorldCupCtrl', ['$scope', '$location', 'ga', WorldCupCtrl])
-    .controller('MainCtrl', ['$scope', '$route', '$routeParams', '$location', 'Groups', MainCtrl])
+    .controller('MainCtrl', ['$scope', '$route', '$routeParams', '$window', '$location', 'ga', 'Groups', MainCtrl])
     .controller('HomeCtrl', ['$scope', HomeCtrl])
     .controller('GroupCtrl', ['$scope', GroupCtrl])
     .controller('SecondStageCtrl', ['$scope', SecondStageCtrl])
