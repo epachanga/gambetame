@@ -80,8 +80,6 @@
         'email,public_profile,user_friends,publish_actions', {
         success: function(user) {
           if (user.existed()) {
-            $scope.$root.currentUser = user;
-            $scope.loading = false;
             $window.location.reload();
             return;
           }
@@ -89,8 +87,6 @@
             user.set('name', me.name);
             user.set('email', me.email);
             user.save().then(function(result) {
-              $scope.$root.currentUser = result;
-              $scope.loading = false;
               $window.location.reload();
             });
           });
@@ -105,7 +101,6 @@
 
     $scope.logout = function() {
       Parse.User.logOut();
-      $scope.$root.currentUser = null;
       $window.location.reload();
     }
   };
