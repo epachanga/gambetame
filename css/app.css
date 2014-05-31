@@ -19,8 +19,6 @@ h1 {
 }
 
 #main {
-  position: relative;
-  z-index: 2;
 }
 
 #bg {
@@ -31,13 +29,15 @@ h1 {
   background-position: bottom left, bottom right;
   background-repeat: no-repeat;
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
 
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -50px;
+  position: relative;
+  z-index: 3;
 }
 .page-wrap:after {
   content: "";
@@ -52,6 +52,8 @@ h1 {
   background: rgba(187, 238, 56, 0.27) url(../img/pattern-2.png);
   line-height: 50px;
   color: #233362;
+  position: relative;
+  z-index: 1;
 }
 
 .group {
