@@ -100,7 +100,7 @@
     }
 
     $scope.logout = function() {
-      Parse.User.logOut();
+      $scope.$root.currentUser = Parse.User.logOut();
       $window.location.reload();
     }
   };
