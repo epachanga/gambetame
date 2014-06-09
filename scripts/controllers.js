@@ -22,13 +22,6 @@
       localStorage.setItem('simpleMode', $scope.$root.simpleMode);
     };
 
-    /*$scope.modeHelp = function($evt, mode) {
-      $evt.stopPropagation();
-      $evt.preventDefault();
-
-      console.log('evme', mode);
-    };*/
-
     if($scope.page != 'home' && !$scope.currentUser) {
       $location.path('/');
       return;
@@ -51,6 +44,7 @@
     $scope.viewTemplate = '/views/templates/page/' + $scope.page + '.html';
 
     if ($scope.$root.currentUser) {
+      // query user matches
       var
       UserMatches = Parse.Object.extend('UserMatches'),
       query = new Parse.Query(UserMatches);
@@ -79,13 +73,13 @@
       Parse.FacebookUtils.logIn(
         'email,public_profile,user_friends,publish_actions', {
         success: function(user) {
-          if (user.existed()) {
+          if (user.existed() && user.getEmail()) {
             $window.location.reload();
             return;
           }
           FB.api('/me', function(me) {
             user.set('name', me.name);
-            user.set('email', me.email);
+            user.setEmail(me.email);
             user.save().then(function(result) {
               $window.location.reload();
             });

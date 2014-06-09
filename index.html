@@ -17,6 +17,67 @@
 
   <div id="main" ng-class="page" ng-view></div>
 
+  <!-- How to play Modal -->
+  <div class="modal fade" id="howToPlayModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">How to play</h4>
+        </div>
+        <div class="modal-body">
+          <p>The idea of the game is to guess as many game results as possible and compete with your friends to see how has better knowledge about football.</p>
+          <h5>Game play</h5>
+          <ol>
+            <li>Login with facebook</li>
+            <li>Create a group or join a friends group<sup>*</sup></li>
+            <li>Start guessing matches results all the way to the final<sup>**</sup></li>
+            <li>Don't forget to save :)</li>
+            <li>Compare with your group friends how scored better</li>
+          </ol>
+          <small>* You can create/join more the one group.</small><br/>
+          <small>** Choose <em>Simple mode</em> if you only want to guess who the winner will be without guessing the match score.</small>
+          <br/>
+          <br/>
+          <h5>Scoring system</h5>
+          <h6>Advanced mode:</h6>
+          <ol>
+            <li>For each guessed goal you get <strong>1 point</strong></li>
+            <li>If you guessed the exact amount of goals for a team you get <strong>1 extra point</strong></li>
+            <li>If you guessed the exact match score you get <strong>1 extra point</strong></li>
+            <li>If you guessed the correct winner you get <strong>1 extra point</strong></li>
+          </ol>
+          <h6>Simple mode:</h6>
+          <ol>
+            <li>If you guessed the correct winner you get <strong>2 points</strong></li>
+          </ol>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Got it!</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Modal -->
+  <div class="modal fade" id="aboutModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">About</h4>
+        </div>
+        <div class="modal-body">
+          <p><strong>Gambeta.me</strong> is a project made out of my two biggest passions, Football in its most important global event and frontend development.</p>
+          <p>The meaning of the word <em>Gambeta</em> in spanish is a quick legs move to lose an oponent, also known as dribble.</p>
+          <p>- Abrazo de Gol.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="/scripts/parse-1.2.18.min.js"></script>
 
   <script src="/libs/jquery/dist/jquery.min.js"></script>

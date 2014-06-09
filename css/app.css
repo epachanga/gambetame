@@ -11,6 +11,12 @@ body {
   text-align: left;
   padding: 50px 0 0;
   font: 300 15px 'Open Sans', sans-serif;
+  color: #233362;
+}
+
+b,
+strong {
+  font-weight: 500;
 }
 
 h1 {
@@ -19,25 +25,15 @@ h1 {
 }
 
 #main {
-}
-
-#bg {
-  position: fixed;
-  top: 0; bottom: 0;
-  left: 0; right: 0;
   background-image: url(../img/bg-left.png), url(../img/bg-right.png);
   background-position: bottom left, bottom right;
   background-repeat: no-repeat;
-  pointer-events: none;
-  z-index: 2;
 }
 
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
   margin-bottom: -50px;
-  position: relative;
-  z-index: 3;
 }
 .page-wrap:after {
   content: "";
@@ -52,8 +48,7 @@ h1 {
   background: rgba(187, 238, 56, 0.27) url(../img/pattern-2.png);
   line-height: 50px;
   color: #233362;
-  position: relative;
-  z-index: 1;
+  font-weight: 300;
 }
 
 .group {
@@ -266,4 +261,57 @@ h3 .small,
 .table-responsive > .table > tbody > tr > td.match-info,
 .table-responsive > .table > tfoot > tr > td.match-info {
   width: 350px;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  #bg {
+    background-size: 50% auto;
+  }
+  h1 {
+    font-size: 36px;
+  }
+  h1 small,
+  .h1 small,
+  h2 small,
+  .h2 small,
+  h3 small,
+  .h3 small,
+  h1 .small,
+  .h1 .small,
+  h2 .small,
+  .h2 .small,
+  h3 .small,
+  .h3 .small {
+    font-size: 18px;
+  }
+
+  .timer-wrapper {
+    color: #233362;
+  }
+  .timer-wrapper .days-wrapper,
+  .timer-wrapper .hours-wrapper,
+  .timer-wrapper .minutes-wrapper,
+  .timer-wrapper .seconds-wrapper {
+    width: auto;
+    height: auto;
+    padding-top: 0;
+    background: transparent;
+    font-size: 14px;
+    text-shadow: none;
+  }
+  .timer-wrapper .days-wrapper:hover,
+  .timer-wrapper .hours-wrapper:hover,
+  .timer-wrapper .minutes-wrapper:hover,
+  .timer-wrapper .seconds-wrapper:hover {
+    background: transparent;
+  }
+  .timer-wrapper .days,
+  .timer-wrapper .hours,
+  .timer-wrapper .minutes,
+  .timer-wrapper .seconds {
+    font-size: 24px;
+    line-height: initial;
+  }
+
 }

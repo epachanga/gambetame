@@ -79,7 +79,6 @@ angular.module('WorldCup', [
 
       (function(d){
         // load the Facebook javascript SDK
-
         var js,
         id = 'facebook-jssdk',
         ref = d.getElementsByTagName('script')[0];
