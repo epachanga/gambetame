@@ -3,15 +3,18 @@
     <h4 id="group-{{group}}" class="col-md-12">Group {{group}}</h4>
     <group-standings class="col-md-12" group="{{group}}"></group-standings>
     <group-matches class="col-md-12" group="{{group}}"></group-matches>
+    <div class="col-md-12">
+      <a href="#" ng-click="save()" ng-class="{loader: saving}" class="btn btn-success pull-right">Save</a>
+    </div>
   </section>
   <div ng-if="group == 'all'">
     <section class="group row" ng-repeat="(group, data) in groups">
       <h4 id="group-{{group}}" class="col-md-12">Group {{group}}</h4>
       <group-standings class="col-md-12" group="{{group}}"></group-standings>
       <group-matches class="col-md-12" group="{{group}}"></group-matches>
+      <div class="col-md-12">
+        <a href="#" ng-click="save()" ng-class="{loader: saving}" class="btn btn-success pull-right">Save</a>
+      </div>
     </section>
   </div>
-  <section class="group">
-    <a ng-href="{{next}}" class="btn btn-default btn-lg pull-right">Next</a>
-  </section>
 </section>

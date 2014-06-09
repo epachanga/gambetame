@@ -2,8 +2,12 @@
   'use strict';
 
   var MainCtrl = function ($scope, $route, $routeParams, $window, $location, ga, Groups) {
+    var self = this;
+
     $scope.page = $location.path().split('/')[1] || 'home';
     $scope.loading = false;
+    $scope.disabled = true;
+    $scope.saving = false;
 
     $scope.$root.currentUser = Parse.User.current();
     $scope.$root.simpleMode = (localStorage.getItem('simpleMode') === 'true');
@@ -96,15 +100,7 @@
     $scope.logout = function() {
       $scope.$root.currentUser = Parse.User.logOut();
       $window.location.reload();
-    }
-  };
-
-  var UserCtrl = function($scope) {
-
-    var self = this;
-
-    $scope.disabled = true;
-    $scope.saving = false;
+    };
 
     $scope.save = function() {
       var
@@ -155,6 +151,8 @@
       });
     }
   };
+
+  var UserCtrl = function($scope) {};
 
   var SecondStageCtrl = function ($scope) {
     $scope.matches = _.groupBy($scope.$root.matches, 'stage');
