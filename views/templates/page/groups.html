@@ -4,7 +4,7 @@
     <group-standings class="col-md-12" group="{{group}}"></group-standings>
     <group-matches class="col-md-12" group="{{group}}"></group-matches>
     <div class="col-md-12">
-      <a href="#" ng-click="save()" ng-class="{loader: saving}" class="btn btn-success pull-right">Save</a>
+      <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
     </div>
   </section>
   <div ng-if="group == 'all'">
@@ -13,7 +13,7 @@
       <group-standings class="col-md-12" group="{{group}}"></group-standings>
       <group-matches class="col-md-12" group="{{group}}"></group-matches>
       <div class="col-md-12">
-        <a href="#" ng-click="save()" ng-class="{loader: saving}" class="btn btn-success pull-right">Save</a>
+        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
       </div>
     </section>
   </div>
