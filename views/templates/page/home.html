@@ -17,8 +17,8 @@
     </div>
   </timer>
 
-  <div class="well col-md-8 col-md-offset-2" ng-hide="currentUser">
-    <div>
+  <div class="col-md-8 col-md-offset-2">
+    <div ng-hide="currentUser">
       <p class="lead">
         Sign in to start placing your bets* with friends.<br/>
       </p>
@@ -28,11 +28,12 @@
           Sign in with Facebook
         </a>
       </p>
-      <br/><br/>
       <small><small>* Virtual bets, no real money is involved.</small></small>
     </div>
-  </div>
-  <div ng-show="currentUser">
-    <a href="/groups/a" class="btn btn-success btn-lg">Start Now</a>
+    <div ng-show="currentUser">
+      <button class="btn btn-primary btn-lg" ng-class="{loader: loading}" ng-click="openModal('Create your grouping', 'Create')">Create your grouping</button>
+      <span class="col-md-offset-1 hidden-sm hidden-xs" ng-hide="loading">OR</span>
+      <button class="btn btn-default btn-lg col-md-offset-1" ng-hide="loading" ng-click="openModal('Join a grouping', 'Join')">Join a grouping</button>
+    </div>
   </div>
 </section>

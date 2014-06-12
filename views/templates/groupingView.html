@@ -1,0 +1,27 @@
+<h3>Group {{ grouping.get('name') }}</h3>
+<div class="table-responsive">
+  <h4><i class="fa fa-user"></i> Users</h4>
+  <a class="btn btn-social btn-facebook btn-xs" ng-click="inviteFriends(grouping.id)"><i class="fa fa-facebook"></i> Invite friends</a>
+  <table class="table">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Name</th>
+        <th>Matches</th>
+        <th>Score</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(i, row) in groupingUsers">
+        <td>{{ i+1 }}</td>
+        <td>{{ row.get('user').get('name') }}</td>
+        <td><a href="/results/{{ row.get('user').id }}">View results</a></td>
+        <td>{{ row.get('score') }}</td>
+        <td>
+          <span ng-show="row.get('isAdmin')"><i class="fa fa-user"></i> Admin</span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

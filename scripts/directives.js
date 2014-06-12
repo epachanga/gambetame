@@ -40,6 +40,8 @@
         scope.data = group;
         scope.standings = group.standings;
         scope.simpleMode = $rootScope.simpleMode;
+        scope.currentDate = (new Date()).getTime();
+        scope.currentUser = scope.$root.currentUser;
 
         scope.matches = [];
         _.forEach(group.matches, function(matchId){
@@ -84,6 +86,8 @@
       },
       link: function(scope) {
         scope.simpleMode = $rootScope.simpleMode;
+        scope.currentDate = (new Date()).getTime();
+        scope.currentUser = scope.$root.currentUser;
 
         scope.selectWinner = function($evt) {
           var _scope = $($evt.target).scope();

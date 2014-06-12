@@ -42,7 +42,22 @@ angular.module('WorldCup', [
           templateUrl: '/views/layout.html',
           resolve: resolveServices
         })
-        .when('/second-stage', {
+        .when('/knockout-round', {
+          controller: 'MainCtrl',
+          templateUrl: '/views/layout.html',
+          resolve: resolveServices
+        })
+        .when('/groupings', {
+          controller: 'MainCtrl',
+          templateUrl: '/views/layout.html',
+          resolve: resolveServices
+        })
+        .when('/groupings/:id', {
+          controller: 'MainCtrl',
+          templateUrl: '/views/layout.html',
+          resolve: resolveServices
+        })
+        .when('/results/:id', {
           controller: 'MainCtrl',
           templateUrl: '/views/layout.html',
           resolve: resolveServices

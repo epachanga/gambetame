@@ -1,7 +1,31 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation" ng-include src='"/views/templates/topnav.html"'></nav>
 <div class="page-wrap container">
   <div class="row">
-    <div class="col-md-12" ng-include src="viewTemplate"></div>
+    <div class="col-md-12" ng-hide="mainLoading" ng-include src="viewTemplate"></div>
+    <div id="mainLoader" class="loader" ng-show="mainLoading"></div>
   </div>
 </div>
 <footer class="site-footer" ng-include src='"/views/templates/footer.html"'></footer>
+
+<!-- Grouping Modal -->
+<div class="modal fade col-md-12" id="groupingModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="myModalLabel">{{modalTitle}}</h3>
+      </div>
+      <div class="modal-body">
+        <form class="form-inline" role="form">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Name" ng-model="groupingName">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-sm" data-dismiss="modal" ng-hide="loading" ng-click="closeModal()">Cancel</button>
+        <button type="button" class="btn btn-success btn-lg" ng-class="{loader: loading}" ng-click="go(modalAction)">{{modalAction}}</button>
+        <p class="text-danger" ng-show="error"><strong>Oops!</strong> {{error}}</p>
+      </div>
+    </div>
+  </div>
+</div>

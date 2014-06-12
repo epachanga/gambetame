@@ -1,0 +1,30 @@
+<h3>My Groupings</h3>
+<button class="btn btn-primary" ng-class="{loader: loading}" ng-click="openModal('New grouping', 'Create')">New grouping</button>
+<button class="btn btn-default" ng-hide="loading" ng-click="openModal('Join a grouping', 'Join')">Join a grouping</button>
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="(i, row) in userGroupings">
+        <td><a href="/groupings/{{ row.get('grouping').id }}">{{ i+1 }}</a></td>
+        <td><a href="/groupings/{{ row.get('grouping').id }}">{{ row.get('grouping').get('name') }}</a></td>
+        <td>
+          <span ng-hide="row.get('isAdmin')">{{ row.get('status') | capitalize }}</span>
+          <span ng-show="row.get('isAdmin')"><i class="fa fa-user"></i> Admin</span>
+        </td>
+        <td>
+          <button class="btn btn-default btn-xs" ng-show="row.get('status') == 'invited'">Join</button>
+          <button class="btn btn-link btn-xs" ng-show="row.get('invited')">Join</button>
+          <a class="btn btn-social btn-facebook btn-xs" ng-click="inviteFriends(row.get('grouping').id)"><i class="fa fa-facebook"></i> Invite friends</a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

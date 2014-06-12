@@ -24,11 +24,11 @@ h1 {
   font-size: 48px;
 }
 
-#main {
+/*#main {
   background-image: url(../img/bg-left.png), url(../img/bg-right.png);
   background-position: bottom left, bottom right;
   background-repeat: no-repeat;
-}
+}*/
 
 .page-wrap {
   min-height: 100%;
@@ -49,6 +49,10 @@ h1 {
   line-height: 50px;
   color: #233362;
   font-weight: 300;
+}
+
+#mainLoader {
+  margin-top: 30px;
 }
 
 .group {

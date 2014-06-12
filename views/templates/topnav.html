@@ -15,7 +15,7 @@
     <ul class="nav navbar-nav navbar-left">
       <li><a href="#" data-toggle="modal" data-target="#aboutModal">About</a></li>
       <li><a href="#" data-toggle="modal" data-target="#howToPlayModal">How to play</a></li>
-      <li ng-class="page == 'groups' ? 'active' : ''" class="dropdown" ng-show="currentUser">
+      <li ng-class="page == 'groups' ? 'active' : ''" class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Groups <b class="caret"></b></a>
         <ul class="dropdown-menu">
           <li><a href="/groups/a">Group A</a></li>
@@ -30,20 +30,23 @@
           <li><a href="/groups/all">All Groups</a></li>
         </ul>
       </li>
-      <li ng-class="page == 'second-stage' ? 'active' : ''" ng-show="currentUser"><a href="/second-stage">Second Stage</a></li>
+      <li ng-class="page == 'knockout-round' ? 'active' : ''"><a href="/knockout-round">Knockout Round</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-controller="UserCtrl">
-      <li ng-show="currentUser"><button type="button" ng-class="{loader: saving}" class="btn btn-success navbar-btn" ng-disabled="disabled" ng-click="save()">Save</button></li>
+      <li><a class="fb-share-button" data-href="http://gambeta.me/" data-type="icon_link"></a></li>
       <li class="dropdown" ng-show="currentUser">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-cogs fa-lg"></i></a>
         <ul class="dropdown-menu">
           <li ng-show="simpleMode"><a href="#" ng-click="switchMode()">Switch to advanced mode</a></li>
           <li ng-hide="simpleMode"><a href="#" ng-click="switchMode()">Switch to simple mode</a></li>
-          <li class="divider" ng-show="currentUser"></li>
-          <li class="dropdown-header" ng-show="currentUser">{{currentUser.get('name')}}</li>
-          <li ng-show="currentUser"><a href="#" ng-click="logout()">Logout</a></li>
+          <li class="divider"></li>
+          <li class="dropdown-header"><i class="fa fa-user"></i> {{currentUser.get('name')}}</li>
+          <li><a href="/groupings">My groupings</a></li>
+          <li class="divider"></li>
+          <li><a href="#" ng-click="logout()"><i class="fa fa-sign-out"></i> Signout</a></li>
         </ul>
       </li>
+      <li ng-hide="currentUser || page == 'home'"><a href="#" ng-click="login()" ng-class="{loader: loading}"><i class="fa fa-facebook"></i> Sign in with Facebook</a></li>
     </ul>
   </div><!-- /.navbar-collapse -->
 </div><!-- /.container-fluid -->
