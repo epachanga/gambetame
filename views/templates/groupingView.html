@@ -1,7 +1,8 @@
 <h3>Group {{ grouping.get('name') }}</h3>
 <div class="table-responsive">
+  <a class="btn btn-social btn-facebook btn-xs" ng-click="inviteFriends(grouping.id)" ng-hide="userInvited"><i class="fa fa-facebook"></i> Invite friends</a>
+  <button class="btn btn-default" ng-click="joinGrouping(grouping)" ng-show="userInvited">Join</button>
   <h4><i class="fa fa-user"></i> Users</h4>
-  <a class="btn btn-social btn-facebook btn-xs" ng-click="inviteFriends(grouping.id)"><i class="fa fa-facebook"></i> Invite friends</a>
   <table class="table">
     <thead>
       <tr>

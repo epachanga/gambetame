@@ -4,6 +4,10 @@
   var MainCtrl = function ($scope, $route, $routeParams, $window, $location, ga, Groups) {
     var self = this;
 
+    if ($location.search().request_ids) {
+      $window.location.href = '/groupings';
+    }
+
     $scope.page = $location.path().split('/')[1] || 'home';
     $scope.loading = false;
     $scope.mainLoading = true;
@@ -215,27 +219,48 @@
             $scope.$apply();
             return;
           }
-          var
-          UserGroupings = Parse.Object.extend('UserGroupings'),
-          UserGrouping = new UserGroupings();
-
-          UserGrouping.set('user', $scope.$root.currentUser);
-          UserGrouping.set('grouping', result[0]);
-          UserGrouping.set('isAdmin', false);
-          UserGrouping.set('status', 'joined');
-          UserGrouping.save().then(function() {
-            $window.location.href = '/groupings/' + result[0].id;
-            return;
-          });
+          $scope.joinGrouping(result[0]);
         }
       });
     };
 
+    $scope.joinGrouping = function(grouping) {
+      var
+      UserGroupings = Parse.Object.extend('UserGroupings'),
+      UserGrouping = new UserGroupings();
+
+      UserGrouping.set('user', $scope.$root.currentUser);
+      UserGrouping.set('grouping', grouping);
+      UserGrouping.set('isAdmin', false);
+      UserGrouping.set('status', 'joined');
+      UserGrouping.save().then(function() {
+        $window.location.href = '/groupings/' + grouping.id;
+        return;
+      });
+    };
+
     $scope.inviteFriends = function(groupId) {
-      FB.ui({method: 'apprequests',
-        message: 'Come guess the world cup scores with me.'
-      }, function(result) {
-        console.log('evme', result);
+      var
+      Groupings = Parse.Object.extend('Groupings'),
+      query = new Parse.Query(Groupings);
+
+      query.equalTo('objectId', groupId);
+      query.find().then(function(result){
+        if (result.length) {
+          FB.ui({method: 'apprequests',
+            message: 'Come guess the world cup scores with me.'
+          }, function(requestResult) {
+            var InviteRequests = Parse.Object.extend('InviteRequests');
+            _.forEach(requestResult.to, function(invitedUser) {
+              var InviteRequest = new InviteRequests();
+
+              InviteRequest.set('requestId', requestResult.request);
+              InviteRequest.set('invitee', invitedUser);
+              InviteRequest.set('grouping', result[0]);
+              InviteRequest.save().then(function(){});
+            });
+          });
+        }
       });
     };
 
@@ -303,8 +328,26 @@
       query.include('grouping');
       query.find().then(function(results){
         $scope.userGroupings = results;
-        $scope.loaded();
-        $scope.$apply();
+
+        var
+        InviteRequests = Parse.Object.extend('InviteRequests'),
+        query = new Parse.Query('InviteRequests');
+
+        query.equalTo('invitee', $scope.$root.currentUser.get('authData').facebook.id);
+        query.include('grouping');
+        query.find().then(function(results) {
+          $scope.invitedGroups = [];
+          _.forEach(results, function(invitedGroup) {
+            var joined = _.find($scope.userGroupings, function(userGroup){
+              return invitedGroup.get('grouping').id == userGroup.get('grouping').id;
+            });
+            if (!joined) {
+              $scope.invitedGroups.push(invitedGroup);
+            }
+          });
+          $scope.loaded();
+          $scope.$apply();
+        });
       });
     } else {
       var
@@ -325,6 +368,14 @@
           query.include('user');
           query.find().then(function(results) {
             $scope.groupingUsers = results;
+
+            $scope.userInvited = false;
+            if (!_.find($scope.groupingUsers, function(groupUser){
+              return groupUser.get('user').id == $scope.$root.currentUser.id;
+            })) {
+              $scope.userInvited = true;
+            }
+
             $scope.loaded();
             $scope.$apply();
           });
