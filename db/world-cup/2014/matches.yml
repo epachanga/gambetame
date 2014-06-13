@@ -6,11 +6,11 @@
   teams:
     home:
       team: bra
-      goals:
+      goals: 3
       penalty:
     away:
       team: cro
-      goals:
+      goals: 1
       penalty:
 
 -
