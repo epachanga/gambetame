@@ -306,8 +306,8 @@
   };
 
   var HomeCtrl = function($scope, $window) {
-    var firstMatch = _.find($scope.$root.matches, {id: 1});
-    $scope.startTime = firstMatch.date.getTime();
+    var lastMatch = _.find($scope.$root.matches, {id: 64});
+    $scope.endTime = lastMatch.date.getTime();
 
     $scope.loaded();
   };

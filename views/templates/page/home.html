@@ -1,6 +1,6 @@
 <section rel="home" ng-controller="HomeCtrl">
   <h1>Gambeta.me<br/><small>Let your friends see how much you know about the worldcup.</small></h1>
-  <timer end-time="startTime">
+  <timer end-time="endTime">
     <div class="timer-wrapper">
       <div class="days-wrapper">
         <div class="days">{{days}}</div>day{{daysS}}
@@ -31,9 +31,7 @@
       <small><small>* Virtual bets, no real money is involved.</small></small>
     </div>
     <div ng-show="currentUser">
-      <button class="btn btn-primary btn-lg" ng-class="{loader: loading}" ng-click="openModal('Create your grouping', 'Create')">Create your grouping</button>
-      <span class="col-md-offset-1 hidden-sm hidden-xs" ng-hide="loading">OR</span>
-      <button class="btn btn-default btn-lg col-md-offset-1" ng-hide="loading" ng-click="openModal('Join a grouping', 'Join')">Join a grouping</button>
+      <a href="/groupings" class="btn btn-default btn-lg">My Groupings</a>
     </div>
   </div>
 </section>
