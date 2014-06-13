@@ -21,11 +21,11 @@
   teams:
     home:
       team: mex
-      goals:
+      goals: 1
       penalty:
     away:
       team: cmr
-      goals:
+      goals: 0
       penalty:
 
 -
@@ -36,11 +36,11 @@
   teams:
     home:
       team: esp
-      goals:
+      goals: 1
       penalty:
     away:
       team: ned
-      goals:
+      goals: 5
       penalty:
 
 -
