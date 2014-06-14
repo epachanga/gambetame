@@ -51,11 +51,11 @@
   teams:
     home:
       team: chi
-      goals:
+      goals: 3
       penalty:
     away:
       team: aus
-      goals:
+      goals: 1
       penalty:
 
 -
