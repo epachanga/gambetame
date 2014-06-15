@@ -280,6 +280,14 @@
                 scope.rel = match.teams.home.team;
               } else if (match.teams.home.goals < match.teams.away.goals) {
                 scope.rel = match.teams.away.team;
+              } else if (match.teams.home.goals >= 0
+                    && match.teams.away.goals >= 0
+                    && match.teams.home.goals == match.teams.away.goals) {
+                if (match.teams.home.penalty) {
+                  scope.rel = match.teams.home.team;
+                } else if (match.teams.away.penalty) {
+                  scope.rel = match.teams.away.team;
+                }
               }
             }
             if (result == 'L') {
@@ -287,6 +295,14 @@
                 scope.rel = match.teams.home.team;
               } else if (match.teams.home.goals > match.teams.away.goals) {
                 scope.rel = match.teams.away.team;
+              } else if (match.teams.home.goals >= 0
+                    && match.teams.away.goals >= 0
+                    && match.teams.home.goals == match.teams.away.goals) {
+                if (match.teams.home.penalty) {
+                  scope.rel = match.teams.home.team;
+                } else if (match.teams.away.penalty) {
+                  scope.rel = match.teams.away.team;
+                }
               }
             }
           }
