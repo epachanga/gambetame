@@ -210,101 +210,69 @@
             matchId = parseInt(matches[2]),
             result = matches[1],
             match = _.find($rootScope.matches, {id: matchId});
+            console.log('evme', 1);
 
             scope.match = match;
 
             scope.$watch('match', function(newVal, oldVal){
-              if (!_.isEqual(newVal, oldVal)) {
-                if (!_.isNull(newVal.teams.home.goals)
-                                        && !_.isNull(newVal.teams.away.goals)
-                                        && !/\[/.test(newVal.teams.home.team)
-                                        && !/\[/.test(newVal.teams.away.team)) {
-                  if (result == 'W') {
-                    if (match.teams.home.goals > match.teams.away.goals) {
+              if (!_.isNull(newVal.teams.home.goals)
+                                      && !_.isNull(newVal.teams.away.goals)
+                                      && !/\[/.test(newVal.teams.home.team)
+                                      && !/\[/.test(newVal.teams.away.team)) {
+                if (result == 'W') {
+                  if (match.teams.home.goals > match.teams.away.goals) {
+                    scope.rel = match.teams.home.team;
+                  } else if (match.teams.home.goals < match.teams.away.goals) {
+                    scope.rel = match.teams.away.team;
+                  } else if (match.teams.home.goals >= 0
+                        && match.teams.away.goals >= 0
+                        && match.teams.home.goals == match.teams.away.goals) {
+                    if (match.teams.home.penalty) {
                       scope.rel = match.teams.home.team;
-                    } else if (match.teams.home.goals < match.teams.away.goals) {
+                    } else if (match.teams.away.penalty) {
                       scope.rel = match.teams.away.team;
-                    } else if (match.teams.home.goals >= 0
-                          && match.teams.away.goals >= 0
-                          && match.teams.home.goals == match.teams.away.goals) {
-                      if (match.teams.home.penalty) {
-                        scope.rel = match.teams.home.team;
-                      } else if (match.teams.away.penalty) {
-                        scope.rel = match.teams.away.team;
-                      } else {
-                        scope.name = matches[0];
-                        scope.flag = false;
-                        return;
-                      }
                     } else {
                       scope.name = matches[0];
                       scope.flag = false;
                       return;
                     }
+                  } else {
+                    scope.name = matches[0];
+                    scope.flag = false;
+                    return;
                   }
-                  if (result == 'L') {
-                    if (match.teams.home.goals < match.teams.away.goals) {
-                      scope.rel = match.teams.home.team;
-                    } else if (match.teams.home.goals > match.teams.away.goals) {
-                      scope.rel = match.teams.away.team;
-                    } else if (match.teams.home.goals >= 0
-                          && match.teams.away.goals >= 0
-                          && match.teams.home.goals == match.teams.away.goals) {
-                      if (match.teams.home.penalty) {
-                        scope.rel = match.teams.home.team;
-                      } else if (match.teams.away.penalty) {
-                        scope.rel = match.teams.away.team;
-                      } else {
-                        scope.name = matches[0];
-                        scope.flag = false;
-                        return;
-                      }
-                    } else {
-                      scope.name = matches[0];
-                      scope.flag = false;
-                      return;
-                    }
-                  }
-                  scope.name = $rootScope.teams[scope.rel].name;
-                  scope.flag = $rootScope.teams[scope.rel].flag;
-                } else {
-                  scope.name = matches[0];
-                  scope.flag = false;
-                  return;
                 }
+                if (result == 'L') {
+                  if (match.teams.home.goals < match.teams.away.goals) {
+                    scope.rel = match.teams.home.team;
+                  } else if (match.teams.home.goals > match.teams.away.goals) {
+                    scope.rel = match.teams.away.team;
+                  } else if (match.teams.home.goals >= 0
+                        && match.teams.away.goals >= 0
+                        && match.teams.home.goals == match.teams.away.goals) {
+                    if (match.teams.home.penalty) {
+                      scope.rel = match.teams.away.team;
+                    } else if (match.teams.away.penalty) {
+                      scope.rel = match.teams.home.team;
+                    } else {
+                      scope.name = matches[0];
+                      scope.flag = false;
+                      return;
+                    }
+                  } else {
+                    scope.name = matches[0];
+                    scope.flag = false;
+                    return;
+                  }
+                }
+                scope.name = $rootScope.teams[scope.rel].name;
+                scope.flag = $rootScope.teams[scope.rel].flag;
+              } else {
+                scope.name = matches[0];
+                scope.flag = false;
+                return;
               }
             }, true);
-
-            if (result == 'W') {
-              if (match.teams.home.goals > match.teams.away.goals) {
-                scope.rel = match.teams.home.team;
-              } else if (match.teams.home.goals < match.teams.away.goals) {
-                scope.rel = match.teams.away.team;
-              } else if (match.teams.home.goals >= 0
-                    && match.teams.away.goals >= 0
-                    && match.teams.home.goals == match.teams.away.goals) {
-                if (match.teams.home.penalty) {
-                  scope.rel = match.teams.home.team;
-                } else if (match.teams.away.penalty) {
-                  scope.rel = match.teams.away.team;
-                }
-              }
-            }
-            if (result == 'L') {
-              if (match.teams.home.goals < match.teams.away.goals) {
-                scope.rel = match.teams.home.team;
-              } else if (match.teams.home.goals > match.teams.away.goals) {
-                scope.rel = match.teams.away.team;
-              } else if (match.teams.home.goals >= 0
-                    && match.teams.away.goals >= 0
-                    && match.teams.home.goals == match.teams.away.goals) {
-                if (match.teams.home.penalty) {
-                  scope.rel = match.teams.home.team;
-                } else if (match.teams.away.penalty) {
-                  scope.rel = match.teams.away.team;
-                }
-              }
-            }
           }
         }
 
