@@ -8,8 +8,8 @@ angular.module('WorldCup', [
   'ngResource',
   'ngRoute'
 ])
-.value('PARSE_APP_ID', '7mghYoIjQPCwTEQ8xL43HY4EU7ixDzh4Rk1hEh9P')
-.value('PARSE_CLIENT_KEY', 'StBqBqmPL4XsMblXf3HAbzLTm17roPoSIs4aOYWm')
+.value('PARSE_APP_ID', 'YIoLJmYUmCX2dfAib5PVXJVSCnchYtA29iPFRHDb')
+.value('PARSE_CLIENT_KEY', 'fHEKQzjSPjiMTbLOGJahWA0VNuwU5CrwvtQPvM0R')
 .value('FB_APP_ID', '1435795020006139')
 .config(
   ['$routeProvider', '$locationProvider',
