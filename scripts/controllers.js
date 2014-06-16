@@ -21,7 +21,7 @@
 
     $scope.$root.currentUser = Parse.User.current();
     $scope.$root.simpleMode = (localStorage.getItem('simpleMode') === 'true');
-    $scope.$root.matches = $route.current.locals.MatchesData;
+    $scope.$root.matches = _.sortBy($route.current.locals.MatchesData, 'date');
     $scope.$root.teams = $route.current.locals.TeamsData;
     $scope.$root.grounds = $route.current.locals.GroundsData;
     $scope.$root.groups = $route.current.locals.GroupsData;
@@ -306,8 +306,18 @@
   };
 
   var HomeCtrl = function($scope, $window) {
-    var lastMatch = _.find($scope.$root.matches, {id: 64});
-    $scope.endTime = lastMatch.date.getTime();
+    $scope.nextMatches = [];
+    $scope.currentDate = (new Date()).getTime();
+
+    var nextMatchIndex = _.findIndex($scope.$root.matches, function(match) {
+      return match.date.getTime() > $scope.currentDate;
+    });
+
+    var nextMatch = $scope.$root.matches[nextMatchIndex];
+    $scope.nextMatches.push(nextMatch);
+    while ($scope.$root.matches[nextMatchIndex++] && $scope.$root.matches[nextMatchIndex].date.getTime() == nextMatch.date.getTime()) {
+      $scope.nextMatches.push($scope.$root.matches[nextMatchIndex]);
+    }
 
     $scope.loaded();
   };
@@ -369,12 +379,20 @@
           query.find().then(function(results) {
             $scope.groupingUsers = results;
 
-            $scope.userInvited = false;
-            if (!_.find($scope.groupingUsers, function(groupUser){
+            $scope.userJoined = false;
+            if (_.find($scope.groupingUsers, function(groupUser){
               return groupUser.get('user').id == $scope.$root.currentUser.id;
             })) {
-              $scope.userInvited = true;
+              $scope.userJoined = true;
             }
+
+            var joinedUsers = [];
+            _.forEach($scope.groupingUsers, function(groupUser) {
+              groupUser.get('user').fetch().then(function(user) {
+                debugger;
+                // console.log('evme', user.get('authData').facebook.id);
+              });
+            });
 
             $scope.loaded();
             $scope.$apply();

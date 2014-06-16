@@ -19,10 +19,18 @@ strong {
   font-weight: 500;
 }
 
-h1 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 300;
+}
+h1 {
   font-size: 48px;
 }
+
 
 /*#main {
   background-image: url(../img/bg-left.png), url(../img/bg-right.png);
@@ -86,53 +94,21 @@ input.score[readonly] {
 }
 
 section[rel="home"] {
+  margin-bottom: 50px;
+}
+section[rel="home"] h1 {
   text-align: center;
-}
-
-.timer-wrapper {
-  text-shadow: 0 1px 5px rgba(0,0,0,.1);
-  color: #fff;
-  margin: 50px 0;
-}
-
-.timer-wrapper .days-wrapper,
-.timer-wrapper .hours-wrapper,
-.timer-wrapper .minutes-wrapper,
-.timer-wrapper .seconds-wrapper {
-  display: inline-block;
-  width: 140px;
-  height: 140px;
-  margin: 0 10px;
-  padding-top: 20px;
-  background: #2d2d2d; /* browsers that don't support rgba */
-  background: rgba(45,45,45,.7);
-  font-size: 16px;
-  -moz-border-radius: 80px;
-  -webkit-border-radius: 80px;
-  border-radius: 80px;
-  cursor: default;
-}
-
-.timer-wrapper .days-wrapper:hover,
-.timer-wrapper .hours-wrapper:hover,
-.timer-wrapper .minutes-wrapper:hover,
-.timer-wrapper .seconds-wrapper:hover {
-  background: #3b982a url(../img/pattern-2.png);
-  text-shadow: none;
-}
-
-.timer-wrapper .days,
-.timer-wrapper .hours,
-.timer-wrapper .minutes,
-.timer-wrapper .seconds {
-  font-size: 60px;
-  line-height: 70px;
 }
 
 .match-id {
   font-size: 28px;
   font-weight: 300;
   width: 60px;
+}
+.match-info time,
+.match-info venue,
+.match-info timer {
+  white-space: nowrap;
 }
 
 team {
@@ -211,7 +187,15 @@ team.away img {
   }
 }
 
-
+/**
+ * Helpers
+ */
+.alignCenter {
+  text-align: center;
+}
+.nowrap {
+  white-space: nowrap;
+}
 
 /**
  * Bootstrap overwrite
@@ -257,14 +241,6 @@ h3 .small,
 .table-responsive > .table > tfoot > tr > td.match-result {
   width: 110px;
   white-space: nowrap;
-}
-.table-responsive > .table > thead > tr > th.match-info,
-.table-responsive > .table > tbody > tr > th.match-info,
-.table-responsive > .table > tfoot > tr > th.match-info,
-.table-responsive > .table > thead > tr > td.match-info,
-.table-responsive > .table > tbody > tr > td.match-info,
-.table-responsive > .table > tfoot > tr > td.match-info {
-  width: 350px;
 }
 
 /* Smartphones (portrait and landscape) ----------- */
