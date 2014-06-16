@@ -85,7 +85,7 @@
       penalty:
     away:
       team: jpn
-      goals: 0
+      goals: 1
       penalty:
 
 -
@@ -126,11 +126,11 @@
   teams:
     home:
       team: sui
-      goals:
+      goals: 2
       penalty:
     away:
       team: ecu
-      goals:
+      goals: 1
       penalty:
 
 -
@@ -141,11 +141,11 @@
   teams:
     home:
       team: fra
-      goals:
+      goals: 3
       penalty:
     away:
       team: hon
-      goals:
+      goals: 0
       penalty:
 
 -
@@ -156,11 +156,11 @@
   teams:
     home:
       team: arg
-      goals:
+      goals: 2
       penalty:
     away:
       team: bih
-      goals:
+      goals: 1
       penalty:
 
 -
