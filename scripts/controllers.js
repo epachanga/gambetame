@@ -100,6 +100,7 @@
     };
 
     $scope.logout = function() {
+      $scope.mainLoading = true;
       $scope.$root.currentUser = Parse.User.logOut();
       $window.location.href = '/';
     };
