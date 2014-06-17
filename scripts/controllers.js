@@ -322,6 +322,10 @@
     while ($scope.$root.matches[nextMatchIndex++] && $scope.$root.matches[nextMatchIndex].date.getTime() == nextMatch.date.getTime()) {
       $scope.nextMatches.push($scope.$root.matches[nextMatchIndex]);
     }
+    var addMatches = $scope.nextMatches.length;
+    for (var i=0; i<addMatches; i++) {
+      $scope.nextMatches.push($scope.$root.matches[nextMatchIndex++]);
+    }
 
     $scope.loaded();
   };
