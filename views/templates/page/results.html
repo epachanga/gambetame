@@ -4,8 +4,8 @@
     <section class="group row" ng-repeat="(group, data) in groups">
       <h4 id="group-{{group}}" class="col-md-12">Group {{group}}</h4>
       <group-standings class="col-md-12" group="{{group}}"></group-standings>
-      <group-matches class="col-md-12" group="{{group}}"></group-matches>
-      <div class="col-md-12">
+      <group-matches class="col-md-12" group="{{group}}" viewMode="viewMode"></group-matches>
+      <div class="col-md-12" ng-hide="viewMode">
         <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
       </div>
     </section>
@@ -14,36 +14,36 @@
     <section class="stage row">
       <h3 class="col-md-12">Round of 16</h3>
       <section class="col-md-12">
-        <matches-list matches="Roundof16"></matches-list>
-        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
+        <matches-list matches="Roundof16" viewMode="viewMode"></matches-list>
+        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()" ng-hide="viewMode">Save</button>
       </section>
     </section>
     <section class="stage row">
       <h3 class="col-md-12">Quarter Finals</h3>
       <section class="col-md-12">
-        <matches-list matches="QuarterFinals"></matches-list>
-        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
+        <matches-list matches="QuarterFinals" viewMode="viewMode"></matches-list>
+        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()" ng-hide="viewMode">Save</button>
       </section>
     </section>
     <section class="stage row">
       <h3 class="col-md-12">Semi Finals</h3>
       <section class="col-md-12">
-        <matches-list matches="SemiFinals"></matches-list>
-        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
+        <matches-list matches="SemiFinals" viewMode="viewMode"></matches-list>
+        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()" ng-hide="viewMode">Save</button>
       </section>
     </section>
     <section class="stage row">
       <h3 class="col-md-12">Play-off For Third Place</h3>
       <section class="col-md-12">
-        <matches-list matches="PlayoffForThirdPlace"></matches-list>
-        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
+        <matches-list matches="PlayoffForThirdPlace" viewMode="viewMode"></matches-list>
+        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()" ng-hide="viewMode">Save</button>
       </section>
     </section>
     <section class="stage row">
       <h3 class="col-md-12">Final</h3>
       <section class="col-md-12">
-        <matches-list matches="Final"></matches-list>
-        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
+        <matches-list matches="Final" viewMode="viewMode"></matches-list>
+        <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()" ng-hide="viewMode">Save</button>
       </section>
     </section>
   </section>

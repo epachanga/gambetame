@@ -40,6 +40,7 @@
         scope.data = group;
         scope.standings = group.standings;
         scope.simpleMode = $rootScope.simpleMode;
+        scope.viewMode = $rootScope.viewMode;
         scope.currentDate = (new Date()).getTime();
         scope.currentUser = scope.$root.currentUser;
 
@@ -67,6 +68,15 @@
           }
         );
 
+        scope.$watch(
+          function() { return $rootScope.viewMode },
+          function(newVal, oldVal) {
+            if (newVal != oldVal) {
+              scope.viewMode = newVal;
+            }
+          }
+        );
+
         scope.$watch('matches', function(newVal, oldVal){
           if (!_.isEqual(newVal, oldVal)) {
             $rootScope.buildStandings(scope.group);
@@ -86,6 +96,7 @@
       },
       link: function(scope) {
         scope.simpleMode = $rootScope.simpleMode;
+        scope.viewMode = $rootScope.viewMode;
         scope.currentDate = (new Date()).getTime();
         scope.currentUser = scope.$root.currentUser;
 
@@ -128,6 +139,15 @@
           function(newVal, oldVal) {
             if (newVal != oldVal) {
               scope.simpleMode = newVal;
+            }
+          }
+        );
+
+        scope.$watch(
+          function() { return $rootScope.viewMode },
+          function(newVal, oldVal) {
+            if (newVal != oldVal) {
+              scope.viewMode = newVal;
             }
           }
         );
@@ -210,7 +230,6 @@
             matchId = parseInt(matches[2]),
             result = matches[1],
             match = _.find($rootScope.matches, {id: matchId});
-            console.log('evme', 1);
 
             scope.match = match;
 

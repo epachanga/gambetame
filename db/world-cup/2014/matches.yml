@@ -171,11 +171,11 @@
   teams:
     home:
       team: irn
-      goals:
+      goals: 0
       penalty:
     away:
       team: nga
-      goals:
+      goals: 0
       penalty:
 
 -
@@ -186,11 +186,11 @@
   teams:
     home:
       team: ger
-      goals:
+      goals: 4
       penalty:
     away:
       team: por
-      goals:
+      goals: 0
       penalty:
 
 -
@@ -201,11 +201,11 @@
   teams:
     home:
       team: gha
-      goals:
+      goals: 1
       penalty:
     away:
       team: usa
-      goals:
+      goals: 2
       penalty:
 
 -

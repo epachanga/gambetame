@@ -119,7 +119,10 @@
             userMatches = result[0];
           } else {
             userMatches = new UserMatches();
-            userMatches.setACL(new Parse.ACL($scope.$root.currentUser));
+            var UserMatchesACL = new Parse.ACL($scope.$root.currentUser);
+
+            UserMatchesACL.setPublicReadAccess(true);
+            userMatches.setACL(UserMatchesACL);
             userMatches.set('userId', $scope.$root.currentUser.id);
           }
           self.saveMatches(userMatches);
@@ -415,10 +418,11 @@
       return;
     }
 
+    $scope.mainLoading = true;
+
     var
     UserMatches = Parse.Object.extend('UserMatches'),
     query = new Parse.Query(UserMatches);
-
     query.equalTo('userId', userId);
     query.find().then(function(result){
       if (result.length) {
@@ -434,6 +438,7 @@
           $scope.$root.buildStandings(group);
         });
 
+        $scope.$root.viewMode = true;
         $scope.loaded();
         $scope.$apply();
       }
