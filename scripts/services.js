@@ -39,6 +39,22 @@
     $http.get('/db/world-cup/2014/groups.yml')
       .success(function(data) {
         self.data = jsyaml.load(data);
+        _.forEach(self.data, function(data, group) {
+          self.data[group].standings = [];
+          _.forEach(_.values(self.data[group].teams), function(team, i){
+            self.data[group].standings.push({
+              name: team,
+              priority: i+1,
+              mp: '-',
+              w: '-',
+              d: '-',
+              l: '-',
+              gf: '-',
+              ga: '-',
+              pts: '-'
+            });
+          });
+        });
         defer.resolve(self.data);
       });
 

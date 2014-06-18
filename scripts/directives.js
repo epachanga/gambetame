@@ -153,7 +153,7 @@
         );
 
         scope.$watch('matches', function(newVal, oldVal){
-          if (!_.isEqual(newVal, oldVal)) {
+          if (!_.isEqual(newVal, oldVal) && !_.isUndefined(newVal) && !_.isUndefined(oldVal)) {
             _.forEach(newVal, function(v, k){
               delete v.$$hashKey;
               if (!_.isEqual(v, oldVal[k])) {

@@ -21,7 +21,7 @@
 
     $scope.$root.currentUser = Parse.User.current();
     $scope.$root.simpleMode = (localStorage.getItem('simpleMode') === 'true');
-    $scope.$root.matches = _.sortBy($route.current.locals.MatchesData, 'date');
+    $scope.$root.matches = angular.copy(_.sortBy($route.current.locals.MatchesData, 'date'));
     $scope.$root.teams = $route.current.locals.TeamsData;
     $scope.$root.grounds = $route.current.locals.GroundsData;
     $scope.$root.groups = $route.current.locals.GroupsData;
@@ -37,6 +37,7 @@
       UserMatches = Parse.Object.extend('UserMatches'),
       query = new Parse.Query(UserMatches);
 
+      query.include('user');
       query.equalTo('userId', $scope.$root.currentUser.id);
       query.find().then(function(result){
         if (result.length) {
@@ -114,6 +115,7 @@
       $scope.saving = true;
       if (!$scope.$root.userMatches) {
         query.equalTo('userId', $scope.$root.currentUser.id);
+        query.include('user');
         query.find().then(function(result){
           if (result.length) {
             userMatches = result[0];
@@ -124,6 +126,7 @@
             UserMatchesACL.setPublicReadAccess(true);
             userMatches.setACL(UserMatchesACL);
             userMatches.set('userId', $scope.$root.currentUser.id);
+            userMatches.set('user', $scope.$root.currentUser);
           }
           self.saveMatches(userMatches);
         });
@@ -301,11 +304,20 @@
     _.forEach($scope.matches, function(matches, stage) {
       $scope[stage.replace(/[\s-]/g, '')] = matches;
     });
+
     $scope.loaded();
   };
 
   var GroupCtrl = function($scope) {
     $scope.group = $scope.routeParams.group;
+    if (!$scope.group || $scope.group == 'all') {
+      _.forEach($scope.$root.groups, function(data, group) {
+        $scope.$root.buildStandings(group);
+      });
+    } else {
+      $scope.$root.buildStandings($scope.group);
+    }
+
     $scope.loaded();
   };
 
@@ -409,6 +421,8 @@
   var ResultsCtrl = function($scope) {
     var userId = $scope.routeParams.id;
 
+    $scope.$root.viewMode = false;
+
     if ($scope.$root.currentUser.id == userId) {
       $scope.loaded();
       return;
@@ -420,6 +434,7 @@
     UserMatches = Parse.Object.extend('UserMatches'),
     query = new Parse.Query(UserMatches);
     query.equalTo('userId', userId);
+    query.include('user', userId);
     query.find().then(function(result){
       if (result.length) {
         var matches = JSON.parse(result[0].get('matches'));
@@ -434,7 +449,17 @@
           $scope.$root.buildStandings(group);
         });
 
+        var matches = _.groupBy($scope.$root.matches, 'stage');
+        _.forEach(matches, function(matches, stage) {
+          $scope[stage.replace(/[\s-]/g, '')] = matches;
+        });
+
         $scope.$root.viewMode = true;
+        $scope.user = result[0].get('user');
+        $scope.loaded();
+        $scope.$apply();
+      } else {
+        $scope.error = "User has not entered any results";
         $scope.loaded();
         $scope.$apply();
       }

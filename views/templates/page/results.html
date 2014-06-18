@@ -1,5 +1,8 @@
 <section rel="user-results" ng-controller="ResultsCtrl">
-  <section rel="groups" ng-controller="GroupCtrl">
+  <div class="alert alert-info" ng-show="user">
+    <strong>Heads Up!</strong> You are viewing <em>{{ user.get('name') }}</em>'s results.
+  </div>
+  <section rel="groups">
     <div class="row"><h3 class="col-md-12">Groups Round</h3></div>
     <section class="group row" ng-repeat="(group, data) in groups">
       <h4 id="group-{{group}}" class="col-md-12">Group {{group}}</h4>
@@ -10,7 +13,7 @@
       </div>
     </section>
   </section>
-  <section rel="knockout-round" ng-controller="KnockoutRoundCtrl">
+  <section rel="knockout-round">
     <section class="stage row">
       <h3 class="col-md-12">Round of 16</h3>
       <section class="col-md-12">
