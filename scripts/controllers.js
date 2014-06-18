@@ -394,14 +394,6 @@
               $scope.userJoined = true;
             }
 
-            var joinedUsers = [];
-            _.forEach($scope.groupingUsers, function(groupUser) {
-              groupUser.get('user').fetch().then(function(user) {
-                debugger;
-                // console.log('evme', user.get('authData').facebook.id);
-              });
-            });
-
             $scope.loaded();
             $scope.$apply();
           });

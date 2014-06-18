@@ -12,9 +12,7 @@
         defer.resolve(data);
       });
 
-    return {
-      promise: defer.promise
-    }
+    this.promise = defer.promise;
   };
 
   var Teams = function($http, $q) {
@@ -28,9 +26,7 @@
         defer.resolve(data);
       });
 
-    return {
-      promise: defer.promise
-    }
+    this.promise = defer.promise;
   };
 
   var Groups = function($rootScope, $http, $q) {
@@ -46,7 +42,9 @@
         defer.resolve(self.data);
       });
 
-    var buildStandings = function buildStandings(group) {
+    this.promise = defer.promise;
+
+    this.buildStandings = function buildStandings(group) {
       var standings = [];
       _.forEach(_.values(self.data[group].teams), function(team, i){
         standings.push({
@@ -126,11 +124,6 @@
       });
       self.data[group].standings = standings;
     };
-
-    return {
-      promise: defer.promise,
-      buildStandings: buildStandings
-    }
   };
 
   var Matches = function($http, $q) {
@@ -144,14 +137,12 @@
         defer.resolve(data);
       });
 
-    return {
-      promise: defer.promise
-    }
+    this.promise = defer.promise;
   };
 
   var Utils = function() {
 
-    var orderStandings = function(standings) {
+    this.orderStandings = function(standings) {
       return standings.sort(function(a, b) {
         var
         apts = a.pts === '-' ? -1 : a.pts,
@@ -172,10 +163,6 @@
         }
       });
     };
-
-    return {
-      orderStandings: orderStandings
-    }
 
   };
 
