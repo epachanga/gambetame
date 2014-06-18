@@ -6,7 +6,6 @@
     <div class="row"><h3 class="col-md-12">Groups Round</h3></div>
     <section class="group row" ng-repeat="(group, data) in groups">
       <h4 id="group-{{group}}" class="col-md-12">Group {{group}}</h4>
-      <group-standings class="col-md-12" group="{{group}}"></group-standings>
       <group-matches class="col-md-12" group="{{group}}" viewMode="viewMode"></group-matches>
       <div class="col-md-12" ng-hide="viewMode">
         <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
