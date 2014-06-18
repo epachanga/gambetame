@@ -216,11 +216,11 @@
   teams:
     home:
       team: bel
-      goals:
+      goals: 2
       penalty:
     away:
       team: alg
-      goals:
+      goals: 1
       penalty:
 
 -
@@ -231,11 +231,11 @@
   teams:
     home:
       team: rus
-      goals:
+      goals: 1
       penalty:
     away:
       team: kor
-      goals:
+      goals: 1
       penalty:
 
 -
@@ -246,11 +246,11 @@
   teams:
     home:
       team: bra
-      goals:
+      goals: 0
       penalty:
     away:
       team: mex
-      goals:
+      goals: 0
       penalty:
 
 -

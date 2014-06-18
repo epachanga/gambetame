@@ -124,9 +124,6 @@
           }
         }
       });
-      if (!self.data[group].standings) {
-        self.data[group].standings = [];
-      }
       self.data[group].standings = standings;
     };
 
