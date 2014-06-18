@@ -76,7 +76,7 @@
         <h3>
             <timer interval="1000">{{hhours}} hours, {{mminutes}} minutes, {{sseconds}} seconds.</timer>
         </h3>
-        <button class="btn" onclick="stopResumeTimer('clock-timer', this)" type="button">Stop</button>
+        <button class="btn" onclick="stopResumeTimer('clock-timer-leading-zero', this)" type="button">Stop</button>
     </div>
 </section>
 <section id="timer-with-start-time">
@@ -139,7 +139,7 @@
 
     <div class="bs-docs-example">
         <p>
-            The countdown timer <code ng-non-bindable="">&lt;timer interval=&quot;1000&quot; countdown=&quot;100&quot;/&gt;</code>
+            The countdown timer <code ng-non-bindable="">&lt;timer interval=&quot;1000&quot; countdown=&quot;100&quot;&gt;{{countdown}}&lt;/timer&gt;</code>
             will start its countdown from 100 until it reaches 0 by ticking every second</p>
 
         <h3>
@@ -179,6 +179,37 @@
         </code>
         <h3 class="plural-counter">
             <timer autostart="false" countdown="190061">{{days}} day{{daysS}}, {{hours}} hour{{hoursS}}, {{minutes}} minute{{minutesS}}, {{seconds}} second{{secondsS}}.</timer>
+        </h3>
+    </div>
+</section>
+
+<section id="max-time-unit-countdown-timer">
+    <h3>Countdown time display according to specified <em>max-time-unit</em></h3>
+
+    <div class="bs-docs-example">
+        <p>
+            This markup will display countdown time in minute and seconds only.  This attribute can be applied to regular clock timer as well.
+            <code ng-non-bindable="">
+            &lt;timer countdown="10041" max-time-unit="'minute'" interval="1000"&gt;{{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}&lt;/timer&gt;            
+            </code>
+        </p>
+        <p class="muted">countdown Time with max time unit option - year</p>
+        <h3 class="WithMaxTimeUnitAsYear">
+            <timer countdown="100410000" max-time-unit="'year'" interval="1000">{{yyears}} year{{yearsS}}, {{mmonths}} month{{monthsS}}, {{ddays}} day{{daysS}}, {{hhours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
+        </h3>
+        <p class="muted">countdown Time with max time unit option - minute</p>
+        <h3 class="WithMaxTimeUnitAsMinute">
+            <timer countdown="10041" max-time-unit="'minute'" interval="1000"> {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
+        </h3>
+
+        <p class="muted">countdown Time with max time unit option - second</p>
+        <h3 class="WithMaxTimeUnitAsSecond">
+            <timer countdown="10041" max-time-unit="'second'" interval="1000"> {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
+        </h3>
+        
+        <p class="muted">countdown Time without max time unit option - minute</p>
+        <h3 class="WithoutMaxTimeUnit">
+            <timer countdown="10041" interval="1000"> {{ddays}} day{{daysS}}, {{hhours}} hour{{hoursS}}, {{mminutes}} minute{{minutesS}}, {{sseconds}} second{{secondsS}}</timer>
         </h3>
     </div>
 </section>
@@ -268,6 +299,16 @@
                 false
             </td>
             <td>Sets the countdown based on predefined end time (in milliseconds).
+            </td>
+        </tr>
+        <tr>
+            <td>
+                max-time-unit
+            </td>
+            <td>
+                false
+            </td>
+            <td> no default value.   But you can give value,  'minute', 'second', or 'hour'. 
             </td>
         </tr>
         </tbody>

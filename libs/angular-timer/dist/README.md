@@ -1,5 +1,20 @@
 ##Change Log
 
+###Version 1.1.5
+* Fix for - https://github.com/siddii/angular-timer/issues/84
+
+###Version 1.1.4
+* CommonJS Compliance - https://github.com/siddii/angular-timer/pull/80
+
+###Version 1.1.3
+* Setting `countdownattr` value on `tick` - https://github.com/siddii/angular-timer/pull/78
+
+###Version 1.1.2
+* Countdown time max-time-unit for month & year - https://github.com/siddii/angular-timer/pull/74
+
+###Version 1.1.1
+* Fix for https://github.com/siddii/angular-timer/issues/73
+
 ###Version 1.1.0
 * Plural/singular units. PR - https://github.com/siddii/angular-timer/pull/54
 * IE8 support. PR - https://github.com/siddii/angular-timer/pull/62
