@@ -14,7 +14,6 @@
     }
   }
 
-
   angular.module('worldcup.filters', [])
     .filter('orderStandings', ['Utils', orderStandings])
     .filter('capitalize', capitalize);
