@@ -296,12 +296,12 @@
     home:
       team: cmr
       goals:
-      score:
+      score: 0
       penalty:
     away:
       team: cro
       goals:
-      score:
+      score: 4
       penalty:
 
 -
@@ -313,12 +313,12 @@
     home:
       team: esp
       goals:
-      score:
+      score: 0
       penalty:
     away:
       team: chi
       goals:
-      score:
+      score: 2
       penalty:
 
 -
@@ -330,12 +330,12 @@
     home:
       team: aus
       goals:
-      score:
+      score: 2
       penalty:
     away:
       team: ned
       goals:
-      score:
+      score: 3
       penalty:
 
 -
