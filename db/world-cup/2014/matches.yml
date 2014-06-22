@@ -443,12 +443,12 @@
     home:
       team: arg
       goals:
-      score:
+      score: 1
       penalty:
     away:
       team: irn
       goals:
-      score:
+      score: 0
       penalty:
 -
   id: 28
@@ -459,12 +459,12 @@
     home:
       team: nga
       goals:
-      score:
+      score: 1
       penalty:
     away:
       team: bih
       goals:
-      score:
+      score: 0
       penalty:
 -
   id: 29
@@ -475,12 +475,12 @@
     home:
       team: ger
       goals:
-      score:
+      score: 2
       penalty:
     away:
       team: gha
       goals:
-      score:
+      score: 2
       penalty:
 -
   id: 30
