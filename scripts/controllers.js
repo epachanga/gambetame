@@ -49,7 +49,12 @@
       query.equalTo('userId', $scope.$root.currentUser.id);
       query.find().then(function(result){
         if (result.length) {
-          var matches = JSON.parse(result[0].get('matches'));
+          var matches = null;
+          if (result[0].get(currentStage)) {
+            matches = JSON.parse(result[0].get(currentStage));
+          } else {
+            matches = JSON.parse(result[0].get('matches'));
+          }
           _.forEach(matches, function(match){
             var $match =_.find($scope.$root.matches, {id: match.id});
             $match.teams.home.goals = match.teams.home.goals;
