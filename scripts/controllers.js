@@ -18,6 +18,7 @@
     $scope.modalOpen = false;
     $scope.groupingName = null;
     $scope.error = null;
+    $scope.currentDate = (new Date()).getTime();
 
     $scope.$root.currentUser = Parse.User.current();
     $scope.$root.simpleMode = (localStorage.getItem('simpleMode') === 'true');
@@ -30,6 +31,13 @@
     _.forEach($scope.$root.groups, function(data, group) {
       $scope.$root.buildStandings(group);
     });
+
+    var nextMatchIndex = _.findIndex($scope.$root.matches, function(match) {
+      return match.date.getTime() > $scope.currentDate;
+    });
+    var
+    nextMatch = $scope.$root.matches[nextMatchIndex],
+    currentStage = nextMatch.stage.replace(/[\s-]/g, '');
 
     if ($scope.$root.currentUser) {
       // query user matches
@@ -128,10 +136,10 @@
             userMatches.set('userId', $scope.$root.currentUser.id);
             userMatches.set('user', $scope.$root.currentUser);
           }
-          self.saveMatches(userMatches);
+          self.saveMatches(userMatches, currentStage);
         });
       } else {
-        self.saveMatches($scope.$root.userMatches);
+        self.saveMatches($scope.$root.userMatches, currentStage);
       }
     };
 
@@ -282,8 +290,11 @@
       true
     );
 
-    this.saveMatches = function(userMatches) {
-      userMatches.set('matches', JSON.stringify($scope.$root.matches));
+    this.saveMatches = function(userMatches, currentStage) {
+      var matches = JSON.stringify($scope.$root.matches);
+
+      userMatches.set('matches', matches);
+      userMatches.set(currentStage, matches);
       userMatches.set('simpleMode', $scope.$root.simpleMode);
       userMatches.save().then(function(result) {
         $scope.$root.userMatches = result;
@@ -323,7 +334,6 @@
 
   var HomeCtrl = function($scope, $window) {
     $scope.nextMatches = [];
-    $scope.currentDate = (new Date()).getTime();
 
     var nextMatchIndex = _.findIndex($scope.$root.matches, function(match) {
       return match.date.getTime() > $scope.currentDate;
