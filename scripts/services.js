@@ -140,6 +140,87 @@
       });
       self.data[group].standings = standings;
     };
+
+    this.buildRealStandings = function buildRealStandings(group) {
+      var standings = [];
+      _.forEach(_.values(self.data[group].teams), function(team, i){
+        standings.push({
+          name: team,
+          priority: i+1,
+          mp: '-',
+          w: '-',
+          d: '-',
+          l: '-',
+          gf: '-',
+          ga: '-',
+          pts: '-'
+        });
+      });
+      _.forEach(self.data[group].matches, function(matchId){
+        var
+        match = _.find($rootScope.matches, {id: matchId}),
+        home = match.teams.home,
+        away = match.teams.away;
+
+        if (!_.isNull(home.score) && !_.isNull(away.score)) {
+          var
+          homeStandsings = _.findWhere(standings, {name: home.team}),
+          awayStandsings = _.findWhere(standings, {name: away.team}),
+          homeScore = parseInt(home.score),
+          awayScore = parseInt(away.score),
+          tie = homeScore == awayScore;
+
+          if (homeStandsings.mp === '-') {
+            homeStandsings.mp =
+            homeStandsings.w =
+            homeStandsings.d =
+            homeStandsings.l =
+            homeStandsings.gf =
+            homeStandsings.ga =
+            homeStandsings.pts = 0;
+          }
+          if (awayStandsings.mp === '-') {
+            awayStandsings.mp =
+            awayStandsings.w =
+            awayStandsings.d =
+            awayStandsings.l =
+            awayStandsings.gf =
+            awayStandsings.ga =
+            awayStandsings.pts = 0;
+          }
+
+          homeStandsings.mp++;
+          homeStandsings.gf += homeScore;
+          homeStandsings.ga += awayScore;
+
+          awayStandsings.mp++;
+          awayStandsings.gf += awayScore;
+          awayStandsings.ga += homeScore;
+
+          if (tie) {
+            // empate
+            homeStandsings.d++;
+            homeStandsings.pts += 1;
+
+            awayStandsings.d++;
+            awayStandsings.pts += 1;
+          } else if (homeScore > awayScore) {
+            // local gana
+            homeStandsings.w++;
+            homeStandsings.pts += 3;
+
+            awayStandsings.l++;
+          } else {
+            // visitante gana
+            awayStandsings.w++;
+            awayStandsings.pts += 3;
+
+            homeStandsings.l++;
+          }
+        }
+      });
+      self.data[group].real_standings = standings;
+    };
   };
 
   var Matches = function($http, $q) {

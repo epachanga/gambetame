@@ -30,6 +30,7 @@
     $scope.$root.buildStandings = Groups.buildStandings;
     _.forEach($scope.$root.groups, function(data, group) {
       $scope.$root.buildStandings(group);
+      Groups.buildRealStandings(group);
     });
 
     var nextMatchIndex = _.findIndex($scope.$root.matches, function(match) {

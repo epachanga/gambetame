@@ -7,7 +7,8 @@
       replace: true,
       templateUrl: '/views/directives/groupStandings.html',
       scope: {
-        group: '@'
+        group: '@',
+        real: '='
       },
       link: function(scope, element) {
         var group = $rootScope.groups[scope.group];

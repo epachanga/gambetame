@@ -1,7 +1,8 @@
 <section rel="groups" ng-controller="GroupCtrl">
   <section ng-if="group != 'all'" class="group row">
-    <h4 id="group-{{group}}" class="col-md-12">Group {{group}}</h4>
+    <h3 id="group-{{group}}" class="col-md-12">Group {{group}}</h3>
     <group-standings class="col-md-12" group="{{group}}"></group-standings>
+    <group-standings class="col-md-12" group="{{group}}" real="true"></group-standings>
     <group-matches class="col-md-12" group="{{group}}"></group-matches>
     <div class="col-md-12">
       <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
@@ -9,8 +10,9 @@
   </section>
   <div ng-if="group == 'all'">
     <section class="group row" ng-repeat="(group, data) in groups">
-      <h4 id="group-{{group}}" class="col-md-12">Group {{group}}</h4>
+      <h3 id="group-{{group}}" class="col-md-12">Group {{group}}</h3>
       <group-standings class="col-md-12" group="{{group}}"></group-standings>
+      <group-standings class="col-md-12" group="{{group}}" real="true"></group-standings>
       <group-matches class="col-md-12" group="{{group}}"></group-matches>
       <div class="col-md-12">
         <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
