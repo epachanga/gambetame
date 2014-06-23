@@ -1,43 +1,45 @@
-<div class="table-responsive">
+<div>
   <h4 ng-if="!real">User Standings</h4>
   <h4 ng-if="real">Real Standings</h4>
-  <table class="table">
-    <thead>
-      <tr>
-        <th></th>
-        <th>TEAM</th>
-        <th class="text-center">MP</th>
-        <th class="text-center">W</th>
-        <th class="text-center" ng-hide="simpleMode">D</th>
-        <th class="text-center">L</th>
-        <th class="text-center" ng-hide="simpleMode">GF</th>
-        <th class="text-center" ng-hide="simpleMode">GA</th>
-        <th class="text-center">PTS</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr ng-if="!real" ng-repeat="(i, team) in data.standings | orderStandings" ng-class="{success: i < 2 && team.pts != '-' }">
-        <td class="match-id">{{ i+1 }}</td>
-        <td><team rel="team.name"></team></td>
-        <td class="text-center"><input type="text" class="score" ng-model="team.mp" readonly /></td>
-        <td class="text-center"><input type="text" class="score" ng-model="team.w" readonly /></td>
-        <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.d" readonly /></td>
-        <td class="text-center"><input type="text" class="score" ng-model="team.l" readonly /></td>
-        <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.gf" readonly /></td>
-        <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.ga" readonly /></td>
-        <td class="text-center"><input type="text" class="score" ng-model="team.pts" readonly /></td>
-      </tr>
-      <tr ng-if="real" ng-repeat="(i, team) in data.real_standings | orderStandings" ng-class="{success: i < 2 && team.pts != '-' }">
-        <td class="match-id">{{ i+1 }}</td>
-        <td><team rel="team.name"></team></td>
-        <td class="text-center"><input type="text" class="score" ng-model="team.mp" readonly /></td>
-        <td class="text-center"><input type="text" class="score" ng-model="team.w" readonly /></td>
-        <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.d" readonly /></td>
-        <td class="text-center"><input type="text" class="score" ng-model="team.l" readonly /></td>
-        <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.gf" readonly /></td>
-        <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.ga" readonly /></td>
-        <td class="text-center"><input type="text" class="score" ng-model="team.pts" readonly /></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>TEAM</th>
+          <th class="text-center">MP</th>
+          <th class="text-center">W</th>
+          <th class="text-center" ng-hide="simpleMode">D</th>
+          <th class="text-center">L</th>
+          <th class="text-center" ng-hide="simpleMode">GF</th>
+          <th class="text-center" ng-hide="simpleMode">GA</th>
+          <th class="text-center">PTS</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-if="!real" ng-repeat="(i, team) in data.standings | orderStandings" ng-class="{success: i < 2 && team.pts != '-' }">
+          <td class="match-id">{{ i+1 }}</td>
+          <td><team rel="team.name"></team></td>
+          <td class="text-center"><input type="text" class="score" ng-model="team.mp" readonly /></td>
+          <td class="text-center"><input type="text" class="score" ng-model="team.w" readonly /></td>
+          <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.d" readonly /></td>
+          <td class="text-center"><input type="text" class="score" ng-model="team.l" readonly /></td>
+          <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.gf" readonly /></td>
+          <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.ga" readonly /></td>
+          <td class="text-center"><input type="text" class="score" ng-model="team.pts" readonly /></td>
+        </tr>
+        <tr ng-if="real" ng-repeat="(i, team) in data.real_standings | orderStandings" ng-class="{success: i < 2 && team.pts != '-' }">
+          <td class="match-id">{{ i+1 }}</td>
+          <td><team rel="team.name"></team></td>
+          <td class="text-center"><input type="text" class="score" ng-model="team.mp" readonly /></td>
+          <td class="text-center"><input type="text" class="score" ng-model="team.w" readonly /></td>
+          <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.d" readonly /></td>
+          <td class="text-center"><input type="text" class="score" ng-model="team.l" readonly /></td>
+          <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.gf" readonly /></td>
+          <td class="text-center" ng-hide="simpleMode"><input type="text" class="score" ng-model="team.ga" readonly /></td>
+          <td class="text-center"><input type="text" class="score" ng-model="team.pts" readonly /></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
