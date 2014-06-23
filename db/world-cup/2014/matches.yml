@@ -491,12 +491,12 @@
     home:
       team: usa
       goals:
-      score:
+      score: 2
       penalty:
     away:
       team: por
       goals:
-      score:
+      score: 2
       penalty:
 -
   id: 31
@@ -507,12 +507,12 @@
     home:
       team: bel
       goals:
-      score:
+      score: 1
       penalty:
     away:
       team: rus
       goals:
-      score:
+      score: 0
       penalty:
 -
   id: 32
@@ -523,12 +523,12 @@
     home:
       team: kor
       goals:
-      score:
+      score: 2
       penalty:
     away:
       team: alg
       goals:
-      score:
+      score: 4
       penalty:
 
 -
