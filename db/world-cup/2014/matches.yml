@@ -574,12 +574,12 @@
     home:
       team: aus
       goals:
-      score:
+      score: 0
       penalty:
     away:
       team: esp
       goals:
-      score:
+      score: 3
       penalty:
 
 -
@@ -591,12 +591,12 @@
     home:
       team: ned
       goals:
-      score:
+      score: 2
       penalty:
     away:
       team: chi
       goals:
-      score:
+      score: 0
       penalty:
 
 -
