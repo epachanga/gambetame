@@ -540,12 +540,12 @@
     home:
       team: cmr
       goals:
-      score:
+      score: 1
       penalty:
     away:
       team: bra
       goals:
-      score:
+      score: 4
       penalty:
 
 -
@@ -557,12 +557,12 @@
     home:
       team: cro
       goals:
-      score:
+      score: 1
       penalty:
     away:
       team: mex
       goals:
-      score:
+      score: 3
       penalty:
 
 -
