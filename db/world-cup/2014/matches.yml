@@ -608,12 +608,12 @@
     home:
       team: jpn
       goals:
-      score:
+      score: 1
       penalty:
     away:
       team: col
       goals:
-      score:
+      score: 4
       penalty:
 -
   id: 38
@@ -624,12 +624,12 @@
     home:
       team: civ
       goals:
-      score:
+      score: 1
       penalty:
     away:
       team: gre
       goals:
-      score:
+      score: 2
       penalty:
 -
   id: 39
@@ -640,12 +640,12 @@
     home:
       team: ita
       goals:
-      score:
+      score: 0
       penalty:
     away:
       team: uru
       goals:
-      score:
+      score: 1
       penalty:
 -
   id: 40
@@ -656,12 +656,12 @@
     home:
       team: crc
       goals:
-      score:
+      score: 0
       penalty:
     away:
       team: eng
       goals:
-      score:
+      score: 0
       penalty:
 -
   id: 41
