@@ -672,12 +672,12 @@
     home:
       team: hon
       goals:
-      score:
+      score: 0
       penalty:
     away:
       team: sui
       goals:
-      score:
+      score: 3
       penalty:
 -
   id: 42
@@ -688,12 +688,12 @@
     home:
       team: ecu
       goals:
-      score:
+      score: 0
       penalty:
     away:
       team: fra
       goals:
-      score:
+      score: 0
       penalty:
 -
   id: 43
@@ -704,12 +704,12 @@
     home:
       team: nga
       goals:
-      score:
+      score: 2
       penalty:
     away:
       team: arg
       goals:
-      score:
+      score: 3
       penalty:
 -
   id: 44
@@ -720,12 +720,12 @@
     home:
       team: bih
       goals:
-      score:
+      score: 3
       penalty:
     away:
       team: irn
       goals:
-      score:
+      score: 1
       penalty:
 -
   id: 45
