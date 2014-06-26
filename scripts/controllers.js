@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var MainCtrl = function ($scope, $route, $routeParams, $window, $location, ga, Groups) {
+  var MainCtrl = function ($scope, $route, $routeParams, $window, $location, ga, Groups, Utils) {
     var self = this;
 
     if ($location.search().request_ids) {
@@ -31,6 +31,7 @@
     _.forEach($scope.$root.groups, function(data, group) {
       $scope.$root.buildStandings(group);
       Groups.buildRealStandings(group);
+      data.real_standings = Utils.orderStandings(data.real_standings);
     });
 
     var nextMatchIndex = _.findIndex($scope.$root.matches, function(match) {
@@ -50,22 +51,11 @@
       query.equalTo('userId', $scope.$root.currentUser.id);
       query.find().then(function(result){
         if (result.length) {
-          var matches = null;
-          if (result[0].get(currentStage)) {
-            matches = JSON.parse(result[0].get(currentStage));
-          } else {
-            matches = JSON.parse(result[0].get('matches'));
-          }
-          _.forEach(matches, function(match){
-            var $match =_.find($scope.$root.matches, {id: match.id});
-            $match.teams.home.goals = match.teams.home.goals;
-            $match.teams.away.goals = match.teams.away.goals;
-            $match.teams.home.penalty = match.teams.home.penalty;
-            $match.teams.away.penalty = match.teams.away.penalty;
-          });
+          Utils.loadUserMatches(result[0]);
           _.forEach($scope.$root.groups, function(data, group) {
             $scope.$root.buildStandings(group);
           });
+
           $scope.$apply();
         }
       });
@@ -453,14 +443,8 @@
     query.include('user', userId);
     query.find().then(function(result){
       if (result.length) {
-        var matches = JSON.parse(result[0].get('matches'));
-        _.forEach(matches, function(match){
-          var $match =_.find($scope.$root.matches, {id: match.id});
-          $match.teams.home.goals = match.teams.home.goals;
-          $match.teams.away.goals = match.teams.away.goals;
-          $match.teams.home.penalty = match.teams.home.penalty;
-          $match.teams.away.penalty = match.teams.away.penalty;
-        });
+        Utils.loadUserMatches(result[0]);
+
         _.forEach($scope.$root.groups, function(data, group) {
           $scope.$root.buildStandings(group);
         });
@@ -482,13 +466,21 @@
     });
   };
 
+  var ServicesCtrl = function ($scope, $window) {
+    var currentUser = Parse.User.current();
+    if (!currentUser || currentUser.get('authData').facebook.id != '10152131672672532') {
+      $window.location.href = '/';
+    }
+  };
+
   angular.module('worldcup.controllers', [])
-    .controller('MainCtrl', ['$scope', '$route', '$routeParams', '$window', '$location', 'ga', 'Groups', MainCtrl])
+    .controller('MainCtrl', ['$scope', '$route', '$routeParams', '$window', '$location', 'ga', 'Groups', 'Utils', MainCtrl])
     .controller('HomeCtrl', ['$scope', '$window', HomeCtrl])
     .controller('GroupCtrl', ['$scope', GroupCtrl])
     .controller('KnockoutRoundCtrl', ['$scope', KnockoutRoundCtrl])
     .controller('UserCtrl', ['$scope', UserCtrl])
     .controller('GroupingCtrl', ['$scope', GroupingCtrl])
     .controller('ResultsCtrl', ['$scope', ResultsCtrl])
+    .controller('ServicesCtrl', ['$scope', '$window', ServicesCtrl])
     ;
 })();

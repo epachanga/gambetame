@@ -18,8 +18,9 @@
             <time datetime="match.date"></time><br/>
             <venue rel="match.location"></venue>
           </td>
-          <td class="match-id" ng-if="match.stage == 'Group Stage'">
-            <span class="nowrap">GROUP {{teams[match.teams.home.team].group | uppercase}}</span>
+          <td class="match-id">
+            <span class="nowrap" ng-if="match.stage == 'Group Stage'">GROUP {{teams[match.teams.home.team].group | uppercase}}</span>
+            <span ng-if="match.stage != 'Group Stage'">{{match.stage | uppercase}}</span>
           </td>
           <td><team class="home" rel="match.teams.home.team"></team></td>
           <td class="text-center match-result">

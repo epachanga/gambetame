@@ -237,7 +237,7 @@
     this.promise = defer.promise;
   };
 
-  var Utils = function() {
+  var Utils = function($rootScope) {
 
     this.orderStandings = function(standings) {
       return standings.sort(function(a, b) {
@@ -252,11 +252,82 @@
         else if (apts < bpts) {
           return 1;
         }
-        else if (a.priority > b.priority) {
-          return 1;
+        else if (a.gf - a.ga > b.gf - b.ga) {
+          return -1;
         }
         else {
-          return -1;
+          return 1;
+        }
+      });
+    };
+
+    this.loadUserMatches = function(userMatches) {
+      var
+      groupStageMatches = userMatches.get('GroupStage') ? JSON.parse(userMatches.get('GroupStage')) : [],
+      roundOf16Matches = userMatches.get('Roundof16') ? JSON.parse(userMatches.get('Roundof16')) : [],
+      quarterFinalsMatches = userMatches.get('QuarterFinals') ? JSON.parse(userMatches.get('QuarterFinals')) : [],
+      semiFinalsMatches = userMatches.get('SemiFinals') ? JSON.parse(userMatches.get('SemiFinals')) : [],
+      playOffForThirdPlaceMatches = userMatches.get('PlayoffForThirdPlace') ? JSON.parse(userMatches.get('PlayoffForThirdPlace')) : [],
+      finalMatches = userMatches.get('Final') ? JSON.parse(userMatches.get('Final')) : [];
+
+      _.forEach(_.groupBy(groupStageMatches, 'stage')['Group Stage'], function(match){
+        if (match.stage == 'Group Stage') {
+          var
+          $match =_.find($rootScope.matches, {id: match.id});
+          $match.teams.home.goals = match.teams.home.goals;
+          $match.teams.away.goals = match.teams.away.goals;
+          $match.teams.home.penalty = match.teams.home.penalty;
+          $match.teams.away.penalty = match.teams.away.penalty;
+        }
+      });
+      _.forEach(_.groupBy(roundOf16Matches, 'stage')['Round of 16'], function(match){
+        if (match.stage == 'Round of 16') {
+          var
+          $match =_.find($rootScope.matches, {id: match.id});
+          $match.teams.home.goals = match.teams.home.goals;
+          $match.teams.away.goals = match.teams.away.goals;
+          $match.teams.home.penalty = match.teams.home.penalty;
+          $match.teams.away.penalty = match.teams.away.penalty;
+        }
+      });
+      _.forEach(_.groupBy(quarterFinalsMatches, 'stage')['Quarter Finals'], function(match){
+        if (match.stage == 'Quarter Finals') {
+          var
+          $match =_.find($rootScope.matches, {id: match.id});
+          $match.teams.home.goals = match.teams.home.goals;
+          $match.teams.away.goals = match.teams.away.goals;
+          $match.teams.home.penalty = match.teams.home.penalty;
+          $match.teams.away.penalty = match.teams.away.penalty;
+        }
+      });
+      _.forEach(_.groupBy(semiFinalsMatches, 'stage')['Semi Finals'], function(match){
+        if (match.stage == 'Semi Finals') {
+          var
+          $match =_.find($rootScope.matches, {id: match.id});
+          $match.teams.home.goals = match.teams.home.goals;
+          $match.teams.away.goals = match.teams.away.goals;
+          $match.teams.home.penalty = match.teams.home.penalty;
+          $match.teams.away.penalty = match.teams.away.penalty;
+        }
+      });
+      _.forEach(_.groupBy(playOffForThirdPlaceMatches, 'stage')['Play-off For Third Place'], function(match){
+        if (match.stage == 'Play-off For Third Place') {
+          var
+          $match =_.find($rootScope.matches, {id: match.id});
+          $match.teams.home.goals = match.teams.home.goals;
+          $match.teams.away.goals = match.teams.away.goals;
+          $match.teams.home.penalty = match.teams.home.penalty;
+          $match.teams.away.penalty = match.teams.away.penalty;
+        }
+      });
+      _.forEach(_.groupBy(finalMatches, 'stage')['Final'], function(match){
+        if (match.stage == 'Final') {
+          var
+          $match =_.find($rootScope.matches, {id: match.id});
+          $match.teams.home.goals = match.teams.home.goals;
+          $match.teams.away.goals = match.teams.away.goals;
+          $match.teams.home.penalty = match.teams.home.penalty;
+          $match.teams.away.penalty = match.teams.away.penalty;
         }
       });
     };
@@ -264,7 +335,7 @@
   };
 
   angular.module('worldcup.services', [])
-    .service('Utils', [Utils])
+    .service('Utils', ['$rootScope', Utils])
     .service('Grounds', ['$http', '$q', Grounds])
     .service('Teams', ['$http', '$q', Teams])
     .service('Matches', ['$http', '$q', Matches])

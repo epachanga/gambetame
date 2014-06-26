@@ -224,18 +224,19 @@
             scope.$watch(
               function(){ return scope[group].standings },
               function(newStandings, oldStandings){
-                if (!_.isEqual(newStandings, oldStandings)) {
-                  var standings = Utils.orderStandings(newStandings);
-                  if (standings[place].pts === '-') {
-                    scope.name = matches[0];
-                    scope.flag = false;
-                    return;
-                  }
-
-                  scope.rel = scope[group].standings[place].name;
-                  scope.name = $rootScope.teams[scope.rel].name;
-                  scope.flag = $rootScope.teams[scope.rel].flag;
+                var standings = Utils.orderStandings(newStandings);
+                if (standings[place].pts === '-') {
+                  scope.name = matches[0];
+                  scope.flag = false;
+                  return;
                 }
+                if (scope[group].standings[place].name == scope[group].real_standings[place].name) {
+                  scope.rel = scope[group].standings[place].name;
+                } else {
+                  scope.rel = scope[group].real_standings[place].name;
+                }
+                scope.name = $rootScope.teams[scope.rel].name;
+                scope.flag = $rootScope.teams[scope.rel].flag;
               },
               true
             );
