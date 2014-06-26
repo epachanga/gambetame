@@ -736,12 +736,12 @@
     home:
       team: usa
       goals:
-      score:
+      score: 0
       penalty:
     away:
       team: ger
       goals:
-      score:
+      score: 1
       penalty:
 -
   id: 46
@@ -752,12 +752,12 @@
     home:
       team: por
       goals:
-      score:
+      score: 2
       penalty:
     away:
       team: gha
       goals:
-      score:
+      score: 1
       penalty:
 -
   id: 47
