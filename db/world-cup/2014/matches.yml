@@ -768,12 +768,12 @@
     home:
       team: kor
       goals:
-      score:
+      score: 0
       penalty:
     away:
       team: bel
       goals:
-      score:
+      score: 1
       penalty:
 -
   id: 48
@@ -784,12 +784,12 @@
     home:
       team: alg
       goals:
-      score:
+      score: 1
       penalty:
     away:
       team: rus
       goals:
-      score:
+      score: 1
       penalty:
 
 -
