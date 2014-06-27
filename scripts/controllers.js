@@ -41,6 +41,8 @@
     nextMatch = $scope.$root.matches[nextMatchIndex],
     currentStage = nextMatch.stage.replace(/[\s-]/g, '');
 
+    $scope.currentStage = currentStage;
+
     if ($scope.$root.currentUser) {
       // query user matches
       var
@@ -51,7 +53,7 @@
       query.equalTo('userId', $scope.$root.currentUser.id);
       query.find().then(function(result){
         if (result.length) {
-          Utils.loadUserMatches(result[0]);
+          Utils.loadUserMatches(result[0], $scope.currentStage);
           _.forEach($scope.$root.groups, function(data, group) {
             $scope.$root.buildStandings(group);
           });
@@ -424,7 +426,7 @@
     }
   };
 
-  var ResultsCtrl = function($scope) {
+  var ResultsCtrl = function($scope, Utils) {
     var userId = $scope.routeParams.id;
 
     $scope.$root.viewMode = false;
@@ -443,7 +445,8 @@
     query.include('user', userId);
     query.find().then(function(result){
       if (result.length) {
-        Utils.loadUserMatches(result[0]);
+        console.log('evme', $scope.currentStage);
+        Utils.loadUserMatches(result[0], $scope.currentStage);
 
         _.forEach($scope.$root.groups, function(data, group) {
           $scope.$root.buildStandings(group);
@@ -480,7 +483,7 @@
     .controller('KnockoutRoundCtrl', ['$scope', KnockoutRoundCtrl])
     .controller('UserCtrl', ['$scope', UserCtrl])
     .controller('GroupingCtrl', ['$scope', GroupingCtrl])
-    .controller('ResultsCtrl', ['$scope', ResultsCtrl])
+    .controller('ResultsCtrl', ['$scope', 'Utils', ResultsCtrl])
     .controller('ServicesCtrl', ['$scope', '$window', ServicesCtrl])
     ;
 })();

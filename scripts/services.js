@@ -261,7 +261,7 @@
       });
     };
 
-    this.loadUserMatches = function(userMatches) {
+    this.loadUserMatches = function(userMatches, currentStage) {
       var
       groupStageMatches = userMatches.get('GroupStage') ? JSON.parse(userMatches.get('GroupStage')) : [],
       roundOf16Matches = userMatches.get('Roundof16') ? JSON.parse(userMatches.get('Roundof16')) : [],
@@ -270,65 +270,75 @@
       playOffForThirdPlaceMatches = userMatches.get('PlayoffForThirdPlace') ? JSON.parse(userMatches.get('PlayoffForThirdPlace')) : [],
       finalMatches = userMatches.get('Final') ? JSON.parse(userMatches.get('Final')) : [];
 
-      _.forEach(_.groupBy(groupStageMatches, 'stage')['Group Stage'], function(match){
-        if (match.stage == 'Group Stage') {
-          var
-          $match =_.find($rootScope.matches, {id: match.id});
-          $match.teams.home.goals = match.teams.home.goals;
-          $match.teams.away.goals = match.teams.away.goals;
-          $match.teams.home.penalty = match.teams.home.penalty;
-          $match.teams.away.penalty = match.teams.away.penalty;
-        }
-      });
-      _.forEach(_.groupBy(roundOf16Matches, 'stage')['Round of 16'], function(match){
-        if (match.stage == 'Round of 16') {
-          var
-          $match =_.find($rootScope.matches, {id: match.id});
-          $match.teams.home.goals = match.teams.home.goals;
-          $match.teams.away.goals = match.teams.away.goals;
-          $match.teams.home.penalty = match.teams.home.penalty;
-          $match.teams.away.penalty = match.teams.away.penalty;
-        }
-      });
-      _.forEach(_.groupBy(quarterFinalsMatches, 'stage')['Quarter Finals'], function(match){
-        if (match.stage == 'Quarter Finals') {
-          var
-          $match =_.find($rootScope.matches, {id: match.id});
-          $match.teams.home.goals = match.teams.home.goals;
-          $match.teams.away.goals = match.teams.away.goals;
-          $match.teams.home.penalty = match.teams.home.penalty;
-          $match.teams.away.penalty = match.teams.away.penalty;
-        }
-      });
-      _.forEach(_.groupBy(semiFinalsMatches, 'stage')['Semi Finals'], function(match){
-        if (match.stage == 'Semi Finals') {
-          var
-          $match =_.find($rootScope.matches, {id: match.id});
-          $match.teams.home.goals = match.teams.home.goals;
-          $match.teams.away.goals = match.teams.away.goals;
-          $match.teams.home.penalty = match.teams.home.penalty;
-          $match.teams.away.penalty = match.teams.away.penalty;
-        }
-      });
-      _.forEach(_.groupBy(playOffForThirdPlaceMatches, 'stage')['Play-off For Third Place'], function(match){
-        if (match.stage == 'Play-off For Third Place') {
-          var
-          $match =_.find($rootScope.matches, {id: match.id});
-          $match.teams.home.goals = match.teams.home.goals;
-          $match.teams.away.goals = match.teams.away.goals;
-          $match.teams.home.penalty = match.teams.home.penalty;
-          $match.teams.away.penalty = match.teams.away.penalty;
-        }
-      });
-      _.forEach(_.groupBy(finalMatches, 'stage')['Final'], function(match){
-        if (match.stage == 'Final') {
-          var
-          $match =_.find($rootScope.matches, {id: match.id});
-          $match.teams.home.goals = match.teams.home.goals;
-          $match.teams.away.goals = match.teams.away.goals;
-          $match.teams.home.penalty = match.teams.home.penalty;
-          $match.teams.away.penalty = match.teams.away.penalty;
-        }
+      var matches = [];
+      switch(currentStage) {
+        case 'GroupStage':
+          matches = userMatches.get('GroupStage') ? JSON.parse(userMatches.get('GroupStage')) : [];
+          break;
+        case 'Roundof16':
+          if (userMatches.get('Roundof16')) {
+            matches = JSON.parse(userMatches.get('Roundof16'));
+          } else {
+            matches = userMatches.get('GroupStage') ? JSON.parse(userMatches.get('GroupStage')) : [];
+          }
+          break;
+        case 'QuarterFinals':
+          if (userMatches.get('QuarterFinals')) {
+            matches = JSON.parse(userMatches.get('QuarterFinals'));
+          } else if (userMatches.get('Roundof16')) {
+            matches = JSON.parse(userMatches.get('Roundof16'));
+          } else {
+            matches = userMatches.get('GroupStage') ? JSON.parse(userMatches.get('GroupStage')) : [];
+          }
+          break;
+        case 'SemiFinals':
+          if (userMatches.get('SemiFinals')) {
+            matches = JSON.parse(userMatches.get('SemiFinals'));
+          } else if (userMatches.get('QuarterFinals')) {
+            matches = JSON.parse(userMatches.get('QuarterFinals'));
+          } else if (userMatches.get('Roundof16')) {
+            matches = JSON.parse(userMatches.get('Roundof16'));
+          } else {
+            matches = userMatches.get('GroupStage') ? JSON.parse(userMatches.get('GroupStage')) : [];
+          }
+          break;
+        case 'PlayoffForThirdPlace':
+          if (userMatches.get('PlayoffForThirdPlace')) {
+            matches = JSON.parse(userMatches.get('PlayoffForThirdPlace'));
+          } else if (userMatches.get('SemiFinals')) {
+            matches = JSON.parse(userMatches.get('SemiFinals'));
+          } else if (userMatches.get('QuarterFinals')) {
+            matches = JSON.parse(userMatches.get('QuarterFinals'));
+          } else if (userMatches.get('Roundof16')) {
+            matches = JSON.parse(userMatches.get('Roundof16'));
+          } else {
+            matches = userMatches.get('GroupStage') ? JSON.parse(userMatches.get('GroupStage')) : [];
+          }
+          break;
+        case 'Final':
+          if (userMatches.get('Final')) {
+            matches = JSON.parse(userMatches.get('Final'));
+          } else if (userMatches.get('PlayoffForThirdPlace')) {
+            matches = JSON.parse(userMatches.get('PlayoffForThirdPlace'));
+          } else if (userMatches.get('SemiFinals')) {
+            matches = JSON.parse(userMatches.get('SemiFinals'));
+          } else if (userMatches.get('QuarterFinals')) {
+            matches = JSON.parse(userMatches.get('QuarterFinals'));
+          } else if (userMatches.get('Roundof16')) {
+            matches = JSON.parse(userMatches.get('Roundof16'));
+          } else {
+            matches = userMatches.get('GroupStage') ? JSON.parse(userMatches.get('GroupStage')) : [];
+          }
+          break;
+      }
+
+      _.forEach(matches, function(match){
+        var
+        $match =_.find($rootScope.matches, {id: match.id});
+        $match.teams.home.goals = match.teams.home.goals;
+        $match.teams.away.goals = match.teams.away.goals;
+        $match.teams.home.penalty = match.teams.home.penalty;
+        $match.teams.away.penalty = match.teams.away.penalty;
       });
     };
 
