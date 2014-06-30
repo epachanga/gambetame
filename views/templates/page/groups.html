@@ -1,7 +1,7 @@
 <section rel="groups" ng-controller="GroupCtrl">
   <section ng-if="group != 'all'" class="group row">
     <h3 id="group-{{group}}" class="col-md-12">Group {{group}}</h3>
-    <group-standings class="col-md-12" group="{{group}}"></group-standings>
+    <group-standings class="col-md-12" group="{{group}}" ng-show="currentUser"></group-standings>
     <group-standings class="col-md-12" group="{{group}}" real="true"></group-standings>
     <group-matches class="col-md-12" group="{{group}}"></group-matches>
     <div class="col-md-12">

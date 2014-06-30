@@ -31,6 +31,7 @@
         </ul>
       </li>
       <li ng-class="page == 'knockout-round' ? 'active' : ''"><a href="/knockout-round">Knockout Round</a></li>
+      <li ng-class="page == 'groupings' ? 'active' : ''" ng-show="currentUser"><a href="/groupings">Bet with friends</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right" ng-controller="UserCtrl">
       <li><a class="fb-share-button" data-href="http://gambeta.me/" data-type="icon_link"></a></li>
