@@ -7,13 +7,15 @@
     home:
       team: bra
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
     away:
       team: cro
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 
 -
   id: 2
@@ -24,13 +26,15 @@
     home:
       team: mex
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: cmr
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 
 -
   id: 3
@@ -41,13 +45,15 @@
     home:
       team: esp
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: ned
       goals:
-      score: 5
       penalty:
+      real_goals: 5
+      real_penalty:
 
 -
   id: 4
@@ -58,13 +64,15 @@
     home:
       team: chi
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
     away:
       team: aus
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 
 -
   id: 5
@@ -75,13 +83,15 @@
     home:
       team: col
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
     away:
       team: gre
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 
 -
   id: 6
@@ -92,13 +102,15 @@
     home:
       team: civ
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: jpn
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 
 -
   id: 7
@@ -109,13 +121,15 @@
     home:
       team: uru
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: crc
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
 
 -
   id: 8
@@ -126,13 +140,15 @@
     home:
       team: eng
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: ita
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
 
 -
   id: 9
@@ -143,13 +159,15 @@
     home:
       team: sui
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: ecu
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 
 -
   id: 10
@@ -160,13 +178,15 @@
     home:
       team: fra
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
     away:
       team: hon
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 
 -
   id: 11
@@ -177,13 +197,15 @@
     home:
       team: arg
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: bih
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 
 -
   id: 12
@@ -194,13 +216,15 @@
     home:
       team: irn
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: nga
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 
 -
   id: 13
@@ -211,13 +235,15 @@
     home:
       team: ger
       goals:
-      score: 4
       penalty:
+      real_goals: 4
+      real_penalty:
     away:
       team: por
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 
 -
   id: 14
@@ -228,13 +254,15 @@
     home:
       team: gha
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: usa
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
 
 -
   id: 15
@@ -245,13 +273,15 @@
     home:
       team: bel
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: alg
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 
 -
   id: 16
@@ -262,13 +292,15 @@
     home:
       team: rus
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: kor
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 
 -
   id: 17
@@ -279,13 +311,15 @@
     home:
       team: bra
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: mex
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 
 -
   id: 18
@@ -296,13 +330,15 @@
     home:
       team: cmr
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: cro
       goals:
-      score: 4
       penalty:
+      real_goals: 4
+      real_penalty:
 
 -
   id: 19
@@ -313,13 +349,15 @@
     home:
       team: esp
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: chi
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
 
 -
   id: 20
@@ -330,13 +368,15 @@
     home:
       team: aus
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: ned
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
 
 -
   id: 21
@@ -347,13 +387,15 @@
     home:
       team: col
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: civ
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 22
   stage: Group Stage
@@ -363,13 +405,15 @@
     home:
       team: jpn
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: gre
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 -
   id: 23
   stage: Group Stage
@@ -379,13 +423,15 @@
     home:
       team: uru
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: eng
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 24
   stage: Group Stage
@@ -395,13 +441,15 @@
     home:
       team: ita
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: crc
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 25
   stage: Group Stage
@@ -411,13 +459,15 @@
     home:
       team: sui
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: fra
       goals:
-      score: 5
       penalty:
+      real_goals: 5
+      real_penalty:
 -
   id: 26
   stage: Group Stage
@@ -427,13 +477,15 @@
     home:
       team: hon
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: ecu
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
 -
   id: 27
   stage: Group Stage
@@ -443,13 +495,15 @@
     home:
       team: arg
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: irn
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 -
   id: 28
   stage: Group Stage
@@ -459,13 +513,15 @@
     home:
       team: nga
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: bih
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 -
   id: 29
   stage: Group Stage
@@ -475,13 +531,15 @@
     home:
       team: ger
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: gha
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
 -
   id: 30
   stage: Group Stage
@@ -491,13 +549,15 @@
     home:
       team: usa
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: por
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
 -
   id: 31
   stage: Group Stage
@@ -507,13 +567,15 @@
     home:
       team: bel
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: rus
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 -
   id: 32
   stage: Group Stage
@@ -523,13 +585,15 @@
     home:
       team: kor
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: alg
       goals:
-      score: 4
       penalty:
+      real_goals: 4
+      real_penalty:
 
 -
   id: 33
@@ -540,13 +604,15 @@
     home:
       team: cmr
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: bra
       goals:
-      score: 4
       penalty:
+      real_goals: 4
+      real_penalty:
 
 -
   id: 34
@@ -557,13 +623,15 @@
     home:
       team: cro
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: mex
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
 
 -
   id: 35
@@ -574,13 +642,15 @@
     home:
       team: aus
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: esp
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
 
 -
   id: 36
@@ -591,13 +661,15 @@
     home:
       team: ned
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: chi
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 
 -
   id: 37
@@ -608,13 +680,15 @@
     home:
       team: jpn
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: col
       goals:
-      score: 4
       penalty:
+      real_goals: 4
+      real_penalty:
 -
   id: 38
   stage: Group Stage
@@ -624,13 +698,15 @@
     home:
       team: civ
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: gre
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
 -
   id: 39
   stage: Group Stage
@@ -640,13 +716,15 @@
     home:
       team: ita
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: uru
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 40
   stage: Group Stage
@@ -656,13 +734,15 @@
     home:
       team: crc
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: eng
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 -
   id: 41
   stage: Group Stage
@@ -672,13 +752,15 @@
     home:
       team: hon
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: sui
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
 -
   id: 42
   stage: Group Stage
@@ -688,13 +770,15 @@
     home:
       team: ecu
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: fra
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
 -
   id: 43
   stage: Group Stage
@@ -704,13 +788,15 @@
     home:
       team: nga
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: arg
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
 -
   id: 44
   stage: Group Stage
@@ -720,13 +806,15 @@
     home:
       team: bih
       goals:
-      score: 3
       penalty:
+      real_goals: 3
+      real_penalty:
     away:
       team: irn
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 45
   stage: Group Stage
@@ -736,13 +824,15 @@
     home:
       team: usa
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: ger
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 46
   stage: Group Stage
@@ -752,13 +842,15 @@
     home:
       team: por
       goals:
-      score: 2
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: gha
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 47
   stage: Group Stage
@@ -768,13 +860,15 @@
     home:
       team: kor
       goals:
-      score: 0
       penalty:
+      real_goals: 0
+      real_penalty:
     away:
       team: bel
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 48
   stage: Group Stage
@@ -784,13 +878,15 @@
     home:
       team: alg
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
     away:
       team: rus
       goals:
-      score: 1
       penalty:
+      real_goals: 1
+      real_penalty:
 
 -
   id: 49
@@ -801,13 +897,15 @@
     home:
       team: '[1A]'
       goals:
-      score:
       penalty:
+      real_goals: 1
+      real_penalty: true
     away:
       team: '[2B]'
       goals:
-      score:
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 50
   stage: Round of 16
@@ -817,13 +915,15 @@
     home:
       team: '[1C]'
       goals:
-      score:
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: '[2D]'
       goals:
-      score:
       penalty:
+      real_goals: 0
+      real_penalty:
 -
   id: 51
   stage: Round of 16
@@ -833,13 +933,15 @@
     home:
       team: '[1B]'
       goals:
-      score:
       penalty:
+      real_goals: 2
+      real_penalty:
     away:
       team: '[2A]'
       goals:
-      score:
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 52
   stage: Round of 16
@@ -849,13 +951,15 @@
     home:
       team: '[1D]'
       goals:
-      score:
       penalty:
+      real_goals: 1
+      real_penalty: true
     away:
       team: '[2C]'
       goals:
-      score:
       penalty:
+      real_goals: 1
+      real_penalty:
 -
   id: 53
   stage: Round of 16
@@ -865,13 +969,15 @@
     home:
       team: '[1E]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[2F]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 -
   id: 54
   stage: Round of 16
@@ -881,13 +987,15 @@
     home:
       team: '[1G]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[2H]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 -
   id: 55
   stage: Round of 16
@@ -897,13 +1005,15 @@
     home:
       team: '[1F]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[2E]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 -
   id: 56
   stage: Round of 16
@@ -913,13 +1023,15 @@
     home:
       team: '[1H]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[2G]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 
 -
   id: 57
@@ -930,13 +1042,15 @@
     home:
       team: '[W49]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[W50]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 -
   id: 58
   stage: Quarter Finals
@@ -946,13 +1060,15 @@
     home:
       team: '[W53]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[W54]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 -
   id: 59
   stage: Quarter Finals
@@ -962,13 +1078,15 @@
     home:
       team: '[W51]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[W52]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 -
   id: 60
   stage: Quarter Finals
@@ -978,13 +1096,15 @@
     home:
       team: '[W55]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[W56]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 
 -
   id: 61
@@ -995,13 +1115,15 @@
     home:
       team: '[W57]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[W58]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 -
   id: 62
   stage: Semi Finals
@@ -1011,13 +1133,15 @@
     home:
       team: '[W59]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[W60]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 
 -
   id: 63
@@ -1028,13 +1152,15 @@
     home:
       team: '[L61]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[L62]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
 
 -
   id: 64
@@ -1045,10 +1171,12 @@
     home:
       team: '[W61]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:
     away:
       team: '[W62]'
       goals:
-      score:
       penalty:
+      real_goals:
+      real_penalty:

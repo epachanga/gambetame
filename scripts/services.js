@@ -162,12 +162,12 @@
         home = match.teams.home,
         away = match.teams.away;
 
-        if (!_.isNull(home.score) && !_.isNull(away.score)) {
+        if (!_.isNull(home.real_goals) && !_.isNull(away.real_goals)) {
           var
           homeStandsings = _.findWhere(standings, {name: home.team}),
           awayStandsings = _.findWhere(standings, {name: away.team}),
-          homeScore = parseInt(home.score),
-          awayScore = parseInt(away.score),
+          homeScore = parseInt(home.real_goals),
+          awayScore = parseInt(away.real_goals),
           tie = homeScore == awayScore;
 
           if (homeStandsings.mp === '-') {

@@ -81,14 +81,14 @@
         scope.$watch('matches', function(newVal, oldVal){
           _.forEach(newVal, function(match) {
             match.userGuess = null;
-            if (!_.isNull(match.teams.home.score) && !_.isNull(match.teams.away.score) && !_.isNull(match.teams.home.goals) && !_.isNull(match.teams.away.goals)) {
+            if (!_.isNull(match.teams.home.real_goals) && !_.isNull(match.teams.away.real_goals) && !_.isNull(match.teams.home.goals) && !_.isNull(match.teams.away.goals)) {
               match.userGuess =
                 (match.teams.home.goals > match.teams.away.goals
-                  && match.teams.home.score > match.teams.away.score) ||
+                  && match.teams.home.real_goals > match.teams.away.real_goals) ||
                 (match.teams.home.goals < match.teams.away.goals
-                  && match.teams.home.score < match.teams.away.score) ||
+                  && match.teams.home.real_goals < match.teams.away.real_goals) ||
                 (match.teams.home.goals == match.teams.away.goals
-                  && match.teams.home.score == match.teams.away.score);
+                  && match.teams.home.real_goals == match.teams.away.real_goals);
             }
           });
           if (!_.isEqual(newVal, oldVal)) {
@@ -167,14 +167,14 @@
 
         scope.$watch('matches', function(newVal, oldVal){
           _.forEach(newVal, function(match) {
-            if (!_.isNull(match.teams.home.score) && !_.isNull(match.teams.away.score) && !_.isNull(match.teams.home.goals) && !_.isNull(match.teams.away.goals)) {
+            if (!_.isNull(match.teams.home.real_goals) && !_.isNull(match.teams.away.real_goals) && !_.isNull(match.teams.home.goals) && !_.isNull(match.teams.away.goals)) {
               match.userGuess =
                 (match.teams.home.goals > match.teams.away.goals
-                  && match.teams.home.score > match.teams.away.score) ||
+                  && match.teams.home.real_goals > match.teams.away.real_goals) ||
                 (match.teams.home.goals < match.teams.away.goals
-                  && match.teams.home.score < match.teams.away.score) ||
+                  && match.teams.home.real_goals < match.teams.away.real_goals) ||
                 (match.teams.home.goals == match.teams.away.goals
-                  && match.teams.home.score == match.teams.away.score);
+                  && match.teams.home.real_goals == match.teams.away.real_goals);
             }
           });
           if (!_.isEqual(newVal, oldVal) && !_.isUndefined(newVal) && !_.isUndefined(oldVal)) {
