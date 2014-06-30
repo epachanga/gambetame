@@ -167,14 +167,34 @@
 
         scope.$watch('matches', function(newVal, oldVal){
           _.forEach(newVal, function(match) {
+            match.userGuess = null;
             if (!_.isNull(match.teams.home.real_goals) && !_.isNull(match.teams.away.real_goals) && !_.isNull(match.teams.home.goals) && !_.isNull(match.teams.away.goals)) {
-              match.userGuess =
-                (match.teams.home.goals > match.teams.away.goals
-                  && match.teams.home.real_goals > match.teams.away.real_goals) ||
-                (match.teams.home.goals < match.teams.away.goals
-                  && match.teams.home.real_goals < match.teams.away.real_goals) ||
-                (match.teams.home.goals == match.teams.away.goals
-                  && match.teams.home.real_goals == match.teams.away.real_goals);
+              if (match.stage != 'Group Stage') {
+                var
+                userWinner,
+                realWinner;
+
+                if (match.teams.home.goals > match.teams.away.goals || match.teams.home.penalty) {
+                  userWinner = match.teams.home.team;
+                } else {
+                  userWinner = match.teams.away.team;
+                }
+                if (match.teams.home.real_goals > match.teams.away.real_goals || match.teams.home.real_penalty) {
+                  realWinner = match.teams.home.team;
+                } else {
+                  realWinner = match.teams.away.team;
+                }
+
+                match.userGuess = userWinner == realWinner;
+              } else {
+                match.userGuess =
+                  (match.teams.home.goals > match.teams.away.goals
+                    && match.teams.home.real_goals > match.teams.away.real_goals) ||
+                  (match.teams.home.goals < match.teams.away.goals
+                    && match.teams.home.real_goals < match.teams.away.real_goals) ||
+                  (match.teams.home.goals == match.teams.away.goals
+                    && match.teams.home.real_goals == match.teams.away.real_goals);
+              }
             }
           });
           if (!_.isEqual(newVal, oldVal) && !_.isUndefined(newVal) && !_.isUndefined(oldVal)) {

@@ -79,7 +79,7 @@
 
     $scope.login = function() {
       var
-      href = $location.search().redirect || '/';
+      href = $location.search().redirect || $location.path();
       $scope.loading = true;
       Parse.FacebookUtils.logIn(
         'email,public_profile,user_friends,publish_actions', {

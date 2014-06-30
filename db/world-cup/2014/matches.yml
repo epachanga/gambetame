@@ -895,13 +895,13 @@
   location: mineirao
   teams:
     home:
-      team: '[1A]'
+      team: bra
       goals:
       penalty:
       real_goals: 1
       real_penalty: true
     away:
-      team: '[2B]'
+      team: chi
       goals:
       penalty:
       real_goals: 1
@@ -913,13 +913,13 @@
   location: maracana
   teams:
     home:
-      team: '[1C]'
+      team: col
       goals:
       penalty:
       real_goals: 2
       real_penalty:
     away:
-      team: '[2D]'
+      team: uru
       goals:
       penalty:
       real_goals: 0
@@ -931,13 +931,13 @@
   location: castelao
   teams:
     home:
-      team: '[1B]'
+      team: ned
       goals:
       penalty:
       real_goals: 2
       real_penalty:
     away:
-      team: '[2A]'
+      team: mex
       goals:
       penalty:
       real_goals: 1
@@ -949,13 +949,13 @@
   location: pernambuco
   teams:
     home:
-      team: '[1D]'
+      team: crc
       goals:
       penalty:
       real_goals: 1
       real_penalty: true
     away:
-      team: '[2C]'
+      team: gre
       goals:
       penalty:
       real_goals: 1
@@ -967,13 +967,13 @@
   location: nacionaldebrasilia
   teams:
     home:
-      team: '[1E]'
+      team: fra
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[2F]'
+      team: nga
       goals:
       penalty:
       real_goals:
@@ -985,13 +985,13 @@
   location: beirario
   teams:
     home:
-      team: '[1G]'
+      team: ger
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[2H]'
+      team: alg
       goals:
       penalty:
       real_goals:
@@ -1003,13 +1003,13 @@
   location: corinthians
   teams:
     home:
-      team: '[1F]'
+      team: arg
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[2E]'
+      team: sui
       goals:
       penalty:
       real_goals:
@@ -1021,13 +1021,13 @@
   location: fontenova
   teams:
     home:
-      team: '[1H]'
+      team: bel
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[2G]'
+      team: usa
       goals:
       penalty:
       real_goals:
