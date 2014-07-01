@@ -970,13 +970,13 @@
       team: fra
       goals:
       penalty:
-      real_goals:
+      real_goals: 2
       real_penalty:
     away:
       team: nga
       goals:
       penalty:
-      real_goals:
+      real_goals: 0
       real_penalty:
 -
   id: 54
@@ -988,13 +988,13 @@
       team: ger
       goals:
       penalty:
-      real_goals:
+      real_goals: 2
       real_penalty:
     away:
       team: alg
       goals:
       penalty:
-      real_goals:
+      real_goals: 1
       real_penalty:
 -
   id: 55
