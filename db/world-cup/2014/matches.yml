@@ -1006,13 +1006,13 @@
       team: arg
       goals:
       penalty:
-      real_goals:
+      real_goals: 1
       real_penalty:
     away:
       team: sui
       goals:
       penalty:
-      real_goals:
+      real_goals: 0
       real_penalty:
 -
   id: 56
@@ -1024,13 +1024,13 @@
       team: bel
       goals:
       penalty:
-      real_goals:
+      real_goals: 2
       real_penalty:
     away:
       team: usa
       goals:
       penalty:
-      real_goals:
+      real_goals: 1
       real_penalty:
 
 -
