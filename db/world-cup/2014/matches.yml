@@ -1040,13 +1040,13 @@
   location: castelao
   teams:
     home:
-      team: '[W49]'
+      team: bra
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[W50]'
+      team: col
       goals:
       penalty:
       real_goals:
@@ -1058,13 +1058,13 @@
   location: maracana
   teams:
     home:
-      team: '[W53]'
+      team: fra
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[W54]'
+      team: ger
       goals:
       penalty:
       real_goals:
@@ -1076,13 +1076,13 @@
   location: fontenova
   teams:
     home:
-      team: '[W51]'
+      team: ned
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[W52]'
+      team: crc
       goals:
       penalty:
       real_goals:
@@ -1094,13 +1094,13 @@
   location: nacionaldebrasilia
   teams:
     home:
-      team: '[W55]'
+      team: arg
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[W56]'
+      team: bel
       goals:
       penalty:
       real_goals:

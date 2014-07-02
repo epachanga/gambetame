@@ -43,7 +43,9 @@
       </tbody>
     </table>
   </div>
-  <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
+  <div class="clearfix">
+    <button type="button" ng-class="{loader: saving}" class="btn btn-success pull-right" ng-disabled="disabled" ng-click="save()">Save</button>
+  </div>
 
   <div class="col-md-12 alignCenter">
     <div ng-hide="currentUser">
