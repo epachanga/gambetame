@@ -63,8 +63,9 @@ angular.module('WorldCup', [
           resolve: resolveServices
         })
         .when('/services/updateUserScores', {
-          controller: 'ServicesCtrl',
-          templateUrl: '/views/services.html'
+          controller: 'MainCtrl',
+          templateUrl: '/views/layout.html',
+          resolve: resolveServices
         })
         .otherwise({
           templateUrl: '/views/error.html'

@@ -18,7 +18,7 @@
         <td>{{ i+1 }}</td>
         <td>{{ row.get('user').get('name') }}</td>
         <td><a href="/results/{{ row.get('user').id }}">View results</a></td>
-        <td>{{ row.get('score') }}</td>
+        <td><score row="row"></score></td>
         <td>
           <span ng-show="row.get('isAdmin')"><i class="fa fa-user"></i> Admin</span>
         </td>

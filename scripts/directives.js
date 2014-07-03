@@ -367,11 +367,41 @@
     };
   };
 
+  var ScoreDirective = function() {
+    return {
+      restrict: 'E',
+      scope: {
+        row: '='
+      },
+      link: function(scope, element) {
+        var
+        stages = ['GroupStage', 'Roundof16', 'QuarterFinals', 'SemiFinals', 'PlayoffForThirdPlace', 'Final'],
+        totalScore = 0,
+        UserScores = Parse.Object.extend('UserScores'),
+        scoreQuery = new Parse.Query(UserScores);
+        scoreQuery.equalTo('user', scope.row.get('user'));
+        scoreQuery.find().then(function(result) {
+          if (result.length) {
+            result = result[0];
+            _.forEach(stages, function(stage) {
+              totalScore += result.get(stage);
+            });
+          }
+          element[0].innerHTML = totalScore;
+          scope.row.score = totalScore;
+          scope.$apply();
+        });
+      }
+    };
+  };
+
   angular.module('worldcup.directives', [])
     .directive('groupStandings', ['$rootScope', GroupStandingsDirective])
     .directive('groupMatches', ['$rootScope', GroupMatchesDirective])
     .directive('matchesList', ['$rootScope', MatchesListDirective])
     .directive('team', ['$rootScope', 'Utils', TeamDirective])
     .directive('venue', ['$rootScope', VenueDirective])
-    .directive('time', TimeDirective);
+    .directive('time', TimeDirective)
+    .directive('score', ScoreDirective)
+    ;
 })();
