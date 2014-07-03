@@ -1,5 +1,5 @@
 <section rel="user-results" ng-controller="ResultsCtrl">
-  <div class="alert alert-info" ng-show="user">
+  <div class="alert alert-info" ng-show="viewMode && user">
     <strong>Heads Up!</strong> You are viewing <em>{{ user.get('name') }}</em>'s results.
   </div>
   <section rel="groups">

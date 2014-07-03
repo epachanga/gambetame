@@ -495,11 +495,6 @@
   var ResultsCtrl = function($scope, Utils) {
     var userId = $scope.routeParams.id;
 
-    if ($scope.$root.currentUser.id == userId) {
-      $scope.loaded();
-      return;
-    }
-
     $scope.mainLoading = true;
 
     var
@@ -520,7 +515,7 @@
           $scope[stage.replace(/[\s-]/g, '')] = matches;
         });
 
-        $scope.$root.viewMode = true;
+        $scope.$root.viewMode = $scope.$root.currentUser.id != userId;
         $scope.user = result[0].get('user');
         $scope.loaded();
         $scope.$apply();
