@@ -527,7 +527,7 @@
     });
   };
 
-  var ServicesCtrl = function ($scope, $window) {
+  var ServicesCtrl = function ($scope, $window, Utils) {
     console.group('Update User Scores');
     var currentUser = Parse.User.current();
     if (!currentUser || currentUser.get('authData').facebook.id != '10152131672672532') {
@@ -569,112 +569,9 @@
             matches.forEach(function(match) {
               var
               realMatch = _.find($scope.$root.matches, {id: match.id}),
-              matchScore = 0,
-              matchStage = match.stage.replace(/[\s-]/g, '');
-              console.groupCollapsed('Process match ' + match.id + ' (' + realMatch.teams.home.team + ' - ' + realMatch.teams.away.team + ') score');
+              matchScore = Utils.calculateMatchScore(match, realMatch, stage);
 
-              console.log('match', match);
-              console.log('home team', realMatch.teams.home.team);
-              console.log('away team', realMatch.teams.away.team);
-
-              if (matchStage == stage && !_.isNull(realMatch.teams.home.real_goals) && !_.isNull(realMatch.teams.away.real_goals) && !_.isNull(match.teams.home.goals) && !_.isNull(match.teams.away.goals)) {
-                var
-                realWinner = null,
-                userWinner = null,
-                realTie = null,
-                userTie = null,
-                realHomeGoals = realMatch.teams.home.real_goals,
-                realAwayGoals = realMatch.teams.away.real_goals,
-                realHomePenalty = realMatch.teams.home.real_penalty,
-                realAwayPenalty = realMatch.teams.away.real_penalty,
-                userHomeGoals = match.teams.home.goals,
-                userAwayGoals = match.teams.away.goals,
-                userHomePenalty = match.teams.home.penalty,
-                userAwayPenalty = match.teams.away.penalty;
-
-                console.log('real home goals', realHomeGoals);
-                console.log('real away goals', realAwayGoals);
-                console.log('real home penalty', realHomePenalty);
-                console.log('real away penalty', realAwayPenalty);
-                console.log('user home goals', userHomeGoals);
-                console.log('user away goals', userAwayGoals);
-                console.log('user home penalty', userHomePenalty);
-                console.log('user away penalty', userAwayPenalty);
-
-                if (realHomeGoals == userHomeGoals) {
-                  console.log('+1 guess exact team goals', match.teams.home.team, userHomeGoals);
-                  matchScore += 1;
-                  if (realHomeGoals > 4) {
-                    console.log('+1 guess exact team goals > 4', match.teams.home.team, userHomeGoals);
-                    matchScore += 1;
-                  }
-                }
-                if (realAwayGoals == userAwayGoals) {
-                  console.log('+1 guess exact team goals', match.teams.away.team, userAwayGoals);
-                  matchScore += 1;
-                  if (realAwayGoals > 4) {
-                    console.log('+1 guess exact team goals > 4', match.teams.away.team, userAwayGoals);
-                    matchScore += 1;
-                  }
-                }
-
-                if (match.stage == 'Group Stage') {
-                  if (realHomeGoals > realAwayGoals) {
-                    realWinner = match.teams.home.team;
-                  } else if (realAwayGoals > realHomeGoals) {
-                    realWinner = match.teams.away.team;
-                  } else {
-                    realTie = true;
-                  }
-
-                  if (userHomeGoals > userAwayGoals) {
-                    userWinner = match.teams.home.team;
-                  } else if (userAwayGoals > userHomeGoals) {
-                    userWinner = match.teams.away.team;
-                  } else {
-                    userTie = true;
-                  }
-                } else {
-                  if (realHomeGoals > realAwayGoals || realHomePenalty) {
-                    realWinner = match.teams.home.team;
-                  } else {
-                    realWinner = match.teams.away.team;
-                  }
-
-                  if (userHomeGoals > userAwayGoals || userHomePenalty) {
-                    userWinner = match.teams.home.team;
-                  } else {
-                    userWinner = match.teams.away.team;
-                  }
-
-                  realTie = realHomeGoals == realAwayGoals;
-                  userTie = userHomeGoals == userAwayGoals;
-                }
-
-                if (!_.isNull(realWinner) && realWinner == userWinner) {
-                  console.log('+2 guess correct winner', userWinner);
-                  matchScore += 2;
-                }
-                if (!_.isNull(realTie) && realTie === userTie) {
-                  if (_.isNull(realWinner)) {
-                    console.log('+2 guess tie');
-                    matchScore += 2;
-                  } else {
-                    console.log('+1 guess tie');
-                    matchScore += 1;
-                  }
-                }
-              } else {
-                console.log('skipped match processing');
-                console.assert(matchStage == stage, 'matchStage == stage');
-                console.assert(!_.isNull(realMatch.teams.home.real_goals), '!_.isNull(realMatch.teams.home.real_goals)');
-                console.assert(!_.isNull(realMatch.teams.away.real_goals), '!_.isNull(realMatch.teams.away.real_goals)');
-                console.assert(!_.isNull(match.teams.home.goals), '!_.isNull(match.teams.home.goals)');
-                console.assert(!_.isNull(match.teams.away.goals), '!_.isNull(match.teams.away.goals)');
-              }
-              console.log('total match score:', matchScore);
               stageScore += matchScore;
-              console.groupEnd();
             });
             console.log('total stage score:', stageScore);
             console.groupEnd();
@@ -707,6 +604,6 @@
     .controller('UserCtrl', ['$scope', UserCtrl])
     .controller('GroupingCtrl', ['$scope', GroupingCtrl])
     .controller('ResultsCtrl', ['$scope', 'Utils', ResultsCtrl])
-    .controller('ServicesCtrl', ['$scope', '$window', ServicesCtrl])
+    .controller('ServicesCtrl', ['$scope', '$window', 'Utils', ServicesCtrl])
     ;
 })();
