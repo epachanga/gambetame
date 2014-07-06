@@ -646,6 +646,9 @@
                   } else {
                     userWinner = match.teams.away.team;
                   }
+
+                  realTie = realHomeGoals == realAwayGoals;
+                  userTie = userHomeGoals == userAwayGoals;
                 }
 
                 if (!_.isNull(realWinner) && realWinner == userWinner) {
@@ -653,8 +656,13 @@
                   matchScore += 2;
                 }
                 if (!_.isNull(realTie) && realTie === userTie) {
-                  console.log('+2 guess tie');
-                  matchScore += 2;
+                  if (_.isNull(realWinner) {
+                    console.log('+2 guess tie');
+                    matchScore += 2;
+                  } else {
+                    console.log('+1 guess tie');
+                    matchScore += 1;
+                  }
                 }
               } else {
                 console.log('skipped match processing');
