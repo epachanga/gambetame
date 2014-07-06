@@ -656,7 +656,7 @@
                   matchScore += 2;
                 }
                 if (!_.isNull(realTie) && realTie === userTie) {
-                  if (_.isNull(realWinner) {
+                  if (_.isNull(realWinner)) {
                     console.log('+2 guess tie');
                     matchScore += 2;
                   } else {
