@@ -584,7 +584,7 @@
           console.log('+2 guess correct winner', userWinner);
           matchScore += 2;
         }
-        if (!_.isNull(realTie) && realTie === userTie) {
+        if (realTie === true && realTie === userTie) {
           if (_.isNull(realWinner)) {
             console.log('+2 guess tie');
             matchScore += 2;
