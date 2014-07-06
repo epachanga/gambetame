@@ -2,9 +2,9 @@
   <table class="table">
     <tbody>
       <tr ng-repeat="match in matches">
-        <td>
-          <i class="fa fa-times-circle-o text-danger" ng-show="match.userGuess === false"></i>
-          <i class="fa fa-check-circle-o text-success" ng-show="match.userGuess === true"></i>
+        <td ng-class="{'text-danger': match.userGuess === false, 'text-success': match.userGuess === true}">
+          <i class="fa" ng-class="{'fa-times-circle-o': match.userGuess === false, 'fa-check-circle-o': match.userGuess === true}"></i>
+          <match-score match="match"><match-score>
         </td>
         <td class="match-id" ng-if="match.stage != 'Group Stage'">
           {{match.id}}

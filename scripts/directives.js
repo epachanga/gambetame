@@ -395,6 +395,24 @@
     };
   };
 
+  var MatchScoreDirective = function(Utils) {
+    return {
+      restrict: 'E',
+      template: '<span>{{score}}</span>',
+      scope: {
+        match: '='
+      },
+      link: function(scope, element) {
+        scope.$watch('match', function() {
+          if (!_.isNull(scope.match.teams.home.real_goals)) {
+            var score = Utils.calculateMatchScore(scope.match, scope.match, scope.match.stage.replace(/[\s-]/g, ''));
+            scope.score = score;
+          }
+        }, true);
+      }
+    };
+  };
+
   angular.module('worldcup.directives', [])
     .directive('groupStandings', ['$rootScope', GroupStandingsDirective])
     .directive('groupMatches', ['$rootScope', GroupMatchesDirective])
@@ -403,5 +421,6 @@
     .directive('venue', ['$rootScope', VenueDirective])
     .directive('time', TimeDirective)
     .directive('score', ScoreDirective)
+    .directive('matchScore', ['Utils', MatchScoreDirective])
     ;
 })();
