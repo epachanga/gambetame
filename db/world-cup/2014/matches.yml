@@ -1043,13 +1043,13 @@
       team: bra
       goals:
       penalty:
-      real_goals:
+      real_goals: 2
       real_penalty:
     away:
       team: col
       goals:
       penalty:
-      real_goals:
+      real_goals: 1
       real_penalty:
 -
   id: 58
@@ -1061,13 +1061,13 @@
       team: fra
       goals:
       penalty:
-      real_goals:
+      real_goals: 0
       real_penalty:
     away:
       team: ger
       goals:
       penalty:
-      real_goals:
+      real_goals: 1
       real_penalty:
 -
   id: 59
@@ -1079,13 +1079,13 @@
       team: ned
       goals:
       penalty:
-      real_goals:
-      real_penalty:
+      real_goals: 0
+      real_penalty: true
     away:
       team: crc
       goals:
       penalty:
-      real_goals:
+      real_goals: 0
       real_penalty:
 -
   id: 60
@@ -1097,13 +1097,13 @@
       team: arg
       goals:
       penalty:
-      real_goals:
+      real_goals: 1
       real_penalty:
     away:
       team: bel
       goals:
       penalty:
-      real_goals:
+      real_goals: 0
       real_penalty:
 
 -
@@ -1113,13 +1113,13 @@
   location: mineirao
   teams:
     home:
-      team: '[W57]'
+      team: bra
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[W58]'
+      team: ger
       goals:
       penalty:
       real_goals:
@@ -1131,13 +1131,13 @@
   location: corinthians
   teams:
     home:
-      team: '[W59]'
+      team: ned
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[W60]'
+      team: arg
       goals:
       penalty:
       real_goals:
