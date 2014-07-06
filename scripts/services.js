@@ -533,7 +533,7 @@
         if (realHomeGoals == userHomeGoals) {
           console.log('+1 guess exact team goals', match.teams.home.team, userHomeGoals);
           matchScore += 1;
-          if (realHomeGoals > 4) {
+          if (realHomeGoals >= 4) {
             console.log('+1 guess exact team goals > 4', match.teams.home.team, userHomeGoals);
             matchScore += 1;
           }
@@ -541,10 +541,14 @@
         if (realAwayGoals == userAwayGoals) {
           console.log('+1 guess exact team goals', match.teams.away.team, userAwayGoals);
           matchScore += 1;
-          if (realAwayGoals > 4) {
+          if (realAwayGoals >= 4) {
             console.log('+1 guess exact team goals > 4', match.teams.away.team, userAwayGoals);
             matchScore += 1;
           }
+        }
+        if (realHomeGoals == userHomeGoals && realAwayGoals == userAwayGoals) {
+          console.log('+1 guess exact game score', match.teams.home.team, userHomeGoals, match.teams.away.team, userAwayGoals);
+          matchScore += 1;
         }
 
         if (match.stage == 'Group Stage') {
@@ -585,13 +589,8 @@
           matchScore += 2;
         }
         if (realTie === true && realTie === userTie) {
-          if (_.isNull(realWinner)) {
-            console.log('+2 guess tie');
-            matchScore += 2;
-          } else {
-            console.log('+1 guess tie');
-            matchScore += 1;
-          }
+          console.log('+2 guess tie');
+          matchScore += 2;
         }
       } else {
         console.log('skipped match processing');
