@@ -1116,13 +1116,13 @@
       team: bra
       goals:
       penalty:
-      real_goals:
+      real_goals: 1
       real_penalty:
     away:
       team: ger
       goals:
       penalty:
-      real_goals:
+      real_goals: 7
       real_penalty:
 -
   id: 62
