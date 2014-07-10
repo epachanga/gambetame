@@ -1134,14 +1134,14 @@
       team: ned
       goals:
       penalty:
-      real_goals:
+      real_goals: 0
       real_penalty:
     away:
       team: arg
       goals:
       penalty:
-      real_goals:
-      real_penalty:
+      real_goals: 0
+      real_penalty: true
 
 -
   id: 63
@@ -1150,13 +1150,13 @@
   location: nacionaldebrasilia
   teams:
     home:
-      team: '[L61]'
+      team: bra
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[L62]'
+      team: ned
       goals:
       penalty:
       real_goals:
@@ -1169,13 +1169,13 @@
   location: maracana
   teams:
     home:
-      team: '[W61]'
+      team: ger
       goals:
       penalty:
       real_goals:
       real_penalty:
     away:
-      team: '[W62]'
+      team: arg
       goals:
       penalty:
       real_goals:
