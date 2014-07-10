@@ -388,10 +388,10 @@
           while ($scope.$root.matches[nextMatchIndex++] && $scope.$root.matches[nextMatchIndex].stage == nextMatch.stage) {
             $scope.nextMatches.push($scope.$root.matches[nextMatchIndex]);
           }
-          /*var addMatches = $scope.nextMatches.length;
+          var addMatches = $scope.nextMatches.length;
           for (var i=0; i<addMatches; i++) {
             $scope.nextMatches.push($scope.$root.matches[nextMatchIndex++]);
-          }*/
+          }
 
           $scope.loaded();
           $scope.$apply();

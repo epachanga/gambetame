@@ -18,9 +18,10 @@
             <time datetime="match.date"></time><br/>
             <venue rel="match.location"></venue>
           </td>
-          <td class="match-id">
+          <td class="match-id nowrap">
             <span class="nowrap" ng-if="match.stage == 'Group Stage'">GROUP {{teams[match.teams.home.team].group | uppercase}}</span>
-            <span ng-if="match.stage != 'Group Stage'">{{match.stage | uppercase}}</span>
+            <span ng-if="match.stage == 'Play-off For Third Place'">THIRD PLACE</span>
+            <span ng-if="match.stage != 'Play-off For Third Place' && match.stage != 'Group Stage'">{{match.stage | uppercase}}</span>
           </td>
           <td><team class="home" rel="match.teams.home.team"></team></td>
           <td class="text-center match-result">
