@@ -1153,13 +1153,13 @@
       team: bra
       goals:
       penalty:
-      real_goals:
+      real_goals: 0
       real_penalty:
     away:
       team: ned
       goals:
       penalty:
-      real_goals:
+      real_goals: 3
       real_penalty:
 
 -
@@ -1172,11 +1172,11 @@
       team: ger
       goals:
       penalty:
-      real_goals:
+      real_goals: 1
       real_penalty:
     away:
       team: arg
       goals:
       penalty:
-      real_goals:
+      real_goals: 0
       real_penalty:
